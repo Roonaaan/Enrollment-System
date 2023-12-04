@@ -276,7 +276,7 @@ $currentyear = date('Y');
             <div class="row">
               <div class="col-lg-8">
                 <div class="panel panel-default">
-                  <div class="panel-heading" style="background-color:#098744;color:#fff;">
+                  <div class="panel-heading" style="background-color:#242424; color:#933DC9; border: 1px solid #53118F">
                   <b><?php   
                   echo  $title . (isset($_GET['category']) ?  '  |  ' .$_GET['category'] : '' )?> </b> 
                   </div>
@@ -303,7 +303,7 @@ $currentyear = date('Y');
 
 ?>
        </div>
-            <footer class="panel-footer" style="background-color:#098744;color:#fff;" >
+            <footer class="panel-footer" style="background-color:#242424; color:#933DC9; border: 1px solid #53118F">
               <p align="left" >&copy; University of Caloocan City | North</p>
            </footer>
       </div>

@@ -2,7 +2,7 @@
  <form action="index.php?q=subject" method="POST">
       <table class="table table-hover"> 
             <thead>
-              <tr  bgcolor="#098744" style="color:#fff">
+              <tr  bgcolor="#242424" style="color:#933DC9; border: 1px solid #53118F;">
              <th>ID</th>
               <th>
                <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
