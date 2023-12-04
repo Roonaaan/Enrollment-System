@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
-            <i class="fa fa-globe"></i>Green Valley College Foundation INC.
+            University of Caloocan City
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
         </div>
@@ -99,7 +99,7 @@
    <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
-            <i  class="fa fa-globe">List Of Students</i>
+            <i>List Of Students</i>
               <small class="pull-right"> <?php echo (isset($_POST['Course'])) ? 'Course/Year :' .$_POST['Course'] .' ||': ''; ?>
                 <?php echo (isset($_POST['Semester'])) ? ' Semester :' .$_POST['Semester'] .' ||': ''; ?>
                  <?php echo (isset($_POST['SY'])) ? ' SY :' .$_POST['SY'] : ''; ?> 
@@ -115,11 +115,11 @@
           <table class="table table-bordered table-striped" style="font-size:11px" cellspacing="0" >
             <thead>
             <tr>
-              <th>IdNo.</th>
+              <th>Id No.</th>
               <th>Name</th> 
               <th>Address</th>
               <th>Sex</th> 
-              <th>AGE</th>
+              <th>Age</th>
               <th>Contact No.</th>
               <th>Civil Status</th>
               <th>Course/Year</th>

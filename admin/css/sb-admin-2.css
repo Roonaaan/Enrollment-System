@@ -73,6 +73,10 @@ a {
     line-height: 20px;
 }
 
+.table-bordered {
+    border: 1px solid #53118F;
+}
+
 .form-inline .form-control {
     display: inline-block;
     border-block-start-color: #53118F;
