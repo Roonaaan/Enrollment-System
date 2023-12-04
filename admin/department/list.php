@@ -11,7 +11,7 @@
             <h1 class="page-header">List of Departments  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
        		</div>
        		<div class="col-lg-6" >
-       			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
+       			<img style="float:right;" src="<?php echo web_root; ?>img/UCC.png" >
        		</div>
        		</div>
         	<!-- /.col-lg-12 -->
