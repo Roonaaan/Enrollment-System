@@ -206,7 +206,7 @@ if($userStud){
 				
 			</tr>
 			<tr>
-			 	<td><label>Course/Year</label></td>
+			 	<td><label>Course</label></td>
 				<td colspan="2">
 					
 					<select class="form-control input-sm" name="COURSE">
@@ -214,7 +214,7 @@ if($userStud){
 								if(isset($_SESSION['COURSEID'])){
 									$course = New Course();
   								    $singlecourse = $course->single_course($_SESSION['COURSEID']);
-  								    echo '<option value='.$singlecourse->COURSE_ID.' >'.$singlecourse->COURSE_NAME.'-'.$singlecourse->COURSE_LEVEL.' </option>';
+  								    echo '<option value='.$singlecourse->COURSE_ID.' >'.$singlecourse->COURSE_NAME.' </option>';
 
 								}else{
 									echo '<option value="Select">Select</option>';
@@ -227,7 +227,7 @@ if($userStud){
 								$cur = $mydb->loadResultList();
 
 								foreach ($cur as $result) {
-								  echo '<option value='.$result->COURSE_ID.' >'.$result->COURSE_NAME.'-'.$result->COURSE_LEVEL.' </option>';
+								  echo '<option value='.$result->COURSE_ID.' >'.$result->COURSE_NAME.' </option>';
 
 								}
 								?>

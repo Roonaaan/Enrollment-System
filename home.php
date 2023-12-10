@@ -1,7 +1,7 @@
  <!-- Map Column -->
  <div class="row">
             <div class="col-md-4">
-                <img style = ""width="50%" src="img/UCC.png" >
+            <img style="width:80%" src="img/UCC.png">
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-8">

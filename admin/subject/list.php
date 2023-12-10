@@ -8,7 +8,7 @@
 <div class="row">
       <div class="col-lg-12">
        	 <div class="col-lg-8">
-            <h2 class="page-header">List of Subjects per Course/Year <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h2>
+            <h2 class="page-header">List of Subjects per Course <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h2>
        		</div>
        		<div class="col-lg-4" >
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
@@ -29,7 +29,6 @@
 				  		<th>Description</th> 
 				  		<th>Unit</th>
 				  		<th>Pre-Requisite</th>
-				  		<th>Course/Year</th>
 				  		<!-- <th>Academic Year</th> -->
 				  		<th>Semester</th>
 				  		<th width="10%" >Action</th>
@@ -52,7 +51,7 @@
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
 				  		echo '<td>' . $result->UNIT.'</a></td>';
 				  		echo '<td>'. $result->PRE_REQUISITE.'</td>';
-				  		echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'</td>';
+				  		echo '<td>'. $result->COURSE_NAME.'</td>';
 				  		// echo '<td>' . $result->AY.'</a></td>';
 				  		echo '<td>'. $result->SEMESTER.'</td>'; 
 				  		 

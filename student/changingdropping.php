@@ -55,7 +55,7 @@
               echo '<td>'. $result->SUBJ_CODE.' ['. $result->SUBJ_DESCRIPTION.']</td>'; 
               echo '<td>'. $result->UNIT.'</a></td>';
               echo '<td>'. $result->PRE_REQUISITE.'</td>';
-              echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'</td>'; 
+              echo '<td>'. $result->COURSE_NAME.'</td>'; 
               echo '<td>'. $result->sched_day  .'</td>';
               echo '<td>'. $result->sched_time  .'</td>';
               echo '<td>'. $result->sched_room .'</td>';

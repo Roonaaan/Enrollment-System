@@ -8,7 +8,7 @@ require_once ("../include/initialize.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Green Valley College Foundation, Inc.</title>
+<title>University of Caloocan City</title>
 
      <!-- Bootstrap Core CSS -->
  <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
@@ -67,9 +67,8 @@ require_once ("../include/initialize.php");
 
             $course = New Course();
             $singlecourse = $course->single_course($stud->COURSE_ID);
-            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME.'-'.$singlecourse->COURSE_LEVEL;
+            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME;
             $_SESSION['COURSEID'] =$stud->COURSE_ID;
-            $_SESSION['COURSELEVEL'] = $stud->YEARLEVEL;
             ?></b><br>
           <b>Semester : <?php echo $_SESSION['SEMESTER']; ?></b> <br/>
           <b>Academic Year : <?php echo $_SESSION['SY']; ?></b>

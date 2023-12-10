@@ -7,7 +7,7 @@
  <div class="row">
       <div class="col-lg-12">
        	 <div class="col-lg-6">
-            <h1 class="page-header">List of Courses/Year  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
+            <h1 class="page-header">List of Courses  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
        		</div>
        		<div class="col-lg-6" >
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
@@ -23,7 +23,6 @@
 				  	<tr>
 				  		<th>Course Id</th>
 				  		<th>Course</th>
-				  		<th>Level</th>
 				  		<th>Major</th> 
 
 				  		<th>Description</th>
@@ -44,35 +43,12 @@
 
 						foreach ($cur as $result) {
 
-							switch ($result->COURSE_LEVEL) {
-								case 1:
-									# code...
-								$Level ='First Year';
-									break;
-								case 2:
-									# code...
-								$Level ='Second Year';
-									break;
-								case 3:
-									# code...
-								$Level ='Third Year';
-									break;
-								case 4:
-									# code...
-								$Level ='Fourth Year';
-									break;
-
-								default:
-									# code...
-								$Level ='First Year';
-									break;
-							}
+							
 
 
 				  		echo '<tr>';
 				  		echo '<td >' . $result->COURSE_ID.'</td>';
 				  		echo '<td>' . $result->COURSE_NAME.'</a></td>';
-				  		echo '<td>'. $Level.'</td>';
 				  		echo '<td>'. $result->COURSE_MAJOR.'</td>';
 				  		echo '<td>'. $result->COURSE_DESC.'</td>'; 
 				  		echo '<td>'. $result->DEPARTMENT_NAME.'</td>';
