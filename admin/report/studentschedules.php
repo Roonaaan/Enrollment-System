@@ -8,9 +8,9 @@
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- info row -->
+
       <div class="row invoice-info">
       <div class="col-sm-6 invoice-col">
         
@@ -25,7 +25,7 @@
           </address>
         </div>
  
-           <!-- /.col -->
+
         <div class="col-sm-2 invoice-col"> 
         <br/>
         <address>
@@ -36,9 +36,9 @@
         </address>
 
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
+
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -53,9 +53,9 @@
 				
 				  <thead>
 				  	<tr>
-				  		<!-- <th>ID</th> -->
+
 				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
+
 				  		 Time</th>
 				  		<th>Days</th> 
 				  		<th>Subject</th>
@@ -75,15 +75,14 @@
 				  			 WHERE s.`COURSE_ID`=c.`COURSE_ID` AND s.SUBJ_ID=subj.SUBJ_ID 
 				  			 AND CONCAT(COURSE_NAME,'-',COURSE_LEVEL) LIKE '%" . $_POST['Course'] ."%' 
           					 AND sched_semester  LIKE '%" . $_POST['Semester'] ."%'";;
-				  		// $mydb->setQuery("SELECT * FROM `tblschedule`");
+
 				  		$mydb->setQuery($sql);
 
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
-				  		// echo '<td>' . $result->schedID.'</a></td>';
+
 				  		echo '<td>'. $result->sched_time.'</td>';
 				  		echo '<td>'. $result->sched_day.'</td>';
 				  		echo '<td>' . $result->SUBJ_CODE.'</a></td>';
@@ -97,15 +96,14 @@
 				  		}else{
 				  		$sql="SELECT * FROM `tblschedule` s, `course` c, subject subj
 				  			 WHERE s.`COURSE_ID`=c.`COURSE_ID` AND s.SUBJ_ID=subj.SUBJ_ID";;
-				  		// $mydb->setQuery("SELECT * FROM `tblschedule`");
+
 				  		$mydb->setQuery($sql);
 
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
-				  		// echo '<td>' . $result->schedID.'</a></td>';
+
 				  		echo '<td>'. $result->sched_time.'</td>';
 				  		echo '<td>'. $result->sched_day.'</td>';
 				  		echo '<td>' . $result->SUBJ_CODE.'</a></td>';
@@ -123,16 +121,11 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- --> 
 	</form>
 	<form action="schedulesPrint.php" method="POST" target="_blank">
 	<input type="hidden" name="Course" value="<?php echo (isset($_POST['Course'])) ? $_POST['Course'] : ''; ?>">
 	 <input type="hidden" name="Semester" value="<?php echo (isset($_POST['Semester'])) ? $_POST['Semester'] : ''; ?> "> 
-      <!-- this row will not appear when printing -->
+
       <div class="row no-print">
         <div class="col-xs-12">
          <span class="pull-right"> <button type="submit" name="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
@@ -140,7 +133,7 @@
       </div>
     </section>
     </form>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
 	
 

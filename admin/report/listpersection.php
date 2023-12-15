@@ -1,7 +1,6 @@
  
  <form action="" method="POST" >
-    <!-- Main content --> 
-        <!-- title row -->
+
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -9,9 +8,7 @@
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
         </div>
-        <!-- /.col -->
       </div>
-      <!-- info row -->
       <div class="row invoice-info">
       <div class="col-sm-4 invoice-col">
        
@@ -46,8 +43,6 @@
 		  </div>
           </address>
         </div> 
-        <!-- /.col -->
-           <!-- /.col -->
         <div class="col-sm-2 invoice-col"> 
         <br/>
         <address>
@@ -58,10 +53,9 @@
         </address>
 
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
-      <!-- title row -->
+
   
    <div class="row">
         <div class="col-xs-12">
@@ -78,7 +72,7 @@
       </div> 
    
 
-      <!-- Table row -->
+
       <div class="row">
         <div class="col-xs-12 col-md-12 table-responsive">
           <table class="table table-bordered table-striped" style="font-size:11px" cellspacing="0" >
@@ -130,7 +124,7 @@
                          $tot =  count($cur);
                         
                     } 
-                       // $_SESSION['tot'] = $tot;
+
                  
             }
            
@@ -144,24 +138,24 @@
             </tfoot>
           </table>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
+
  
 </form>
     <form action="printpersection.php" method="POST" target="_blank">
     <input type="hidden" name="Course" value="<?php echo (isset($_POST['Course'])) ? $_POST['Course'] : ''; ?>">
      <input type="hidden" name="SECTION" value="<?php echo (isset($_POST['SECTION'])) ? $_POST['SECTION'] : ''; ?> ">  
-          <!-- this row will not appear when printing -->
+
           <div class="row no-print">
             <div class="col-xs-12">
              <span class="pull-right"> <button type="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
           </div>
           </div> 
     </form>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
  
 </div>
-<!-- ./wrapper -->
+
   

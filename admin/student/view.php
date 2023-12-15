@@ -43,16 +43,15 @@
         </div>
     </div>
          
-        <!--/col-3-->
+
 <div class="col-sm-9"> 
-   <!-- `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`,
- `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `EMAIL`, `ACC_PASSWORD`, `student_status`, `schedID`, `course_year` -->
+
 <?php
   $currentyear = date('Y');
   $nextyear =  date('Y') + 1;
   $sy = $currentyear .'-'.$nextyear;
   $_SESSION['SY'] = $sy;
-  // $newDate    = Carbon::createFromFormat('Y-m-d',$_SESSION['SY'] )->addYear(1);
+
 
 ?>
 

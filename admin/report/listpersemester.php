@@ -1,7 +1,6 @@
  
  <form action="" method="POST" >
-    <!-- Main content --> 
-        <!-- title row -->
+
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -9,9 +8,9 @@
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- info row -->
+
       <div class="row invoice-info">
       <div class="col-sm-4 invoice-col">
        
@@ -37,7 +36,7 @@
           </address>
         </div>
 
-        <!-- /.col -->
+
         <div class="col-sm-2 invoice-col">
          Semester
           <address> 
@@ -48,7 +47,7 @@
           </address>
         </div>
           
-           <!-- /.col -->
+
         <div class="col-sm-2 invoice-col"> 
         <br/>
         <address>
@@ -59,10 +58,9 @@
         </address>
 
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
-      <!-- title row -->
+
   
    <div class="row">
         <div class="col-xs-12">
@@ -76,7 +74,7 @@
       </div> 
    
 
-      <!-- Table row -->
+
       <div class="row">
         <div class="col-xs-12 col-md-12 table-responsive">
           <table class="table table-bordered table-striped" style="font-size:11px" cellspacing="0" >
@@ -99,9 +97,7 @@
                if(isset($_POST['submit'])){ 
           
             if ($_POST['Course']=='All') {
-              # code...
-                  // $sql ="SELECT * FROM `tblstudent`  s ,`course` c 
-                  //       WHERE s.`COURSE_ID`=c.`COURSE_ID`";
+
                 
                   $sql ="SELECT * FROM schoolyr sy, `tblstudent`  s ,`course` c 
                         WHERE sy.IDNO=s.IDNO AND s.`COURSE_ID`=c.`COURSE_ID`
@@ -132,12 +128,10 @@
                          $tot =  count($cur);
                         
                     } 
-                       // $_SESSION['tot'] = $tot;
+
                   } 
             }else{
-                  // $sql ="SELECT * FROM `tblstudent`  s ,`course` c 
-                  //       WHERE s.`COURSE_ID`=c.`COURSE_ID` AND CONCAT(COURSE_NAME,'-',COURSE_LEVEL) LIKE '%" . $_POST['Course'] ."%' 
-                  //       AND SEMESTER  LIKE '%" . $_POST['Semester'] ."%'";
+
                  $sql ="SELECT * FROM `schoolyr` sy, `tblstudent`  s ,`course` c 
                         WHERE sy.`IDNO`=s.`IDNO` AND s.`COURSE_ID`=c.`COURSE_ID` AND CONCAT(COURSE_NAME,'-',COURSE_LEVEL) LIKE '%" . $_POST['Course'] ."%' 
                         AND sy.SEMESTER  LIKE '%" . $_POST['Semester'] ."%'";
@@ -167,7 +161,7 @@
                          $tot =  count($cur);
                         
                     } 
-                       // $_SESSION['tot'] = $tot;
+
                   } 
 
             }
@@ -182,24 +176,23 @@
             </tfoot>
           </table>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
+
  
 </form>
     <form action="printpersemester.php" method="POST" target="_blank">
     <input type="hidden" name="Course" value="<?php echo (isset($_POST['Course'])) ? $_POST['Course'] : ''; ?>">
      <input type="hidden" name="Semester" value="<?php echo (isset($_POST['Semester'])) ? $_POST['Semester'] : ''; ?> ">  
-          <!-- this row will not appear when printing -->
+
           <div class="row no-print">
             <div class="col-xs-12">
              <span class="pull-right"> <button type="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
           </div>
           </div> 
     </form>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
  
 </div>
-<!-- ./wrapper -->
   

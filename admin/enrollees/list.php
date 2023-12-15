@@ -14,7 +14,7 @@
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
        		</div>
        		</div>
-        	<!-- /.col-lg-12 -->
+        	
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
@@ -24,13 +24,13 @@
 				  	<tr>
 				  		<th>ID</th>
 				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
+				  		
 				  		 Name</th>
 				  		<th>Sex</th> 
 				  		<th>Age</th>
 				  		<th>Address</th>
 				  		<th>Contact No.</th>
-				  		<!-- <th>Email Address</th> -->
+				  		
 				  		<th>Status</th>
 				  		<th>Course</th>
 				  		<th width="14%" >Action</th>
@@ -52,22 +52,21 @@
 								$age='None';
 							}
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
+				  		
 				  		echo '<td>' . $result->IDNO.'</a></td>';
 				  		echo '<td>'. $result->LNAME.','. $result->FNAME.' '. $result->MNAME.'</td>';
 				  		echo '<td>'. $result->SEX.'</td>';
 				  		echo '<td>' .$age.'</td>';
 				  		echo '<td>'. $result->HOME_ADD.'</td>';
 				  		echo '<td>'. $result->CONTACT_NO.'</td>';
-				  		// echo '<td>' . $result->EMAIL.'</a></td>';
+				  	
 				  		echo '<td>'. $result->student_status.'</td>'; 
 				  		echo '<td>'. $result->COURSE_NAME.'</td>';
 				  		 if($result->student_status=='New'){
 				  		 	echo '<td align="center" > 
 				  		             <a title="Confirm" href="controller.php?action=confirm&IDNO='.$result->IDNO.'"  class="btn btn-info btn-xs  ">Confirm <span class="fa fa-info-circle fw-fa"></span></a>
 				  			      </td>';
-				  		// echo '<td align="center" > <a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a>
-				  		// 			 </td>';
+				  		
 				  		 }else{
 				  		 	echo '<td align="center" > 
 				  		             <a title="Add Subject" href="index.php?view=addCredit&IDNO='.$result->IDNO.'"  class="btn btn-info btn-xs  ">Confirm <span class="fa fa-info-circle fw-fa"></span></a>
@@ -81,13 +80,9 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+				
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

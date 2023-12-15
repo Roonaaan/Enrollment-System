@@ -30,13 +30,12 @@
 				  		<th width="10%" >Action</th>
 				 
 				  	</tr>	
-				  </thead>     <!-- `COURSE_NAME`, `COURSE_LEVEL`, ``, `COURSE_DESC`, `DEPT_ID` -->
+				  </thead>     
               
 				  <tbody>
 				  	<?php 
 
-				  		// $mydb->setQuery("SELECT * 
-								// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
+				  		
 				  		$mydb->setQuery("SELECT * 
 											FROM  `course` c, `department` d WHERE c.DEPT_ID=d.DEPT_ID");
 				  		$cur = $mydb->loadResultList();
@@ -63,13 +62,9 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+				
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

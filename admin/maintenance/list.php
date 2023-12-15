@@ -13,7 +13,7 @@
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
        		</div>
        		</div>
-        	<!-- /.col-lg-12 -->
+        	
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
@@ -51,4 +51,4 @@
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

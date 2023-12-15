@@ -23,18 +23,11 @@
           </div>
         </div> 
                    
-                  <!--   <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "INST_ID">ID:</label>
-
-                      <div class="col-md-8"> -->
+                  
                         
                          <input class="form-control input-sm" id="INST_ID" name="INST_ID" placeholder=
                             "Instructor Full Name" type="hidden" value="<?php echo $inst->INST_ID ; ?>">
-                     <!--  </div>
-                    </div>
-                  </div> -->
+                    
                    <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
@@ -81,7 +74,7 @@
 
                       <div class="col-md-8">
                        <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                          <!-- <a href="index.php" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>List of Users</strong></a> -->
+                         
                        </div>
                     </div>
                   </div>

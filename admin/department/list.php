@@ -14,7 +14,7 @@
        			<img style="float:right;" src="<?php echo web_root; ?>img/UCC.png" >
        		</div>
        		</div>
-        	<!-- /.col-lg-12 -->
+        	
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
@@ -33,15 +33,14 @@
 				  </thead> 
 				  <tbody>
 				  	<?php   
-				  		// $mydb->setQuery("SELECT * 
-								// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
+				  	
 				  		$mydb->setQuery("SELECT * 
 											FROM  `department`");
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
+				  		
 				  		echo '<td>' . $result->DEPT_ID.'</a></td>';
 				  		echo '<td>'. $result->DEPARTMENT_NAME.'</td>';
 				  		echo '<td>'. $result->DEPARTMENT_DESC.'</td>';
@@ -56,13 +55,9 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+				
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

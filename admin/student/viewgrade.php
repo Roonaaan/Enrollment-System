@@ -45,7 +45,7 @@ $cur = $mydb->loadSingleResult();
             <h3 class="page-header">Student Subjects </h3>
        	 
        		</div>
-        	<!-- /.col-lg-12 -->
+
    		 	    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
 				<table id="dash-table" class="table table-striped table-bordered table-hover table-responsive" style="font-size:12px" cellspacing="0">
@@ -54,8 +54,7 @@ $cur = $mydb->loadSingleResult();
 				  	<tr>
 				  		<th>ID</th>
 				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
-				  		
+	  		
 				  		 Subject</th>
 				  		<th>Description</th> 
 				  		<th>Unit</th>
@@ -74,8 +73,7 @@ $cur = $mydb->loadSingleResult();
 				  </thead> 
 				  <tbody>
 				  	<?php  
-				  	// `GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`,
-				  	//  `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`
+
 
 						$sql = "SELECT * FROM `tblstudent` st, `grades` g,`subject` s ,studentsubjects ss
 						WHERE st.`IDNO`=g.`IDNO` and g.`SUBJ_ID`=s.`SUBJ_ID`  and s.`SUBJ_ID`=ss.`SUBJ_ID` AND g.`IDNO`=ss.`IDNO` and st.`IDNO`=".$IDNO;
@@ -85,7 +83,7 @@ $cur = $mydb->loadSingleResult();
 
 						foreach ($cur as $result) {
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
+
 				  		echo '<td>' . $result->SUBJ_ID.'</a></td>';
 				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
@@ -97,15 +95,12 @@ $cur = $mydb->loadSingleResult();
 				  		echo '<td>'. $result->AVE.'</td>'; 
 				  		echo '<td>'. $result->REMARKS.'</td>'; 
 				  		echo '<td>'. $result->SEMESTER.'</td>';
-				  		// echo '<td align="center" > <a title="Edit" href="index.php?view=addgrade&id='.$result->SUBJ_ID.'&IDNO='.$result->IDNO.'&gid='.$result->GRADE_ID.'"   class="btn btn-primary btn-xs  ">  <span class="fa fa-plus fw-fa"></span> Add gardes</a>
-				  		// 			  </td>';
+
 
 				  		echo '<td align="center" > <a  title="Edit" href="addmodalgrades.php?id='.$result->SUBJ_ID.'&IDNO='.$result->IDNO.'&gid='.$result->GRADE_ID.'" data-toggle="lightbox" >  <span class="fa fa-plus fw-fa"></span> Add gardes</a>
 				  					  </td>';
 				  		 
-				  		// echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->SUBJ_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
-				  		// 			 <a title="Delete" href="controller.php?action=delete&id='.$result->SUBJ_ID.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> </a>
-				  		// 			 </td>';
+
 				  		echo '</tr>';
 				  	} 
 				  	?>
@@ -113,13 +108,9 @@ $cur = $mydb->loadSingleResult();
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

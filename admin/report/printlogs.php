@@ -10,31 +10,27 @@ require_once("../../include/initialize.php");
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>University of Caloocan City</title>
-  <!-- Tell the browser to be responsive to screen width -->
+
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link href="<?php echo web_root; ?>admin/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
+
     <link href="<?php echo web_root; ?>admin/css/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Timeline CSS -->
+
     <link href="<?php echo web_root; ?>admin/css/timeline.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+
     <link href="<?php echo web_root; ?>admin/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
- 
    <link href="<?php echo web_root; ?>admin/css/morris.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
     <link href="<?php echo web_root; ?>admin/font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   <link href="<?php echo web_root; ?>admin/font/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- DataTables CSS -->
+
     <link href="<?php echo web_root; ?>admin/css/dataTables.bootstrap.css" rel="stylesheet">
- 
-     <!-- datetime picker CSS -->
+
 <link href="<?php echo web_root; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
  <link href="<?php echo web_root; ?>css/datepicker.css" rel="stylesheet" media="screen">
  
@@ -42,9 +38,9 @@ require_once("../../include/initialize.php");
 </head>
 <body onload="window.print();">
 <div class="wrapper">
-  <!-- Main content -->
+
   <section class="invoice">
-    <!-- title row -->
+
     <div class="row">
       <div class="col-xs-12">
         <h4 class="page-header ">
@@ -52,7 +48,7 @@ require_once("../../include/initialize.php");
            <small class="pull-right">Printed Date: <?php echo date('m/d/Y'); ?></small>
         </h4>
       </div>
-      <!-- /.col -->
+
     </div>
     <div class="row">
         <div class="col-xs-12">
@@ -64,7 +60,6 @@ require_once("../../include/initialize.php");
       </div> 
    
 
-      <!-- Table row -->
       <div class="row">
         <div class="col-xs-12 col-md-12  ">
           <table class="table table-striped">
@@ -80,7 +75,7 @@ require_once("../../include/initialize.php");
             <tbody>
             <?php 
                 if ($_POST['Users']=="All") {
-                  # code...
+
                     $sql ="SELECT * FROM `tbllogs`  l ,`useraccounts` u
                       WHERE l.`USERID`=u.`ACCOUNT_ID`" ;
                      
@@ -130,7 +125,6 @@ require_once("../../include/initialize.php");
                 }else{
 
                    if ($_POST['Users']=='Administrator' ||  $_POST['Users']=='Registrar') {
-                # code...
                   $sql ="SELECT * FROM `tbllogs`  l ,`useraccounts` u
                       WHERE l.`USERID`=u.`ACCOUNT_ID` AND  LOGROLE LIKE '%" . $_POST['Users'] ."%'" ;
                      
@@ -155,7 +149,7 @@ require_once("../../include/initialize.php");
 
                       }
                   }else{
-                     # code...
+
                       $sql ="SELECT * FROM `tbllogs`  l ,`tblstudent` u
                           WHERE l.`USERID`=u.`IDNO` AND  LOGROLE LIKE '%" . $_POST['Users'] ."%'" ;
                          
@@ -186,11 +180,10 @@ require_once("../../include/initialize.php");
             </tbody>
           </table>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
-        <!-- /.content -->
+
 </div>
-<!-- ./wrapper -->
+
 </body>
 </html>

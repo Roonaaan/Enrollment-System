@@ -47,21 +47,7 @@ table.dataTable {
 	max-width: none !important;
 }
 
-/*table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc_disabled {
-	cursor: pointer;
-}
 
-table.dataTable thead .sorting { background: url('../images/sort_both.png') no-repeat center right; }
-table.dataTable thead .sorting_asc { background: url('../images/sort_asc.png') no-repeat center right; }
-table.dataTable thead .sorting_desc { background: url('../images/sort_desc.png') no-repeat center right; }
-
-table.dataTable thead .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
-table.dataTable thead .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
-*/
 table.dataTable thead > tr > th {
 	padding-left: 18px;
 	padding-right: 18px;
@@ -103,9 +89,7 @@ div.dataTables_scrollFoot table {
 
 
 
-/*
- * TableTools styles
- */
+
 .table tbody tr.active td,
 .table tbody tr.active th {
 	background-color: #08C;
@@ -144,7 +128,7 @@ ul.DTTT_dropdown.dropdown-menu {
 }
 
 ul.DTTT_dropdown.dropdown-menu a {
-	color: #333 !important; /* needed only when demo_page.css is included */
+	color: #333 !important; 
 }
 
 ul.DTTT_dropdown.dropdown-menu li {
@@ -160,7 +144,7 @@ div.DTTT_collection_background {
 	z-index: 2002;	
 }
 
-/* TableTools information display */
+
 div.DTTT_print_info.modal {
 	height: 150px;
 	margin-top: -75px;
@@ -181,9 +165,7 @@ div.DTTT_print_info p {
 
 
 
-/*
- * FixedColumns styles
- */
+
 div.DTFC_LeftHeadWrapper table,
 div.DTFC_LeftFootWrapper table,
 div.DTFC_RightHeadWrapper table,

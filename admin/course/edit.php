@@ -18,7 +18,7 @@
          <div class="col-lg-12">
             <h1 class="page-header">Update Course</h1>
           </div>
-          <!-- /.col-lg-12 -->
+          
        </div> 
       
                         
@@ -133,4 +133,4 @@
         </form>
       
 
-        </div><!--End of container-->
+        </div>

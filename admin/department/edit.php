@@ -17,7 +17,7 @@
          <div class="col-lg-12">
             <h1 class="page-header">Update Department</h1>
           </div>
-          <!-- /.col-lg-12 -->
+         
        </div> 
                 
                    
@@ -60,7 +60,7 @@
 
                       <div class="col-md-8">
                          <button class="btn btn-primary " name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
-                          <!-- <a href="index.php" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span>&nbsp;<strong>List of Users</strong></a> -->
+                        
                       </div>
                     </div>
                   </div>
@@ -68,4 +68,4 @@
         </form>
       
 
-        </div><!--End of container-->
+        </div>

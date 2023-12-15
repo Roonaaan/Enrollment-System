@@ -1,7 +1,6 @@
  
  <form action="" method="POST" >
-    <!-- Main content --> 
-        <!-- title row -->
+
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -9,9 +8,9 @@
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- info row -->
+
       <div class="row invoice-info">
       <div class="col-sm-4 invoice-col">
         
@@ -21,7 +20,7 @@
           
         </div>
 
-        <!-- /.col -->
+
         <div class="col-sm-2 invoice-col">
          Users
           <address> 
@@ -34,8 +33,6 @@
           </address>
         </div>
       
-        <!-- /.col -->
-           <!-- /.col -->
         <div class="col-sm-2 invoice-col"> 
         <br/>
         <address>
@@ -46,10 +43,8 @@
         </address>
 
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
-      <!-- title row -->
  
    <div class="row">
         <div class="col-xs-12">
@@ -61,7 +56,6 @@
       </div> 
    
 
-      <!-- Table row -->
       <div class="row">
         <div class="col-xs-12 col-md-12 table-responsive">
           <table class="table table-striped table-bordered">
@@ -78,7 +72,7 @@
              <?php
              if(isset($_POST['submit'])){ 
                 if ($_POST['Users']=="All") {
-                  # code...
+
                     $sql ="SELECT * FROM `tbllogs`  l ,`useraccounts` u
                       WHERE l.`USERID`=u.`ACCOUNT_ID`" ;
                      
@@ -128,7 +122,7 @@
                 }else{
 
                    if ($_POST['Users']=='Administrator' ||  $_POST['Users']=='Registrar') {
-                # code...
+
                   $sql ="SELECT * FROM `tbllogs`  l ,`useraccounts` u
                       WHERE l.`USERID`=u.`ACCOUNT_ID` AND  LOGROLE LIKE '%" . $_POST['Users'] ."%'" ;
                      
@@ -153,7 +147,7 @@
 
                       }
                   }else{
-                     # code...
+
                       $sql ="SELECT * FROM `tbllogs`  l ,`tblstudent` u
                           WHERE l.`USERID`=u.`IDNO` AND  LOGROLE LIKE '%" . $_POST['Users'] ."%'" ;
                          
@@ -185,15 +179,14 @@
             </tbody>
           </table>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
+
  
 </form>
 <form action="printlogs.php" method="POST" target="_blank">
 <input type="hidden" name="Users" value="<?php echo (isset($_POST['Users'])) ? $_POST['Users'] : ''; ?>">
- <!-- <input type="hidden" name="Semester" value="<?php echo (isset($_POST['Semester'])) ? $_POST['Semester'] : ''; ?> ">  -->
-      <!-- this row will not appear when printing -->
+
       <div class="row no-print">
         <div class="col-xs-12">
          <span class="pull-right"> <button type="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
@@ -201,9 +194,9 @@
       </div>
     </section>
     </form>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
  
 </div>
-<!-- ./wrapper -->
+
  

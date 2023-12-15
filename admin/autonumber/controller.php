@@ -55,7 +55,6 @@ switch ($action) {
 			$autonumber->AUTOSTART	= $_POST['AUTOSTART'];
 			$autonumber->AUTOINC	= $_POST['AUTOINC'];
 			$autonumber->AUTOEND	= $_POST['AUTOEND'];
-			// $autonumber->AUTOKEY	= $_POST['AUTOKEY'];
 			$autonumber->update($_POST['AUTOKEY']);
 
 			message(" Autonumber has been updated!", "success");
@@ -66,11 +65,7 @@ switch ($action) {
 
 
 	function doDelete(){
-		// if (isset($_POST['selector'])==''){
-		// message("Select a records first before you delete!","error");
-		// redirect('index.php');
-		// }else{
-
+	
 			$id = $_GET['AUTOKEY'];
 
 			$autonumber = New Autonumber();
@@ -79,18 +74,7 @@ switch ($action) {
 			message("autonumber already Deleted!","info");
 			redirect('index.php');
 
-		// $id = $_POST['selector'];
-		// $key = count($id);
-
-		// for($i=0;$i<$key;$i++){
-
-		// 	$autonumber = New autonumber();
-		// 	$autonumber->delete($id[$i]);
-
-		// 	message("autonumber already Deleted!","info");
-		// 	redirect('index.php');
-		// }
-		// }
+	
 		
 	}
 ?>

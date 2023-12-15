@@ -14,7 +14,6 @@
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
        		</div>
        		</div>
-        	<!-- /.col-lg-12 -->
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
@@ -24,21 +23,20 @@
 				  	<tr>
 				  		<th>ID</th>
 				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
+
 				  		 Name</th>
 				  		<th>Sex</th> 
 				  		<th>Age</th>
 				  		<th>Address</th>
 				  		<th>Contact No.</th>
 				  		<th>Course</th>
-				  		<!-- <th>Status</th> -->
+
 				  		<th width="14%" >Action</th>
 				 
 				  	</tr>	
 				  </thead> 
 				  <tbody>
-				  	<?php  //`IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`,
-				  	// `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `EMAIL`, `student_status`
+				  	<?php 
 				  		$mydb->setQuery("SELECT * FROM `tblstudent` s,course c WHERE s.COURSE_ID=c.COURSE_ID AND  NewEnrollees=0");
 
 				  		$cur = $mydb->loadResultList();
@@ -51,7 +49,7 @@
 								$age='None';
 							}
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
+
 				  		echo '<td>' . $result->IDNO.'</a></td>';
 				  		echo '<td>'. $result->LNAME.','. $result->FNAME.' '. $result->MNAME.'</td>';
 				  		echo '<td>'. $result->SEX.'</td>';
@@ -59,13 +57,12 @@
 				  		echo '<td>'. $result->HOME_ADD.'</td>';
 				  		echo '<td>'. $result->CONTACT_NO.'</td>';
 				  		echo '<td>' . $result->COURSE_NAME.'-' . $result->COURSE_LEVEL.'</a></td>';
-				  		// echo '<td>'. $result->student_status.'</td>'; 
+
 				  		 
 				  		echo '<td align="center" > <a title="View Information" href="index.php?view=view&id='.$result->IDNO.'"  class="btn btn-info btn-xs  ">View <span class="fa fa-info-circle fw-fa"></span></a>
 				  					 <a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a>
 				  					 </td>';
-				  		// echo '<td align="center" > <a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a>
-				  		// 			 </td>';
+
 				  		echo '</tr>';
 				  	} 
 				  	?>
@@ -73,13 +70,9 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div>

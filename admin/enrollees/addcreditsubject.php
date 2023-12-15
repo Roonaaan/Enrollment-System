@@ -3,8 +3,7 @@
                           redirect(web_root."admin/index.php");
                          }
 
-                      // $autonum = New Autonumber();
-                      // $res = $autonum->single_autonumber(2);
+                      
 $sem = new Semester();
 $resSem = $sem->single_semester();
 $_SESSION['SEMESTER'] = $resSem->SEMESTER; 
@@ -42,7 +41,7 @@ $_SESSION['SY'] = $sy;
             <h3 class="page-header">Add Subject to the Transferee 
 </h3>
           </div>
-          <!-- /.col-lg-12 -->
+        
        </div> 
                    
  
@@ -80,16 +79,13 @@ $_SESSION['SY'] = $sy;
 
             foreach ($cur as $result) {
               echo '<tr>';
-              // echo '<td width="5%" align="center"></td>';
-              // echo '<td>' . $result->SUBJ_ID.'</a></td>';
+           
               echo '<td>'. $result->SUBJ_CODE.' ['. $result->SUBJ_DESCRIPTION.']</td>'; 
               echo '<td>' . $result->UNIT.'</a></td>';
               echo '<td>'. $result->PRE_REQUISITE.'</td>';
               echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'</td>';  
                
-              // echo '<td align="center" > 
-              //        <a title="Add" href="controller.php?action=doadd&id='.$result->SUBJ_ID.'&IDNO='.$_GET['IDNO'].'"  class="btn btn-primary btn-xs ">  Add <span class="fa fa-plus fw-fa"></span></a>
-              //       </td>';
+             
                 echo '<td align="center" > <a  title="Edit" href="addgrades.php?id='.$result->SUBJ_ID.'&IDNO='.$res->IDNO.'&SEMESTER='.$result->SEMESTER.'" data-toggle="lightbox" >  <span class="fa fa-plus fw-fa"></span> Add gardes</a>
                       </td>';
               echo '</tr>';
@@ -103,10 +99,9 @@ $_SESSION['SY'] = $sy;
                     </table>
                  </form>
                      
-              </div><!--/table-resp--> 
-
+              </div>
                
-             </div><!--/tab-pane-->
+             </div>
             <div class="tab-pane" id="grades">
           
               <?php  require_once  "add.php" ?>
@@ -114,7 +109,7 @@ $_SESSION['SY'] = $sy;
        
             </div>
               
-          </div><!--/tab-content-->
+          </div>
  </div>
  
   <?php 

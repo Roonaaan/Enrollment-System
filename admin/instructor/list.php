@@ -14,7 +14,7 @@
        			<img style="float:right;" src="<?php echo web_root; ?>img/school_seal_100x100.jpg" >
        		</div>
        		</div>
-        	<!-- /.col-lg-12 -->
+        
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  
 			      <div class="table-responsive">			
@@ -40,7 +40,7 @@
 						foreach ($cur as $result) {
 						 
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
+				  		
 				  		echo '<td>' . $result->INST_ID.'</a></td>';
 				  		echo '<td>'. $result->INST_NAME.'</td>';
 				  		echo '<td>'. $result->INST_MAJOR.'</td>'; 
@@ -56,13 +56,9 @@
 					
 				</table>
  
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+				
 			</div>
 				</form>
 	
 
-</div> <!---End of container-->
+</div> 

@@ -3,8 +3,7 @@
                           redirect(web_root."admin/index.php");
                          }
 
-                      // $autonum = New Autonumber();
-                      // $res = $autonum->single_autonumber(2);
+                    
 
                        ?> 
  <form class="form-horizontal span6" action="controller.php?action=add" method="POST">

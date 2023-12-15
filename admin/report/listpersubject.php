@@ -1,17 +1,15 @@
  
  <form action="" method="POST" >
-    <!-- Main content --> 
-        <!-- title row -->
+
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
           University of Caloocan City
             <small class="pull-right">Date: <?php echo date('m/d/Y'); ?></small>
           </h2>
-        </div>
-        <!-- /.col -->
+
       </div>
-      <!-- info row -->
+
       <div class="row invoice-info">
       <div class="col-sm-6 invoice-col">
        
@@ -22,7 +20,7 @@
           <address>
             <div class="form-group">
 			  <select name="SUBJ_ID" class="form-control"> 
-        <!-- <option>All</option> -->
+
       <?php 
         $mydb->setQuery("SELECT * FROM `subject` ");
         $cur = $mydb->loadResultList();
@@ -36,8 +34,7 @@
 		  </div>
           </address>
         </div> 
-        <!-- /.col -->
-           <!-- /.col -->
+
         <div class="col-sm-2 invoice-col"> 
         <br/>
         <address>
@@ -48,10 +45,9 @@
         </address>
 
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
-      <!-- title row -->
+
   <?php
   if (isset($_POST['submit'])) {
     # code...
@@ -71,7 +67,7 @@
       </div> 
    
 
-      <!-- Table row -->
+
       <div class="row">
         <div class="col-xs-12 col-md-12 table-responsive">
           <table class="table table-bordered table-striped" style="font-size:11px" cellspacing="0" >
@@ -121,7 +117,6 @@
                          $tot =  count($cur);
                         
                     } 
-                       // $_SESSION['tot'] = $tot;
                   } 
  
              }
@@ -134,24 +129,23 @@
             </tfoot>
           </table>
         </div>
-        <!-- /.col -->
+
       </div>
-      <!-- /.row -->
+
  
 </form>
     <form action="printpersubject.php" method="POST" target="_blank">
     <input type="hidden" name="Course" value="<?php echo (isset($_POST['Course'])) ? $_POST['Course'] : ''; ?>">
      <input type="hidden" name="SUBJ_ID" value="<?php echo (isset($_POST['SUBJ_ID'])) ? $_POST['SUBJ_ID'] : ''; ?> ">  
-          <!-- this row will not appear when printing -->
+
           <div class="row no-print">
             <div class="col-xs-12">
              <span class="pull-right"> <button type="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
           </div>
           </div> 
     </form>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
  
 </div>
-<!-- ./wrapper -->
   
