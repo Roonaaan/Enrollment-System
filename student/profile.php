@@ -32,7 +32,7 @@
             </a>
              </div>
           <ul class="list-group  ">
-               <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> <?php echo $res->FNAME .' '.$res->LNAME; ?> </li>
+               <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <?php echo $res->FNAME .' '.$res->LNAME; ?> </li>
               <li class="list-group-item text-right"><span class="pull-left"><strong>Course</strong></span> <?php echo $resCourse->COURSE_NAME; ?> </li>
                <li class="list-group-item text-right"><span class="pull-left"><strong>Status</strong></span> <?php echo $res->student_status; ?> </li>
                
@@ -51,8 +51,7 @@
        check_message();   
        ?>
   <ul class="nav nav-tabs" id="myTab">
-    <li class="active"><a href="#home" data-toggle="tab">List of Subjects</a></li> 
-    <li><a href="#grades" data-toggle="tab">Grades</a></li>
+    <li><a href="#grades" data-toggle="tab">Registration Form</a></li>
     <?php 
     if ($res->student_status=='Irregular' || $res->student_status=='Transferee' && $res->NewEnrollees==0) {
       # code... 
@@ -68,43 +67,12 @@
     <div class="tab-pane active" id="home">
     <br/>
     <div class="col-md-12">
-     <h3>Enrolled Subjects</h3> 
     </div>
       <div class="table-responsive" style="margin-top:5%;"> 
              <form action="customer/controller.php?action=delete" Method="POST">  					
-            				<table  class="table table-striped table-bordered table-hover "  style="font-size:12px" cellspacing="0"  > 
-            				  <thead>
-            				  	<tr> 
-                          <th rowspan="2">Subject</th>
-                          <th rowspan="2">Description</th>  
-                          <th rowspan="2">Unit</th>
-            				  	</tr>	
-                        <tr> 
-                          <th>Section</th>  
-                        </tr>
-            				  </thead> 	 
+            				
             			  <tbody>
-                    <?php
-                    $sql ="SELECT * 
-                          FROM  tblstudent st, studentsubjects ss, `subject` sub, `tblschedule` s
-                          WHERE  st.IDNO=ss.IDNO AND ss.`SUBJ_ID` = sub.`SUBJ_ID` AND sub.`SUBJ_ID` = s.`SUBJ_ID`
-                          AND STUDSECTION=SECTION AND OUTCOME !='Drop'  
-                          AND ss.`IDNO`=" .$_SESSION['IDNO']." AND SECTION='".$res->STUDSECTION."'
-                          AND s.sched_semester = '".$_SESSION['SEMESTER']."' AND LEVEL='".$resCourse->COURSE_LEVEL."'";
 
-                      $mydb->setQuery($sql);
-                      $cur = $mydb->loadResultList();
-
-                      foreach ($cur as $result) {
-                        echo '<tr>'; 
-                        echo '<td>'.$result->SUBJ_CODE.'</td>';
-                        echo '<td>'.$result->SUBJ_DESCRIPTION.'</td>';
-                        echo '<td>'.$result->UNIT.'</td>';
-                        echo '<td>'.$result->SECTION .'</td>';
-                      
-                        echo '</tr>';
-                      }
-                    ?> 
             				</tbody>
             					<!-- <footer>
                         <tr>
@@ -114,16 +82,7 @@
             				 	
             				</table>
                      
-            		 </form>
-                  <form action="student/printschedule.php" method="POST" target="_blank">
-                <input type="hidden" name="Course" value="<?php echo $resCourse->COURSE_LEVEL; ?>">
-                <!-- this row will not appear when printing -->
-                    <div class="row no-print">
-                      <div class="col-xs-12">
-                       <span class="pull-right"> <button type="submit" name="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
-                    </div>
-                    </div> 
-                  </form>       
+            	
          
               </div><!--/table-resp-->
                

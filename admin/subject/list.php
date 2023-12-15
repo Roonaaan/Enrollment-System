@@ -30,8 +30,8 @@
 				  		<th>Unit</th>
 				  		<th>Pre-Requisite</th>
 				  		<!-- <th>Academic Year</th> -->
-				  		<th>Semester</th>
-				  		<th width="10%" >Action</th>
+				  		<th>Course</th>
+				  		<th width="10%" >Semester</th>
 				 
 				  	</tr>	
 				  </thead> 

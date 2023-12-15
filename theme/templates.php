@@ -276,7 +276,7 @@ $currentyear = date('Y');
             <div class="row">
               <div class="col-lg-8">
                 <div class="panel panel-default">
-                  <div class="panel-heading" style="background-color:#242424; color:#933DC9; border: 1px solid #53118F">
+                  <div class="panel-heading" style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F">
                   <b><?php   
                   echo  $title . (isset($_GET['category']) ?  '  |  ' .$_GET['category'] : '' )?> </b> 
                   </div>

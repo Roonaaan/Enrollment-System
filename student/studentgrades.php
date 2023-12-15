@@ -10,7 +10,7 @@
  
 <div class="row">
       <div class="col-lg-12"> 
-            <h3 class="page-header">Student Subjects </h3>
+            <h3 class="page-header">Registration Form </h3>
        	 
        		</div>
         	<!-- /.col-lg-12 -->
@@ -25,8 +25,6 @@
 				  		  Subject</th>
 				  		<th>Description</th> 
 				  		<th>Unit</th> 
-				  		<th>Average</th>
-				  		<th>Remarks</th>
 				  		<th>Year Level</th>
 				  		<th>Semester</th> 
 				 
@@ -77,8 +75,6 @@
 				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
 				  		echo '<td>' . $result->UNIT.'</a></td>'; 
-				  		echo '<td>'. $result->AVE.'</td>'; 
-				  		echo '<td>'. $result->REMARKS.'</td>'; 
 				  		echo '<td>'. $Level.'</td>'; 
 				  		echo '<td>'. $result->SEMESTER.'</td>';
 				  	
@@ -100,6 +96,15 @@
  -->
 			</div>
 				</form>
+				<form action="student/printschedule.php" method="POST" target="_blank">
+                <input type="hidden" name="Course" value="<?php echo $resCourse->COURSE_LEVEL; ?>">
+                <!-- this row will not appear when printing -->
+                    <div class="row no-print">
+                      <div class="col-xs-12">
+                       <span class="pull-right"> <button type="submit" name="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
+                    </div>
+                    </div> 
+                  </form> 
 	
 
 </div> <!---End of container-->

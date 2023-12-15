@@ -63,7 +63,7 @@ require_once ("../include/initialize.php");
           </address>
           </td>
           <td >
-             <b>Course/Year:  <?php 
+             <b>Course:  <?php 
 
             $course = New Course();
             $singlecourse = $course->single_course($stud->COURSE_ID);
@@ -77,61 +77,91 @@ require_once ("../include/initialize.php");
       </table>
 
   <div class="row">
-    <h1  align="center">Schedules</h1>
+    <h1  align="center">Registration Form</h1>
     <hr/>
   </div>
-                    <table  class="table table-striped table-bordered table-hover "  style="font-size:12px" cellspacing="0"  > 
-                      <thead>
-                        <tr> 
-                          <th rowspan="2">Subject</th>
-                          <th rowspan="2">Description</th>  
-                          <th rowspan="2">Unit</th>
-                          <th colspan="4">Schedule</th> 
-                        </tr> 
-                      </thead>   
-                    <tbody>
-                    <?php
-                    $tot = 0;
-                    // $sql ="SELECT * 
-                    //       FROM  studentsubjects ss, `subject` sub, `tblschedule` s
-                    //       WHERE  ss.`SUBJ_ID` = sub.`SUBJ_ID` AND sub.`SUBJ_ID` = s.`SUBJ_ID` AND OUTCOME !='Drop'  
-                    //       AND ss.`IDNO`=" .$_SESSION['IDNO']."
-                    //       AND s.sched_semester = '".$_SESSION['SEMESTER']."' AND LEVEL='".$_POST['Course']."'";
-                      $sql ="SELECT * 
-                          FROM  tblstudent st, studentsubjects ss, `subject` sub, `tblschedule` s, tblinstructor i
-                          WHERE  st.IDNO=ss.IDNO AND ss.`SUBJ_ID` = sub.`SUBJ_ID` AND sub.`SUBJ_ID` = s.`SUBJ_ID`
-                          AND s.INST_ID=i.INST_ID AND STUDSECTION=SECTION AND OUTCOME !='Drop'  
-                          AND ss.`IDNO`=" .$_SESSION['IDNO']." 
-                          AND s.sched_semester = '".$_SESSION['SEMESTER']."' AND LEVEL='".$_POST['Course']."'";
+  <form action="controller.php?action=delete" Method="POST">  
+			      <div class="table-responsive">			
+				<table id="example" class="table table-striped table-bordered table-hover table-responsive" style="font-size:12px" cellspacing="0">
+				
+				  <thead>
+				  	<tr>
+				  	<th>#</th>
+				  		 <th>
+				  		  Subject</th>
+				  		<th>Description</th> 
+				  		<th>Unit</th> 
+				  		<th>Year Level</th>
+				  		<th>Semester</th> 
+				 
+				  	</tr>	
+				  </thead> 
+				  <tbody>
+				  	<?php  
+				  	// `GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`,
+				  	//  `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`
 
-                      $mydb->setQuery($sql);
-                      $cur = $mydb->loadResultList();
+						$sql = "SELECT * FROM `tblstudent` st, `grades` g,`subject` s ,studentsubjects ss
+						WHERE st.`IDNO`=g.`IDNO` and g.`SUBJ_ID`=s.`SUBJ_ID`  and s.`SUBJ_ID`=ss.`SUBJ_ID` AND g.`IDNO`=ss.`IDNO`  AND g.`REMARKS` NOT IN ('Drop') and st.`IDNO`=".$_SESSION['IDNO'];
+				  		$mydb->setQuery($sql);
 
-                      foreach ($cur as $result) {
-                        echo '<tr>'; 
-                        echo '<td>'.$result->SUBJ_CODE.'</td>';
-                        echo '<td>'.$result->SUBJ_DESCRIPTION.'</td>';
-                        echo '<td>'.$result->UNIT.'</td>';
-                        echo '<td>'.$result->sched_day  .'</td>';
-                        echo '<td>'.$result->sched_time  .'</td>';
-                        echo '<td>'.$result->sched_room .'</td>';
-                        echo '<td>'.$result->SECTION .'</td>';
-                        echo '<td>'.$result->INST_NAME .'</td>';
-                      
-                        echo '</tr>';
+				  		$cur = $mydb->loadResultList();
 
-                        $tot += $result->UNIT;
-                      }
-                    ?> 
-                    </tbody>
-                      <footer>
-                        <tr>
-                        <td colspan="2" align="right">Total Units</td>
-                          <td colspan="6" ><?php echo $tot; ?></td>
-                        </tr>     
-                      </footer>
-                      
-                    </table>
+						foreach ($cur as $result) {
+							switch ($result->LEVEL) {
+								case 1:
+									# code...
+								$Level ='First Year';
+									break;
+								case 2:
+									# code...
+								$Level ='Second Year';
+									break;
+								case 3:
+									# code...
+								$Level ='Third Year';
+									break;
+								case 4:
+									# code...
+								$Level ='Fourth Year';
+									break;
+
+								default:
+									# code...
+								$Level ='First Year';
+									break;
+							}
+
+
+
+
+				  		echo '<tr>';
+				  		// echo '<td width="5%" align="center"></td>';
+				  		echo '<td></td>';
+				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
+				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
+				  		echo '<td>' . $result->UNIT.'</a></td>'; 
+				  		echo '<td>'. $Level.'</td>'; 
+				  		echo '<td>'. $result->SEMESTER.'</td>';
+				  	
+				  		 
+				  		// echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->SUBJ_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
+				  		// 			 <a title="Delete" href="controller.php?action=delete&id='.$result->SUBJ_ID.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> </a>
+				  		// 			 </td>';
+				  		echo '</tr>';
+				  	} 
+				  	?>
+				  </tbody>
+					
+				</table>
+ 
+				<!-- <div class="btn-group">
+				  <a href="index.php?view=add" class="btn btn-default">New</a>
+				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+				</div>
+ -->
+			</div>
+				</form>
                       
   </body>
 </html>

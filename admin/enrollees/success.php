@@ -248,11 +248,7 @@ $_SESSION['SY'] = $sy;
       <!-- /.row -->
 
       <!-- this row will not appear when printing -->
-      <div class="row no-print">
-        <div class="col-xs-9">
-          <a href="success.php?IDNO=<?php echo $_GET['IDNO']; ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Print</a>
-          
-      </div>
+      
       
       </div>
     </section> 
