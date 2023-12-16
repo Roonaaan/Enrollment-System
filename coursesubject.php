@@ -243,7 +243,7 @@ $totunit =0;
       $result = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
       $row = mysqli_fetch_assoc($result);
 
-      if ($row['student_status']=='Irregular') {
+      if ($row['student_status']=='New') {
         # code...
             $totunit = 0;
 

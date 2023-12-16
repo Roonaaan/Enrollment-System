@@ -207,14 +207,7 @@ footer {
   color: #ffffff;
 }
 
-/*.navbar {
-  position: relative;
-  z-index: 1000;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-}
-*/
+
 
 
 .navbar-TOPsm {
@@ -243,7 +236,7 @@ footer {
 }
 
 .navbar-TOPsm .navbar-nav > li > a {
-  color:  #933DC9; 
+  color:  #f5f5f5; 
    text-decoration: none;
     list-style: none;
 }

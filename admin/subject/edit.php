@@ -18,24 +18,12 @@
          <div class="col-lg-12">
             <h1 class="page-header">Update Subject</h1>
           </div>
-          <!-- /.col-lg-12 `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_REQUISITE`, `COURSE_ID`, `AY`, `SEMESTER`-->
        </div> 
                    
-                    <!-- <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "user_id">User Id:</label> -->
 
-                      <!-- <div class="col-md-8"> -->
-                        
                          <input class="form-control input-sm" id="SUBJ_ID" name="SUBJ_ID" placeholder=
                             "Account Id" type="Hidden" value="<?php echo $res->SUBJ_ID; ?>">
-                   <!--    </div>
-                    </div>
-                  </div>      -->      
-                  
-                  
-                   
+  
                    <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
@@ -121,18 +109,7 @@
                       </div>
                     </div>
                   </div>
-                 <!--  <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "AY">Academic Year:</label>
 
-                      <div class="col-md-8">
-                        
-                         <input class="form-control input-sm" id="AY" name="AY" placeholder=
-                            "Academic Year" type="text" value="<?php echo $res->AY; ?>" required>
-                      </div>
-                    </div>
-                  </div> -->
                    <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
@@ -157,7 +134,6 @@
 
                       <div class="col-md-8">
                        <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                          <!-- <a href="index.php" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>List of Users</strong></a> -->
                        </div>
                     </div>
                   </div>
@@ -166,4 +142,4 @@
         </form>
       
 
-        </div><!--End of container-->
+        </div>

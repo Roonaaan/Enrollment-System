@@ -28,7 +28,7 @@
           <div class="panel">            
             <div id="img_profile" class="panel-body">
             <a href="" data-target="#myModal" data-toggle="modal" >
-            <img title="profile image" class="img-hover"   src="<?php echo web_root. 'student/'.  $res->STUDPHOTO; ?>">
+            <img title="profile image" class="img-hover"   src="<?php echo web_root. 'student\student_image\ava.jpg'.  $res->STUDPHOTO; ?>">
             </a>
              </div>
           <ul class="list-group  ">
@@ -42,7 +42,7 @@
         </div>
     </div>
          
-        <!--/col-3-->
+
 <div class="col-sm-9"> 
 
 <div class="panel">            
@@ -54,9 +54,8 @@
     <li><a href="#grades" data-toggle="tab">Registration Form</a></li>
     <?php 
     if ($res->student_status=='Irregular' || $res->student_status=='Transferee' && $res->NewEnrollees==0) {
-      # code... 
+
     ?>
-    <li><a href="#adddrop" data-toggle="tab">Adding and Dropping</a></li>
     <?php 
     }
     ?>
@@ -74,19 +73,14 @@
             			  <tbody>
 
             				</tbody>
-            					<!-- <footer>
-                        <tr>
-                          <td colspan="7"><a class="btn btn-primary btn-sm" href="">Print</a></td>
-                        </tr>     
-                      </footer> -->
-            				 	
+
             				</table>
                      
             	
          
-              </div><!--/table-resp-->
+              </div>
                
-             </div><!--/tab-pane-->
+             </div>
             <div class="tab-pane" id="grades">
          
               <?php require_once  ("studentgrades.php"); ?>
@@ -94,27 +88,23 @@
        
             </div>
              <div class="tab-pane" id="adddrop">
-         
-              
-              <?php //require_once  ("changingdropping.php"); ?>
-          
-       
+                               
             </div>
              <div class="tab-pane" id="settings">
     		 
               <?php require_once  ("updateyearlevel.php"); ?>
           
        
-            </div><!--/tab-pane-->
-  </div><!--/tab-content-->
+            </div>
+  </div>
  </div>
-</div><!--/col-9--> 
+</div>
 </div>
 
 
 
 
-	  <!-- Modal photo -->
+
           <div class="modal fade" id="myModal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -152,7 +142,6 @@
                     name="savephoto" type="submit">Upload Photo</button>
                   </div>
                 </form>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-   
+              </div>
+            </div>
+          </div>
