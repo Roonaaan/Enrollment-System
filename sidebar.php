@@ -23,7 +23,7 @@
  <div class="panel panel-default"> 
     <div class="panel-body">
     <div class="list-group">
-     <div class="well well-sm " style="background-color:#242424; color:#933DC9; border: 1px solid #53118F "><b> Courses </b> </div>
+     <div class="well well-sm " style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F "><b> Courses </b> </div>
         <ul >
         <?php 
             $mydb->setQuery("SELECT distinct(COURSE_DESC)
