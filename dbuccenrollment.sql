@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 01:24 PM
+-- Generation Time: Dec 17, 2023 at 06:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,10 +42,10 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_LEVEL`, `COURSE_MAJOR`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
-(21, 'BS Computer Science', '1', '', 'Bachelor of Science Computer Science ', 33, ''),
-(22, 'BS Information Technology', '1', '', 'Bachelor of Science in Information Technology', 33, ''),
-(23, 'BS Entertainment and Multimedi', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, ''),
-(24, 'BS Information System', '1', '', 'Bachelor of Science in Information Systems', 33, '');
+(21, 'BS Computer Science', '1', '', 'Bachelor of Science Computer Science ', 33, '1'),
+(22, 'BS Information Technology', '1', '', 'Bachelor of Science in Information Technology', 33, '1'),
+(23, 'BS Entertainment and Multimedi', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, '1'),
+(24, 'BS Information System', '1', '', 'Bachelor of Science in Information Systems', 33, '1');
 
 -- --------------------------------------------------------
 
@@ -86,6 +86,17 @@ CREATE TABLE `grades` (
   `SEMS` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `REMARKS`, `COMMENT`, `SEMS`) VALUES
+(0, 1000000209, 1, 0, 0, 0, 0, 0, '', '', ''),
+(0, 1000000209, 2, 0, 0, 0, 0, 0, '', '', ''),
+(0, 1000000209, 3, 0, 0, 0, 0, 0, '', '', ''),
+(0, 1000000209, 4, 0, 0, 0, 0, 0, '', '', ''),
+(0, 1000000209, 5, 0, 0, 0, 0, 0, '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +115,14 @@ CREATE TABLE `schoolyr` (
   `STATUS` varchar(30) NOT NULL DEFAULT 'New'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `schoolyr`
+--
+
+INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY`, `DATE_RESERVED`, `DATE_ENROLLED`, `STATUS`) VALUES
+(0, '2023-2024', 'First', 21, 1000000208, 'ENROLLED', '2023-12-10 00:00:00', '2023-12-10 00:00:00', 'New'),
+(0, '2023-2024', 'First', 21, 1000000209, 'ENROLLED', '2023-12-15 00:00:00', '2023-12-15 00:00:00', 'New');
+
 -- --------------------------------------------------------
 
 --
@@ -121,6 +140,27 @@ CREATE TABLE `studentsubjects` (
   `AVERAGE` double NOT NULL,
   `OUTCOME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `studentsubjects`
+--
+
+INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMESTER`, `SY`, `ATTEMP`, `AVERAGE`, `OUTCOME`) VALUES
+(1531, 1000000206, 1, 1, 'First', '2023-2024', 1, 0, ''),
+(1532, 1000000206, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1533, 1000000206, 3, 1, 'First', '2023-2024', 1, 0, ''),
+(1534, 1000000206, 4, 1, 'First', '2023-2024', 1, 0, ''),
+(1535, 1000000206, 5, 1, 'First', '2023-2024', 1, 0, ''),
+(1536, 1000000208, 1, 1, 'First', '2023-2024', 1, 18, 'Failed'),
+(1537, 1000000208, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1538, 1000000208, 3, 1, 'First', '2023-2024', 1, 0, ''),
+(1539, 1000000208, 4, 1, 'First', '2023-2024', 1, 0, ''),
+(1540, 1000000208, 5, 1, 'First', '2023-2024', 1, 0, ''),
+(1541, 1000000209, 1, 1, 'First', '2023-2024', 1, 0, ''),
+(1542, 1000000209, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1543, 1000000209, 3, 1, 'First', '2023-2024', 1, 0, ''),
+(1544, 1000000209, 4, 1, 'First', '2023-2024', 1, 0, ''),
+(1545, 1000000209, 5, 1, 'First', '2023-2024', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -174,7 +214,7 @@ CREATE TABLE `tblauto` (
 INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
 (1, 'Asset', 'Asset', 'ASitem', 0, 3, 1),
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 1000000, 206, 1),
+(3, 'SIDNO', 'IDNO', '2015', 1000000, 210, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
 
 -- --------------------------------------------------------
@@ -317,7 +357,27 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (444, 1000000205, '2023-12-04 12:24:46', 'Student', 'Logged in'),
 (445, 1000000205, '2023-12-04 12:27:33', 'Student', 'Logged out'),
 (446, 1000000205, '2023-12-04 13:09:23', 'Student', 'Logged in'),
-(447, 1000000205, '2023-12-04 13:19:29', 'Student', 'Logged out');
+(447, 1000000205, '2023-12-04 13:19:29', 'Student', 'Logged out'),
+(448, 1, '2023-12-10 01:39:09', 'Administrator', 'Logged in'),
+(449, 1, '2023-12-10 01:39:51', 'Administrator', 'Logged out'),
+(450, 1, '2023-12-10 01:40:58', 'Administrator', 'Logged in'),
+(451, 1, '2023-12-10 01:41:00', 'Administrator', 'Logged out'),
+(452, 1, '2023-12-10 01:45:26', 'Administrator', 'Logged in'),
+(453, 1, '2023-12-10 03:31:27', 'Administrator', 'Logged in'),
+(454, 1000000206, '2023-12-10 05:12:13', 'Student', 'Logged in'),
+(455, 1, '2023-12-10 05:12:24', 'Administrator', 'Logged in'),
+(456, 1000000206, '2023-12-10 05:12:33', 'Student', 'Logged out'),
+(457, 1, '2023-12-10 05:19:25', 'Administrator', 'Logged in'),
+(458, 1000000208, '2023-12-15 09:32:15', 'Student', 'Logged in'),
+(459, 1000000208, '2023-12-15 12:19:00', 'Student', 'Logged in'),
+(460, 1, '2023-12-15 15:26:29', 'Administrator', 'Logged in'),
+(461, 1000000208, '2023-12-15 16:38:12', 'Student', 'Logged in'),
+(462, 1000000208, '2023-12-15 16:49:01', 'Student', 'Logged out'),
+(463, 1000000208, '2023-12-15 16:49:11', 'Student', 'Logged in'),
+(464, 1000000208, '2023-12-15 16:50:40', 'Student', 'Logged out'),
+(465, 1000000209, '2023-12-16 13:25:54', 'Student', 'Logged in'),
+(466, 1000000202, '2023-12-16 13:32:06', 'Student', 'Logged out'),
+(467, 1000000209, '2023-12-16 13:32:07', 'Student', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -393,6 +453,13 @@ CREATE TABLE `tblstuddetails` (
   `IDNO` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `tblstuddetails`
+--
+
+INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
+(0, 'Lucky Dancel', '', '123', 1000000209);
+
 -- --------------------------------------------------------
 
 --
@@ -426,6 +493,13 @@ CREATE TABLE `tblstudent` (
   `NewEnrollees` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `tblstudent`
+--
+
+INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
+(0, 1000000209, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-10', 'Caloocan City', 'Single', 0, 'Pinoy', 'iglesia ni chris brown', '123', 'Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -454,13 +528,6 @@ INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `A
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `course`
---
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`COURSE_ID`),
-  ADD KEY `DEPT_ID` (`DEPT_ID`);
 
 --
 -- Indexes for table `department`
@@ -528,12 +595,6 @@ ALTER TABLE `useraccounts`
 --
 
 --
--- AUTO_INCREMENT for table `course`
---
-ALTER TABLE `course`
-  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
-
---
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
@@ -543,7 +604,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1531;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1546;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -555,7 +616,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=448;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=468;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
