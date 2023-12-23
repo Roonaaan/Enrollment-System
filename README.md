@@ -8,7 +8,7 @@ Pages: Log in, Sign up, Landing page, Enroll page, Payment page, Status page, Ac
 
 Features: CRUD function on Admin, Print details and Payment
 
-Instructions: Paste the extracted file "uccenrollmentsystem" to the htdocs file and after that open the XAMPP Control panel and start the Apache and MySQL. Go to the browser and search "http://localhost/uccenrollmentsystem/" to proceed to the main landing page and "http://localhost/uccenrollmentsystem/admin" to see the Admin Log In Page.
+Instructions: Paste the extracted file "uccenrollmentsystem" to the htdocs file and after that open the XAMPP Control panel and start the Apache and MySQL. Go to the browser and search "http://localhost/Enrollment-System/" to proceed to the main landing page and "http://localhost/Enrollment-System/" to see the Admin Log In Page.
 
 Admin Access:
 User: admin
