@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 06:18 AM
+-- Generation Time: Dec 25, 2023 at 03:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -91,11 +91,11 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `REMARKS`, `COMMENT`, `SEMS`) VALUES
-(0, 1000000209, 1, 0, 0, 0, 0, 0, '', '', ''),
-(0, 1000000209, 2, 0, 0, 0, 0, 0, '', '', ''),
-(0, 1000000209, 3, 0, 0, 0, 0, 0, '', '', ''),
-(0, 1000000209, 4, 0, 0, 0, 0, 0, '', '', ''),
-(0, 1000000209, 5, 0, 0, 0, 0, 0, '', '', '');
+(1, 1000000209, 1, 90, 0, 0, 0, 18, 'Failed', '', ''),
+(2, 1000000209, 2, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
+(3, 1000000209, 3, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
+(4, 1000000209, 4, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
+(5, 1000000209, 5, 89, 0, 0, 0, 17.8, 'Failed', '', '');
 
 -- --------------------------------------------------------
 
@@ -156,8 +156,8 @@ INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMES
 (1538, 1000000208, 3, 1, 'First', '2023-2024', 1, 0, ''),
 (1539, 1000000208, 4, 1, 'First', '2023-2024', 1, 0, ''),
 (1540, 1000000208, 5, 1, 'First', '2023-2024', 1, 0, ''),
-(1541, 1000000209, 1, 1, 'First', '2023-2024', 1, 0, ''),
-(1542, 1000000209, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1541, 1000000209, 1, 1, 'First', '2023-2024', 1, 18, 'Failed'),
+(1542, 1000000209, 2, 1, 'First', '2023-2024', 1, 72, 'Failed'),
 (1543, 1000000209, 3, 1, 'First', '2023-2024', 1, 0, ''),
 (1544, 1000000209, 4, 1, 'First', '2023-2024', 1, 0, ''),
 (1545, 1000000209, 5, 1, 'First', '2023-2024', 1, 0, '');
@@ -377,7 +377,12 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (464, 1000000208, '2023-12-15 16:50:40', 'Student', 'Logged out'),
 (465, 1000000209, '2023-12-16 13:25:54', 'Student', 'Logged in'),
 (466, 1000000202, '2023-12-16 13:32:06', 'Student', 'Logged out'),
-(467, 1000000209, '2023-12-16 13:32:07', 'Student', 'Logged in');
+(467, 1000000209, '2023-12-16 13:32:07', 'Student', 'Logged in'),
+(468, 1000000209, '2023-12-23 11:22:26', 'Student', 'Logged in'),
+(469, 1, '2023-12-25 14:38:07', 'Administrator', 'Logged in'),
+(470, 1, '2023-12-25 14:38:42', 'Administrator', 'Logged out'),
+(471, 1, '2023-12-25 14:40:43', 'Administrator', 'Logged in'),
+(472, 1000000209, '2023-12-25 15:04:27', 'Student', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -498,7 +503,7 @@ CREATE TABLE `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
-(0, 1000000209, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-10', 'Caloocan City', 'Single', 0, 'Pinoy', 'iglesia ni chris brown', '123', 'Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
+(0, 1000000209, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-10', 'Caloocan City', 'Single', 0, 'Pinoy', 'iglesia ni chris brown', '123', 'Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Irregular', 1, 1, 21, '', 'First', '', 0);
 
 -- --------------------------------------------------------
 
@@ -534,6 +539,12 @@ INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `A
 --
 ALTER TABLE `department`
   ADD PRIMARY KEY (`DEPT_ID`);
+
+--
+-- Indexes for table `grades`
+--
+ALTER TABLE `grades`
+  ADD PRIMARY KEY (`GRADE_ID`);
 
 --
 -- Indexes for table `studentsubjects`
@@ -601,6 +612,12 @@ ALTER TABLE `department`
   MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT for table `grades`
+--
+ALTER TABLE `grades`
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
@@ -616,7 +633,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=468;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=473;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`

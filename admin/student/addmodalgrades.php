@@ -178,10 +178,10 @@ if($_GET['gid']==''){
    var tot;
 
 
-  first = parseFloat(first) * .20;
-  second = parseFloat(second) * .20;
-  third = parseFloat(third) * .20;
-  fourth = parseFloat(fourth) * .40
+    first = parseFloat(first) * .20;
+    second = parseFloat(second) * .20;
+    third = parseFloat(third) * .20;
+    fourth = parseFloat(fourth) * .40
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 

@@ -165,7 +165,6 @@ switch ($action) {
 					$student->student_status ='Irregular'; 
 					$student->update($_POST['IDNO']);
 				}else{
-						# code...
 					$student = New Student(); 
 					$student->student_status ='Regular'; 
 					$student->update($_POST['IDNO']);
