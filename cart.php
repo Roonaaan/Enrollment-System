@@ -23,7 +23,7 @@
              $totunits = 0;
 
             $query = "SELECT * FROM tblstudent s, course c WHERE s.COURSE_ID=c.COURSE_ID AND IDNO=".$_SESSION['IDNO'];
-            $result = mysqli_query($mydb->conn,$query) or die(mysqli_error(mydb->conn));
+            $result = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
             $row = mysqli_fetch_assoc($result);
 
              $query = "SELECT * 

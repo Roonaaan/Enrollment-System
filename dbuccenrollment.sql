@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2023 at 03:35 PM
+-- Generation Time: Dec 25, 2023 at 04:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -91,11 +91,11 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `REMARKS`, `COMMENT`, `SEMS`) VALUES
-(1, 1000000209, 1, 90, 0, 0, 0, 18, 'Failed', '', ''),
-(2, 1000000209, 2, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
-(3, 1000000209, 3, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
-(4, 1000000209, 4, 89, 0, 0, 0, 17.8, 'Failed', '', ''),
-(5, 1000000209, 5, 89, 0, 0, 0, 17.8, 'Failed', '', '');
+(6, 1000000210, 1, 0, 0, 0, 0, 0, '', '', ''),
+(7, 1000000210, 2, 0, 0, 0, 0, 0, '', '', ''),
+(8, 1000000210, 3, 0, 0, 0, 0, 0, '', '', ''),
+(9, 1000000210, 4, 0, 0, 0, 0, 0, '', '', ''),
+(10, 1000000210, 5, 0, 0, 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -120,8 +120,9 @@ CREATE TABLE `schoolyr` (
 --
 
 INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY`, `DATE_RESERVED`, `DATE_ENROLLED`, `STATUS`) VALUES
-(0, '2023-2024', 'First', 21, 1000000208, 'ENROLLED', '2023-12-10 00:00:00', '2023-12-10 00:00:00', 'New'),
-(0, '2023-2024', 'First', 21, 1000000209, 'ENROLLED', '2023-12-15 00:00:00', '2023-12-15 00:00:00', 'New');
+(1, '2023-2024', 'First', 21, 1000000208, 'ENROLLED', '2023-12-10 00:00:00', '2023-12-10 00:00:00', 'New'),
+(2, '2023-2024', 'First', 21, 1000000209, 'ENROLLED', '2023-12-15 00:00:00', '2023-12-15 00:00:00', 'New'),
+(4, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-25 00:00:00', '2023-12-25 00:00:00', 'New');
 
 -- --------------------------------------------------------
 
@@ -160,7 +161,12 @@ INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMES
 (1542, 1000000209, 2, 1, 'First', '2023-2024', 1, 72, 'Failed'),
 (1543, 1000000209, 3, 1, 'First', '2023-2024', 1, 0, ''),
 (1544, 1000000209, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1545, 1000000209, 5, 1, 'First', '2023-2024', 1, 0, '');
+(1545, 1000000209, 5, 1, 'First', '2023-2024', 1, 0, ''),
+(1546, 1000000210, 1, 1, 'First', '2023-2024', 1, 0, ''),
+(1547, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1548, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
+(1549, 1000000210, 4, 1, 'First', '2023-2024', 1, 0, ''),
+(1550, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -216,19 +222,6 @@ INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, 
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
 (3, 'SIDNO', 'IDNO', '2015', 1000000, 210, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblinstructor`
---
-
-CREATE TABLE `tblinstructor` (
-  `INST_ID` int(11) NOT NULL,
-  `INST_NAME` varchar(90) NOT NULL,
-  `INST_MAJOR` varchar(90) NOT NULL,
-  `INST_CONTACT` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -382,7 +375,9 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (469, 1, '2023-12-25 14:38:07', 'Administrator', 'Logged in'),
 (470, 1, '2023-12-25 14:38:42', 'Administrator', 'Logged out'),
 (471, 1, '2023-12-25 14:40:43', 'Administrator', 'Logged in'),
-(472, 1000000209, '2023-12-25 15:04:27', 'Student', 'Logged in');
+(472, 1000000209, '2023-12-25 15:04:27', 'Student', 'Logged in'),
+(473, 1000000209, '2023-12-25 15:43:00', 'Student', 'Logged out'),
+(474, 1000000210, '2023-12-25 15:50:22', 'Student', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -401,27 +396,6 @@ CREATE TABLE `tblpayment` (
   `TOTALSEMESTER` double NOT NULL,
   `PARTIALPAYMENT` double NOT NULL,
   `BALANCE` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblschedule`
---
-
-CREATE TABLE `tblschedule` (
-  `schedID` int(11) NOT NULL,
-  `TIME_FROM` varchar(90) NOT NULL,
-  `TIME_TO` varchar(90) NOT NULL,
-  `sched_time` varchar(30) NOT NULL,
-  `sched_day` varchar(30) NOT NULL,
-  `sched_semester` varchar(30) NOT NULL,
-  `sched_sy` varchar(30) NOT NULL,
-  `sched_room` varchar(30) NOT NULL,
-  `SECTION` varchar(30) NOT NULL,
-  `COURSE_ID` int(11) NOT NULL,
-  `SUBJ_ID` int(11) NOT NULL,
-  `INST_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -463,7 +437,7 @@ CREATE TABLE `tblstuddetails` (
 --
 
 INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
-(0, 'Lucky Dancel', '', '123', 1000000209);
+(1, 'Lucky Dancel', '', '123', 1000000209);
 
 -- --------------------------------------------------------
 
@@ -503,7 +477,7 @@ CREATE TABLE `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
-(0, 1000000209, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-10', 'Caloocan City', 'Single', 0, 'Pinoy', 'iglesia ni chris brown', '123', 'Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Irregular', 1, 1, 21, '', 'First', '', 0);
+(1, 1000000210, 'John Ronan', 'Ramos', 'C', 'Female', '2001-11-08', 'Camarin Caloocan City', 'Single', 0, 'Filipino', 'Catholic', '09091697716', '#65 Block 30 Lot 149 Mangga St. Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
 
 -- --------------------------------------------------------
 
@@ -545,6 +519,12 @@ ALTER TABLE `department`
 --
 ALTER TABLE `grades`
   ADD PRIMARY KEY (`GRADE_ID`);
+
+--
+-- Indexes for table `schoolyr`
+--
+ALTER TABLE `schoolyr`
+  ADD PRIMARY KEY (`SYID`);
 
 --
 -- Indexes for table `studentsubjects`
@@ -615,13 +595,19 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `schoolyr`
+--
+ALTER TABLE `schoolyr`
+  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1546;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1551;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -633,13 +619,37 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=473;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=475;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
 --
 ALTER TABLE `tblpayment`
   MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT for table `tblsemester`
+--
+ALTER TABLE `tblsemester`
+  MODIFY `SEMID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tblstuddetails`
+--
+ALTER TABLE `tblstuddetails`
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tblstudent`
+--
+ALTER TABLE `tblstudent`
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `useraccounts`
+--
+ALTER TABLE `useraccounts`
+  MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
