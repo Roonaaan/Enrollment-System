@@ -48,7 +48,7 @@ if(!isset($_SESSION['IDNO'])){
 ?>
  <div class="panel panel-default">
     <div class="panel-body">
-        <div class="well well-sm"  style="background-color:#242424; color:#933DC9; border: 1px solid #53118F "><b >  Login </b> </div>
+        <div class="well well-sm"  style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F "><b >  Login </b> </div>
 
             <form class="form-horizontal span6" action="login.php" method="POST">
                 <div class="form-group">
@@ -67,7 +67,7 @@ if(!isset($_SESSION['IDNO'])){
                   </div>
                   <div class="form-group">
                   <div class="col-md-12"> 
-                    <button type="submit" id="sidebarLogin" name="sidebarLogin"  style="background-color:#242424; color:#933DC9; border: 1px solid #53118F ;" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-logged-in "></span>   Login</button> 
+                    <button type="submit" id="sidebarLogin" name="sidebarLogin"  style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F ;" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-logged-in "></span>   Login</button> 
                      
                   </div>
                 </div>

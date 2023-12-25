@@ -15,11 +15,8 @@ require_once("../include/initialize.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<<<<<<< HEAD
 <title>University of Caloocan City</title>
-=======
 <title>University of Caloocan City | North</title>
->>>>>>> 33fe0dea449b774125370fe2221410dfbbc26fe6
 
 <!-- Bootstrap core CSS -->
 <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
@@ -77,9 +74,6 @@ body {
     background-size: cover;
 }
 
-.container {
-  
-}
 
 .login-form {
   margin-top: 30px;

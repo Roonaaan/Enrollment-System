@@ -48,7 +48,7 @@ if($q=='enrol'){
 
         <div class="panel panel-default">
           <div class="panel-body">
-              <div class="well well-sm"  style="background-color:#f5f5f5;color:#fff;"><b >  Login </b> </div>
+              <div class="well well-sm"  style="background-color:#f5f5f5; color:#fff; "><b >  Login </b> </div>
 
                   <form class="form-horizontal span6" action="login.php" method="POST">
                       <div class="form-group">

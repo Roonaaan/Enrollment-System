@@ -87,17 +87,17 @@ $cur = $mydb->loadSingleResult();
 				  		echo '<td>' . $result->SUBJ_ID.'</a></td>';
 				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
-				  		echo '<td>' . $result->UNIT.'</a></td>';
+				  		echo '<td>'. $result->UNIT.'</a></td>';
 				  		echo '<td>'. $result->FIRST.'</td>';
 				  		echo '<td>'. $result->SECOND.'</td>';
-				  		echo '<td>' . $result->THIRD.'</a></td>';
+				  		echo '<td>'. $result->THIRD.'</a></td>';
 				  		echo '<td>'. $result->FOURTH.'</td>'; 
 				  		echo '<td>'. $result->AVE.'</td>'; 
 				  		echo '<td>'. $result->REMARKS.'</td>'; 
 				  		echo '<td>'. $result->SEMESTER.'</td>';
 
 
-				  		echo '<td align="center" > <a  title="Edit" href="addmodalgrades.php?id='.$result->SUBJ_ID.'&IDNO='.$result->IDNO.'&gid='.$result->GRADE_ID.'" data-toggle="lightbox" >  <span class="fa fa-plus fw-fa"></span> Add gardes</a>
+				  		echo '<td align="center" > <a  title="Edit" href="addmodalgrades.php?id='.$result->SUBJ_ID.'&IDNO='.$result->IDNO.'&gid='.$result->GRADE_ID.'" data-toggle="lightbox" >  <span class="fa fa-plus fw-fa"></span> Add Grades</a>
 				  					  </td>';
 				  		 
 

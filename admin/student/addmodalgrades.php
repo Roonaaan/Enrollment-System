@@ -53,7 +53,7 @@ if($_GET['gid']==''){
 
           <div class="col-md-6">
             <textarea  class="form-control input-sm" id="SUBJ_CODE" name="SUBJ_CODE" readonly="true" rows="4" cols="32"><?php echo $res->SUBJ_CODE .'['. $res->SUBJ_DESCRIPTION.']';?></textarea>
-
+             <!-- <input class="form-control input-sm" id="SUBJ_CODE" name="SUBJ_CODE" readonly="true" type="text" value="<?php echo $res->SUBJ_CODE .'['. $res->SUBJ_DESCRIPTION.']';?>"> -->
           </div>
         </div>
       </div>
@@ -132,6 +132,7 @@ if($_GET['gid']==''){
 
           <div class="col-md-6">
            <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
+              <!-- <a href="index.php?view=grades&id=<?php echo $_GET['IDNO']; ?>" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>Back</strong></a> -->
            </div>
         </div>
       </div>
@@ -142,7 +143,7 @@ if($_GET['gid']==''){
 <script src="<?php echo web_root; ?>admin/jquery/jquery.min.js"></script>
 <script type="text/javascript">
     $("#FIRSTGRADING").keyup(function(){
-
+        //alert('FIRSTGRADING');
 
    var first = document.getElementById('FIRSTGRADING').value;
    var second = document.getElementById('SECONDGRADING').value;
@@ -158,7 +159,7 @@ if($_GET['gid']==''){
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 
-
+    // tot = tot /  4;
 
    document.getElementById('AVERAGE').value = tot.toFixed(2);
 
@@ -177,20 +178,20 @@ if($_GET['gid']==''){
    var tot;
 
 
-    first = parseFloat(first) * .20;
-    second = parseFloat(second) * .20;
-    third = parseFloat(third) * .20;
-    fourth = parseFloat(fourth) * .40
+  first = parseFloat(first) * .20;
+  second = parseFloat(second) * .20;
+  third = parseFloat(third) * .20;
+  fourth = parseFloat(fourth) * .40
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 
-
+    // tot = tot /  4;
 
    document.getElementById('AVERAGE').value = tot.toFixed(2);
 
     });
     $("#THIRDGRADING").keyup(function(){
-
+        // alert('THIRDGRADING');
    var first = document.getElementById('FIRSTGRADING').value;
    var second = document.getElementById('SECONDGRADING').value;
    var third = document.getElementById('THIRDGRADING').value;
@@ -205,13 +206,13 @@ if($_GET['gid']==''){
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 
-
+    // tot = tot /  4;
 
    document.getElementById('AVERAGE').value = tot.toFixed(2);
 
     });
     $("#FOURTHGRADING").keyup(function(){
-
+        // alert('FOURTHGRADING');
  var first = document.getElementById('FIRSTGRADING').value;
    var second = document.getElementById('SECONDGRADING').value;
    var third = document.getElementById('THIRDGRADING').value;
@@ -226,7 +227,7 @@ if($_GET['gid']==''){
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 
-
+    // tot = tot /  4;
 
    document.getElementById('AVERAGE').value = tot.toFixed(2);
 
