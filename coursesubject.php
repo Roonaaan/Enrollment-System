@@ -318,11 +318,24 @@ $totunit =0;
       <div class="col-xs-3">
          </form>
          <?php
-          if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
-
+          if ($result->student_status=='New') { 
          ?>
-       
-
+          <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+           <input type="hidden" value="sb-01j8u28917912@business.example.com" name="business">
+          <!-- Specify a Buy Now button. -->
+          <input type="hidden" value="_xclick" name="cmd">
+          <input type="hidden" value="Partial Payments" name="item_name">
+          <!-- <input type="hidden" value="22.16" name="amount"> -->
+          <input type="hidden" id="partial" value="1600" name="amount">
+          <!-- <input type="hidden" name="currency_code" value="USD"> -->
+          <input type="hidden" name="currency_code" value="PHP">
+          <!-- <input type="hidden" value="item_number" name="item_number"> -->
+          <input type="hidden" name="return" value="http://localhost<?php echo web_root ?>index.php?q=payment">
+          <input type="hidden" name="cancel_return" value="http://localhost<?php echo web_root ?>index.php">
+          <!-- Display the payment button. -->
+          <input type="image" name="submit" id="btnpay" border="1 solid #888" src="img/pay.png" alt="PayPal - The safer, easier way to pay online">
+          <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+          </form> 
           <?php
 }
           ?>
@@ -332,3 +345,4 @@ $totunit =0;
     <!-- /.content -->
     <div class="clearfix"></div>
   </div>
+
