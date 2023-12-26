@@ -13,10 +13,8 @@
 
             foreach ($cur as $result) {
          ?>
-          <li><?php echo $result->COURSE_NAME.'-'. $result->COURSE_LEVEL  ;?></li>
-           <ul>
-            <li><?php echo $result->COURSE_DESC. ' [Major in ' .$result->COURSE_MAJOR . ' ] ';?></li>
-          </ul>
+          <li><?php echo $result->COURSE_NAME ?></li>
+
          <?php  
           }
       ?>

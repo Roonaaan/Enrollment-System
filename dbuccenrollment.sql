@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2023 at 04:25 PM
+-- Generation Time: Dec 26, 2023 at 02:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,7 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`DEPT_ID`, `DEPARTMENT_NAME`, `DEPARTMENT_DESC`) VALUES
-(33, 'CSD', 'Computer Science Department');
+(33, 'CLAS', 'College of Liberal Arts and Science');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,12 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`,
 (7, 1000000210, 2, 0, 0, 0, 0, 0, '', '', ''),
 (8, 1000000210, 3, 0, 0, 0, 0, 0, '', '', ''),
 (9, 1000000210, 4, 0, 0, 0, 0, 0, '', '', ''),
-(10, 1000000210, 5, 0, 0, 0, 0, 0, '', '', '');
+(10, 1000000210, 5, 0, 0, 0, 0, 0, '', '', ''),
+(11, 1000000210, 1, 0, 0, 0, 0, 0, '', '', 'First'),
+(12, 1000000210, 2, 0, 0, 0, 0, 0, '', '', 'First'),
+(13, 1000000210, 3, 0, 0, 0, 0, 0, '', '', 'First'),
+(14, 1000000210, 4, 0, 0, 0, 0, 0, '', '', 'First'),
+(15, 1000000210, 5, 0, 0, 0, 0, 0, '', '', 'First');
 
 -- --------------------------------------------------------
 
@@ -122,7 +127,8 @@ CREATE TABLE `schoolyr` (
 INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY`, `DATE_RESERVED`, `DATE_ENROLLED`, `STATUS`) VALUES
 (1, '2023-2024', 'First', 21, 1000000208, 'ENROLLED', '2023-12-10 00:00:00', '2023-12-10 00:00:00', 'New'),
 (2, '2023-2024', 'First', 21, 1000000209, 'ENROLLED', '2023-12-15 00:00:00', '2023-12-15 00:00:00', 'New'),
-(4, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-25 00:00:00', '2023-12-25 00:00:00', 'New');
+(4, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-25 00:00:00', '2023-12-25 00:00:00', 'New'),
+(5, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-26 00:00:00', '2023-12-26 00:00:00', 'Old');
 
 -- --------------------------------------------------------
 
@@ -166,7 +172,12 @@ INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMES
 (1547, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
 (1548, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
 (1549, 1000000210, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1550, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, '');
+(1550, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, ''),
+(1551, 1000000210, 1, 1, 'First', '2023-2024', 1, 0, ''),
+(1552, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
+(1553, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
+(1554, 1000000210, 4, 1, 'First', '2023-2024', 1, 0, ''),
+(1555, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -220,7 +231,7 @@ CREATE TABLE `tblauto` (
 INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
 (1, 'Asset', 'Asset', 'ASitem', 0, 3, 1),
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 1000000, 210, 1),
+(3, 'SIDNO', 'IDNO', '2015', 1000000, 211, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
 
 -- --------------------------------------------------------
@@ -377,7 +388,17 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (471, 1, '2023-12-25 14:40:43', 'Administrator', 'Logged in'),
 (472, 1000000209, '2023-12-25 15:04:27', 'Student', 'Logged in'),
 (473, 1000000209, '2023-12-25 15:43:00', 'Student', 'Logged out'),
-(474, 1000000210, '2023-12-25 15:50:22', 'Student', 'Logged in');
+(474, 1000000210, '2023-12-25 15:50:22', 'Student', 'Logged in'),
+(475, 1000000210, '2023-12-26 08:33:38', 'Student', 'Logged in'),
+(476, 1000000210, '2023-12-26 08:42:17', 'Student', 'Logged in'),
+(477, 1000000210, '2023-12-26 09:22:41', 'Student', 'Logged in'),
+(478, 1000000210, '2023-12-26 09:24:50', 'Student', 'Logged in'),
+(479, 1000000210, '2023-12-26 12:35:02', 'Student', 'Logged in'),
+(480, 1, '2023-12-26 13:15:20', 'Administrator', 'Logged in'),
+(481, 1000000210, '2023-12-26 13:18:33', 'Student', 'Logged out'),
+(482, 1000000210, '2023-12-26 14:16:44', 'Student', 'Logged in'),
+(483, 1000000210, '2023-12-26 14:16:49', 'Student', 'Logged out'),
+(484, 1, '2023-12-26 14:25:44', 'Administrator', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -398,6 +419,13 @@ CREATE TABLE `tblpayment` (
   `BALANCE` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `tblpayment`
+--
+
+INSERT INTO `tblpayment` (`PAYMENTID`, `IDNO`, `COURSE_ID`, `COURSE_LEVEL`, `SEMESTER`, `ENTRANCEFEE`, `TOTALUNITS`, `TOTALSEMESTER`, `PARTIALPAYMENT`, `BALANCE`) VALUES
+(45, 1000000210, 21, 1, 'First', 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -415,8 +443,8 @@ CREATE TABLE `tblsemester` (
 --
 
 INSERT INTO `tblsemester` (`SEMID`, `SEMESTER`, `SETSEM`) VALUES
-(1, 'First', 1),
-(2, 'Second', 0);
+(1, 'First', 0),
+(2, 'Second', 1);
 
 -- --------------------------------------------------------
 
@@ -595,19 +623,19 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `schoolyr`
 --
 ALTER TABLE `schoolyr`
-  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1551;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1556;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -619,13 +647,13 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=475;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=485;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
 --
 ALTER TABLE `tblpayment`
-  MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tblsemester`

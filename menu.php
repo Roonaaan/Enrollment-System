@@ -1,6 +1,6 @@
  
-  <div class="panel-group" id="accordion">
-  <ul>
+<div class="panel-group" id="accordion">
+<ul>
  
 <?php 
 

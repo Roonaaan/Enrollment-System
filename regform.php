@@ -29,7 +29,7 @@ $_SESSION['PASS']    	  =  $_POST['PASS'];
 if ($res) {
 	# code...
 	message("Student already exist.", "error");
-    redirect(web_root."index.php?q=enrol");
+    redirect(web_root."index.php?q=enroll");
 
  }else{
 
@@ -53,7 +53,7 @@ if($userStud){
        message("Cannot Proceed. Must be 15 years old and above to enroll.", "error");
        redirect("index.php?q=enrol");
 
-    }else{
+    } else {
 		$student = New Student();
 		$student->IDNO 			= $_SESSION['STUDID'];
 		$student->FNAME 		= $_SESSION['FNAME'];
@@ -227,7 +227,7 @@ if($userStud){
   								    echo '<option value='.$singlecourse->COURSE_ID.' >'.$singlecourse->COURSE_NAME.' </option>';
 
 								}else{
-									echo '<option value="Select">Select</option>';
+									echo '<option value="Select"> Select </option>';
 								}
 								
 								?>

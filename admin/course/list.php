@@ -23,8 +23,6 @@
 				  	<tr>
 				  		<th>Course Id</th>
 				  		<th>Course</th>
-				  		<th>Major</th> 
-
 				  		<th>Description</th>
 				  		<th>Department</th>
 				  		<th width="10%" >Action</th>
@@ -48,7 +46,6 @@
 				  		echo '<tr>';
 				  		echo '<td >' . $result->COURSE_ID.'</td>';
 				  		echo '<td>' . $result->COURSE_NAME.'</a></td>';
-				  		echo '<td>'. $result->COURSE_MAJOR.'</td>';
 				  		echo '<td>'. $result->COURSE_DESC.'</td>'; 
 				  		echo '<td>'. $result->DEPARTMENT_NAME.'</td>';
 
