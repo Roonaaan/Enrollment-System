@@ -14,4 +14,9 @@ Admin Access:
 User: admin
 Pass: admin
 
+Paypal Payment Account
+User: sb-ttwvi28917952@personal.example.com
+Pass: ?W.}6{4v
+
+
 Thank You!!

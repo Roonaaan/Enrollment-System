@@ -176,7 +176,7 @@ require_once("include/initialize.php");
           $totunit = $totunit <= 0 ? 0 : $totunit;
            $subtot = 0;
            $perunit = 0;
-           $entrancefee = 0;
+           $entrancefee = 320;
            $totsem = 0;
            $subtot = $totunit * $perunit;
            $totsem = $entrancefee + $subtot;
