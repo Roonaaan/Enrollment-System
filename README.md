@@ -11,11 +11,15 @@ Features: CRUD function on Admin, Print details and Payment
 Instructions: Paste the extracted file "uccenrollmentsystem" to the htdocs file and after that open the XAMPP Control panel and start the Apache and MySQL. Go to the browser and search "http://localhost/Enrollment-System/" to proceed to the main landing page and "http://localhost/Enrollment-System/" to see the Admin Log In Page.
 
 Admin Access:
+
 User: admin
+
 Pass: admin
 
 Paypal Payment Account
+
 User: sb-ttwvi28917952@personal.example.com
+
 Pass: ?W.}6{4v
 
 
