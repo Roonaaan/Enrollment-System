@@ -123,12 +123,12 @@ $details = $studdetails->single_StudentDetails($_SESSION['IDNO']);
 		 
 			</tr>
 			<tr>
-				<td><label>Gaurdian</label></td>
+				<td><label>Guardian</label></td>
 				<td colspan="2">
-					<input required="true"  class="form-control input-md" id="GUARDIAN" name="GUARDIAN" placeholder="Parents/Guardian Name" type="text"value="<?php echo $details->GUARDIAN; ?>">
+					<input required="true"  class="form-control input-md" id="GUARDIAN" name="GUARDIAN" placeholder="Parents/Guardian Name" type="text"value="<?php echo $details-> GUARDIAN; ?>">
 				</td>
 				<td><label>Contact No.</label></td>
-				<td colspan="2"><input  required="true" class="form-control input-md" id="GCONTACT" name="GCONTACT" placeholder="Contact Number" type="text"value="<?php echo $details->GCONTACT; ?>"></td>
+				<td colspan="2"><input  required="true" class="form-control input-md" id="GCONTACT" name="GCONTACT" placeholder="Contact Number" type="text"value="<?php echo $details-> GCONTACT; ?>"></td>
 			</tr>
 			<tr>
 			<td></td>
