@@ -32,9 +32,7 @@ if($q=='enrol'){
   }else{
   ?>
 <ul class="nav nav-tabs" id="myTab">
-    <li class="active"><a href="#New" data-toggle="tab">New</a></li> 
-    <li><a href="#Old" data-toggle="tab">Old</a></li>
-    <li><a href="#Transferees" data-toggle="tab">Transferees</a></li>
+    <li class="active"></li> 
   </ul>
   <div class="tab-content"><br/>
     <div class="tab-pane active" id="New">
@@ -68,20 +66,13 @@ if($q=='enrol'){
                         <div class="form-group">
                         <div class="col-md-12"> 
                           <button type="submit" id="oldLogin" name="oldLogin"  style="background-color:#f5f5f5;color:#fff;" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-logged-in "></span>   Login</button> 
-                           
+
                         </div>
                       </div>
-
-
                   </form>
-
               </div> 
         </div>
     </div><!--/tab-pane-->
-     <div class="tab-pane" id="Transferees"><br/> 
-      <?php include  "registrationform.php"; ?> 
-    </div><!--/tab-pane-->
-
   </div><!--/tab-content-->
 <?php
 }

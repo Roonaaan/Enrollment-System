@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `course` (
   `COURSE_ID` int(11) NOT NULL,
-  `COURSE_NAME` varchar(30) NOT NULL,
+  `COURSE_NAME` varchar(50) NOT NULL,
   `COURSE_LEVEL` varchar(50) NOT NULL DEFAULT '1',
   `COURSE_MAJOR` varchar(30) NOT NULL DEFAULT 'None',
   `COURSE_DESC` varchar(255) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_LEVEL`, `COURSE_MAJOR`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
 (21, 'BS Computer Science', '1', '', 'Bachelor of Science Computer Science ', 33, '1'),
 (22, 'BS Information Technology', '1', '', 'Bachelor of Science in Information Technology', 33, '1'),
-(23, 'BS Entertainment and Multimedi', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, '1'),
+(23, 'BS Entertainment and Multimedia', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, '1'),
 (24, 'BS Information System', '1', '', 'Bachelor of Science in Information Systems', 33, '1');
 
 -- --------------------------------------------------------
