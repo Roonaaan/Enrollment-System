@@ -103,7 +103,7 @@
                         <td><?php echo  date_diff(date_create($dbirth),date_create($today))->y;?></td>
                         <td><?php echo $result->CONTACT_NO;?></td>
                         <td><?php echo $result->STATUS;?></td>
-                        <td><?php echo $result->COURSE_NAME .'-'.$result->COURSE_LEVEL;?></td>
+                        <td><?php echo $result->COURSE_NAME;?></td>
                         <td><?php echo $result->student_status;?></td>
                       </tr>
               <?php  
