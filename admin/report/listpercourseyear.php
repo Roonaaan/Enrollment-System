@@ -26,7 +26,7 @@
         $cur = $mydb->loadResultList();
 
         foreach ($cur as $result) {
-          echo '<option value="'.$result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'" >'.$result->COURSE_NAME.'-'.$result->COURSE_LEVEL.' </option>';
+          echo '<option value="'.$result->COURSE_NAME.'" >'.$result->COURSE_NAME.' </option>';
 
         }
       ?>
