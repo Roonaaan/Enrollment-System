@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2023 at 02:28 PM
+-- Generation Time: Dec 29, 2023 at 02:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_LEVEL`, `COURSE_MAJOR`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
 (21, 'BS Computer Science', '1', '', 'Bachelor of Science Computer Science ', 33, '1'),
 (22, 'BS Information Technology', '1', '', 'Bachelor of Science in Information Technology', 33, '1'),
-(23, 'BS Entertainment and Multimedia', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, '1'),
+(23, 'BS Entertainment and Multimedi', '1', '', 'Bachelor of Science in Entertainment and Multimedia Computing', 33, '1'),
 (24, 'BS Information System', '1', '', 'Bachelor of Science in Information Systems', 33, '1');
 
 -- --------------------------------------------------------
@@ -153,21 +153,6 @@ CREATE TABLE `studentsubjects` (
 --
 
 INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMESTER`, `SY`, `ATTEMP`, `AVERAGE`, `OUTCOME`) VALUES
-(1531, 1000000206, 1, 1, 'First', '2023-2024', 1, 0, ''),
-(1532, 1000000206, 2, 1, 'First', '2023-2024', 1, 0, ''),
-(1533, 1000000206, 3, 1, 'First', '2023-2024', 1, 0, ''),
-(1534, 1000000206, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1535, 1000000206, 5, 1, 'First', '2023-2024', 1, 0, ''),
-(1536, 1000000208, 1, 1, 'First', '2023-2024', 1, 18, 'Failed'),
-(1537, 1000000208, 2, 1, 'First', '2023-2024', 1, 0, ''),
-(1538, 1000000208, 3, 1, 'First', '2023-2024', 1, 0, ''),
-(1539, 1000000208, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1540, 1000000208, 5, 1, 'First', '2023-2024', 1, 0, ''),
-(1541, 1000000209, 1, 1, 'First', '2023-2024', 1, 18, 'Failed'),
-(1542, 1000000209, 2, 1, 'First', '2023-2024', 1, 72, 'Failed'),
-(1543, 1000000209, 3, 1, 'First', '2023-2024', 1, 0, ''),
-(1544, 1000000209, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1545, 1000000209, 5, 1, 'First', '2023-2024', 1, 0, ''),
 (1546, 1000000210, 1, 1, 'First', '2023-2024', 1, 0, ''),
 (1547, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
 (1548, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
@@ -206,7 +191,8 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (2, 'CS 116', 'Algorithm and Complexity', 3, 'None', 21, '', 'First', 0),
 (3, 'CS 118', 'CS Thesis Writing 1', 5, 'None', 21, '', 'First', 0),
 (4, 'CSE 103', 'Computational Science', 3, 'None', 21, '', 'First', 0),
-(5, 'CSE 104', 'Intelligent Systems', 3, 'None', 21, '', 'First', 0);
+(5, 'CSE 104', 'Intelligent Systems', 3, 'None', 21, '', 'First', 0),
+(347, 'CCS 119', 'Capstone Project and Research 1', 5, 'None', 22, '', 'First', 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +384,22 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (481, 1000000210, '2023-12-26 13:18:33', 'Student', 'Logged out'),
 (482, 1000000210, '2023-12-26 14:16:44', 'Student', 'Logged in'),
 (483, 1000000210, '2023-12-26 14:16:49', 'Student', 'Logged out'),
-(484, 1, '2023-12-26 14:25:44', 'Administrator', 'Logged in');
+(484, 1, '2023-12-26 14:25:44', 'Administrator', 'Logged in'),
+(485, 1000000210, '2023-12-27 08:50:02', 'Student', 'Logged in'),
+(486, 1000000210, '2023-12-27 08:52:43', 'Student', 'Logged out'),
+(487, 1000000210, '2023-12-27 08:52:48', 'Student', 'Logged in'),
+(488, 1000000210, '2023-12-27 09:09:33', 'Student', 'Logged out'),
+(489, 1000000210, '2023-12-27 09:09:36', 'Student', 'Logged in'),
+(490, 1000000210, '2023-12-27 13:36:55', 'Student', 'Logged in'),
+(491, 1000000210, '2023-12-27 13:39:53', 'Student', 'Logged out'),
+(492, 1, '2023-12-27 13:41:18', 'Administrator', 'Logged in'),
+(493, 1000000210, '2023-12-27 13:43:41', 'Student', 'Logged out'),
+(494, 1, '2023-12-28 12:35:13', 'Administrator', 'Logged in'),
+(495, 1, '2023-12-28 12:53:13', 'Administrator', 'Logged in'),
+(496, 1, '2023-12-28 16:43:36', 'Administrator', 'Logged in'),
+(497, 1000000210, '2023-12-28 17:01:36', 'Student', 'Logged in'),
+(498, 1000000210, '2023-12-28 17:20:46', 'Student', 'Logged out'),
+(499, 1, '2023-12-29 13:33:59', 'Administrator', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -465,7 +466,7 @@ CREATE TABLE `tblstuddetails` (
 --
 
 INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
-(1, 'Lucky Dancel', '', '123', 1000000209);
+(1, 'Lucky Dancel', '', '123', 1000000210);
 
 -- --------------------------------------------------------
 
@@ -505,7 +506,7 @@ CREATE TABLE `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
-(1, 1000000210, 'John Ronan', 'Ramos', 'C', 'Female', '2001-11-08', 'Camarin Caloocan City', 'Single', 0, 'Filipino', 'Catholic', '09091697716', '#65 Block 30 Lot 149 Mangga St. Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
+(1, 1000000210, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-08', 'Camarin Caloocan City', 'Single', 0, 'Filipino', 'Catholic', '09091697716', '#65 Block 30 Lot 149 Mangga St. Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
 
 -- --------------------------------------------------------
 
@@ -641,13 +642,13 @@ ALTER TABLE `studentsubjects`
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
+  MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
 
 --
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=485;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
