@@ -114,7 +114,7 @@ $singleuser = $user->single_user($_SESSION['ACCOUNT_ID']);
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Hi, <?php echo $_SESSION['ACCOUNT_NAME']; ?> <img title="profile image" width="23px" height="17px" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
+                        Hi, <?php echo $_SESSION['ACCOUNT_NAME']; ?> <img width="23px" height="17px" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
                             
                     </a>
                     <ul class="dropdown-menu dropdown-acnt">

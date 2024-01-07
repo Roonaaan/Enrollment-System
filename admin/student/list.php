@@ -56,11 +56,10 @@
 				  		echo '<td>' .$age.'</td>';
 				  		echo '<td>'. $result->HOME_ADD.'</td>';
 				  		echo '<td>'. $result->CONTACT_NO.'</td>';
-				  		echo '<td>' . $result->COURSE_NAME.'-' . $result->COURSE_LEVEL.'</a></td>';
+				  		echo '<td>' . $result->COURSE_NAME.'</a></td>';
 
 				  		 
 				  		echo '<td align="center" > <a title="View Information" href="index.php?view=view&id='.$result->IDNO.'"  class="btn btn-info btn-xs  ">View <span class="fa fa-info-circle fw-fa"></span></a>
-						  <a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a>
 				  					 </td>';
 
 				  		echo '</tr>';

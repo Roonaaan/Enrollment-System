@@ -19,23 +19,26 @@
 		<div class="row invoice-info">
       		<div class="col-sm-6 invoice-col">
       		</div>
-        <div class="col-sm-4 invoice-col">
-        	Course and Year
-          		<address>
-            		<div class="form-group">
-			  			<select name="Course" class="form-control">  
-      						<?php 
-        						$mydb->setQuery("SELECT * FROM `course` ");
-        						$cur = $mydb->loadResultList();
+			  <div class="col-sm-4 invoice-col">
+    Course and Year
+    <address>
+        <div class="form-group">
+            <form method="post" action="index.php">
+                <select name="course" class="form-control">
+				<?php 
+                        $mydb->setQuery("SELECT * FROM `course` ");
+                        $courses = $mydb->loadResultList();
 
-        						foreach ($cur as $result) {
-          						echo '<option value="'.$result->COURSE_NAME.'" >'.$result->COURSE_NAME.' </option>';
-								}
-    						?>
-			  			</select>
-		  			</div>
-          		</address>
-        </div> 
+                        foreach ($courses as $result) {
+                            $selected = ($_POST['course'] == $result->COURSE_ID) ? 'selected' : '';
+                            echo '<option value="'.$result->COURSE_ID.'" '.$selected.'>'.$result->COURSE_NAME.'</option>';
+                        }
+                    ?>
+                </select>
+            </form>
+        </div>
+    </address>
+</div>
 
         <div class="col-sm-2 invoice-col"> 
         <br/>
@@ -73,7 +76,7 @@
             		<tbody>
 						<?php
                 			$tot = 0;
-               				if(isset($_POST['submit'])){           
+							if(isset($_POST['submit']) && isset($_POST['course'])){           
                 				$sql ="SELECT * FROM `course` sy, `subject`  s 
                         		WHERE sy.`COURSE_ID`=s.`COURSE_ID`";
 
