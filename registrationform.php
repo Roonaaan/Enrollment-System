@@ -84,8 +84,6 @@ if($userStud){
 		$studentdetails->GCONTACT = $_SESSION['GCONTACT']; 
 		$studentdetails->create(); 
 
-		$studAuto = New Autonumber();
-		$studAuto->studauto_update();
 
 
 		@$_SESSION['IDNO'] = $_SESSION['STUDID'];

@@ -1,247 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<title><?php echo $title; ?> | University of Caloocan City - North</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>University of Caloocan City</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="img/ucc.png" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="<?php echo web_root; ?>css/styles.css" rel="stylesheet" />
+        <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo web_root; ?>font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
- <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
- 
-    <link href="<?php echo web_root; ?>font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="img/UCC.png" height="50px"> University of Caloocan City</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item <?php echo (isset($_GET['q']) && $_GET['q']=='') ? "active" : false;?> ">
+                        <a class="nav-link active" aria-current="page"href="<?php echo web_root.'index.php'; ?>">Home</a>
+                      </li>
+                      <li class="nav-item <?php echo (isset($_GET['q']) && ($_GET['q']=='enrol' || $_GET['q']=='subject')) ? "active" : false;?>" >
+                        <a class="nav-link active" aria-current="page" href="<?php echo web_root.'index.php?q=enrol'; ?>">Enroll Now!</a>
+                      </li>
+                      <li class="nav-item <?php echo (isset($_GET['q']) && $_GET['q']=='about') ? "active" : false;?> ">
+                        <a class="nav-link active" aria-current="page" href="<?php echo web_root.'index.php?q=about';  ?>">About Us</a>
+                      </li>
+                      <?php if (isset($_SESSION['IDNO']) ){  
 
+$student = New Student();
+$singlestudent = $student->single_student($_SESSION['IDNO']);
 
-    <link href="<?php echo web_root; ?>css/dataTables.bootstrap.css" rel="stylesheet">
- 
+if ($singlestudent->student_status=='New') {
+  # code...
 
-<link href="<?php echo web_root; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
- 
- <link href="<?php echo web_root; ?>css/modern.css" rel="stylesheet">
- <link href="<?php echo web_root; ?>css/costum.css" rel="stylesheet">
-
-  <link href="<?php echo web_root; ?>css/ekko-lightbox.css" rel="stylesheet">
- <style type="text/css">
-
-.p {
-
-  color: white;
-   margin-bottom: 0;
-  margin-top: 0;
-  list-style: none;
-}
-
-.p > a { 
-  color: white;
-  margin-bottom: 0;
-  margin: 0;
-  padding: 0;
-  text-decoration:none;
-  background-color:  #0000FF;
-}
-.p > a:hover ,
-.p > a:focus {
-   color: black; 
-   text-decoration:none;
-   background-color: #2d52f2;
-}
-
-
- 
-.title-logo  {
-    color:black;
-    text-decoration:none;
-    font-size: 42px;
-    font-family: "broadway";
-    padding: 0;
-    margin: 0;
-    top: 0;
-  
-  }
-.title-logo:hover {
-  color: orange; 
-  text-decoration:none;
-  transition: color 2s ease;
-}
-.carttxtactive {
-  color: red;
-  font-style: bold;
-  box-shadow: red;
-
-}
-.carttxtactive:hover {
-   color: white;
-}
-
-.menu  li {
-  left: 0px;
-  width: 150px;
-  padding: 0 3px 0 3px;
-  text-align: center;
- 
-}
-
-</style>
-
-<?php 
-$sem = new Semester();
-$resSem = $sem->single_semester();
-$_SESSION['SEMESTER'] = $resSem->SEMESTER; 
-?>
- <?php
-if (isset($_SESSION['gvCart'])){
-  if (count($_SESSION['gvCart'])>0) {
-    $cart = '<span class="carttxtactive">('.count($_SESSION['gvCart']) .')</span>';
-  } 
- 
-} 
-$currentyear = date('Y');
-  $nextyear =  date('Y') + 1;
-  $sy = $currentyear .'-'.$nextyear;
-  $_SESSION['SY'] = $sy;
- ?>
-</head>
-
-<body style="Pbackground-color:#e0e4e5" >
-
-<div class="navbar-fixed-top navbar-TOPsm  col-md-10    col-md-offset-1"    role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-          <h5 class="navbar-menu p" >University of Caloocan City | North</h5>
-         <button type="button" class="navbar-toggle btn-xs p" data-toggle="collapse" data-target=".smMenu">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button> 
-    </div>
-      <div  class="collapse navbar-collapse  smMenu "> 
-
-        <ul class="navbar-nav p navbar-left tooltip-demo" style="margin-left:-8%;"> 
-            <li class="dropdown dropdown-toggle ">
-              <a  data-toggle="tooltip" data-placement="left" title="Contact Us"   href="<?php echo web_root.'index.php?q=contact';  ?>"> 
-               <i class="fa fa-phone fa-fw"> </i>  Call Us: +632-3106581 / +632-3106855 OR Email Us: admin@ucc-caloocan.edu.ph
-              </a>
-            </li>
-            <li><span>    ||    </span></li>
-            <li>
-             <a  data-toggle="tooltip" data-placement="bottom" title="Academic Year" ><i class="fa fa-calendar-o"></i> Academic Year - <?php echo $_SESSION['SY'] ; ?></a>
-            </li> 
-             <li><span>    ||    </span></li>
-           <li>
-            <a  data-toggle="tooltip" data-placement="bottom" title="Semester" > <?php echo $_SESSION['SEMESTER'] . ' Semester';?></a>
-           </li>
-          </ul>
-          <ul class="navbar-nav p navbar-right ">
-
-            <?php if (isset($_SESSION['IDNO']) ){  
-
-              $student = New Student();
-              $singlestudent = $student->single_student($_SESSION['IDNO']);
-
-              if ($singlestudent->student_status=='New') {
-                # code...
-        
-            ?> 
-             <li class="dropdown dropdown-toggle tooltip-demo">
-              <a   data-toggle="tooltip" data-placement="bottom"  title="Subject to be taken"  href="<?php echo web_root.'index.php?q=cart';  ?>"> 
-               <i class="fa fa-shopping-cart fa-fw"> </i> <?php echo  isset($cart) ? $cart : "(0)" ; ?> 
-              </a>
-            </li> 
-            <?php
-              }
-            ?> 
-            <li class="dropdown  dropdown-toggle">
-               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  <i class="fa fa-user fa-fw"></i>
-                    <?php echo $singlestudent->FNAME. ' ' . $singlestudent->LNAME ; ?>
-                  <i class="caret"> </i> 
-               </a>
-
-                  <ul class="dropdown-menu dropdown-acnt"> 
-                    <li><a title="Edit" href="<?php echo web_root; ?>index.php?q=profile"  >My Profile</a></li> 
-                    <li> <a  href="logout.php">Logout</a></li>  
-                  </ul> 
-            </li>  
- 
-          <?php  } else{?>
-          <li  class="tooltip-demo"><a data-toggle="tooltip" data-placement="left" title="Enrol Now" href="<?php echo web_root.'index.php?q=enrol'; ?>">Enroll Now!</a></li>
-          <?php } ?>
-
-        </ul>
-      </div>
-
-  </div>
-</div>
-
-
-  <div class="col-md-10 col-md-offset-1 " > 
-
-   <div class="col-md-4">
-    <div class="row "> 
-     <p > 
-        <a  class="title-logo"  href="<?php echo web_root; ?>index.php" title="">
-        <h1 align="center" >University of Caloocan City | North</h1>
-        </a>
-    </p>
-       
-     </div>   
-    </div>
-    <div class="col-md-8">
-     <div class="row ">
-        <?php include 'banner.php'; ?>
-     </div>  
-    </div>
-
-   </div>
-
- <div class="navbar navbar-static-top navbar-magbanua col-md-10    col-md-offset-1 "    role="navigation">
-    
-      <div class="container ">
-        <div class="navbar-header"> 
-            <div class="navbar-menu p" >Menu</div>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bigMenu">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> 
-
-        </div>
+?> 
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="tooltip" data-placement="bottom"  title="Subject to be taken"  href="<?php echo web_root.'index.php?q=cart';  ?>"> 
+ <i class="fa fa-shopping-cart fa-fw"> </i> <?php echo  isset($cart) ? $cart : "(0)" ; ?> 
+</a>
+</li> 
 <?php
-  
-  ?>
-        <div class="collapse navbar-collapse bigMenu"  > 
-          <ul class="nav navbar-nav menu" style="margin-left:-4%;"    > 
+}
+?> 
+<li class="nav-item dropdown">
+ <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" href="#" aria-expanded="false">
+    <i class="fa fa-user fa-fw"></i>
+      <?php echo $singlestudent->FNAME. ' ' . $singlestudent->LNAME ; ?>
+    <i class="caret"> </i> 
+ </a>
 
-            <li class="dropdown dropdown-toggle <?php echo (isset($_GET['q']) && $_GET['q']=='') ? "active" : false;?> ">
-              <a href="<?php echo web_root.'index.php'; ?>">Home</a>
-            </li>
-            <li class="dropdown-toggle <?php echo (isset($_GET['q']) && $_GET['q']=='department') ? "active" : false;?>" >
-              <a href="<?php echo web_root.'index.php?q=department'; ?>">Department</a>
-            </li>
-            
-            <li class="dropdown-toggle <?php echo (isset($_GET['q']) && ($_GET['q']=='enrol' || $_GET['q']=='subject')) ? "active" : false;?>" >
-              <a href="<?php echo web_root.'index.php?q=enrol'; ?>">Enroll Now!</a>
-            </li>
- 
-             <li class="dropdown-toggle <?php echo (isset($_GET['q']) && $_GET['q']=='contact') ? "active" : false;?>">
-              <a href="<?php echo web_root.'index.php?q=contact';  ?>">Contact Us</a>
-            </li> 
-           <li class="dropdown-toggle <?php echo (isset($_GET['q']) && $_GET['q']=='about') ? "active" : false;?> ">
-             <a href="<?php echo web_root.'index.php?q=about';  ?>"> 
-               About Us
-             </a>
-          </li>
-          
-          </ul>           
-        </div> 
-
-    </div> 
-
-  </div> 
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+      <li><a class="dropdown-item" title="Edit" href="<?php echo web_root; ?>index.php?q=profile"  >My Profile</a></li> 
+      <li> <a class="dropdown-item"href="logout.php">Logout</a></li>  
+    </ul> 
+</li>  
 
 
-  
-<div class="col-md-10 col-md-push-1 "> 
+<?php  } else{?>
+<li  class="nav-item"><a class="nav-link active" aria-current="page" data-toggle="tooltip" data-placement="left" title="Enrol Now" href="<?php echo web_root.'index.php?q=enrol'; ?>">Log In</a></li>
+<?php } ?>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="col-md-10 col-md-push-1 "> 
 
    
   <?php  check_message(); ?> 
@@ -251,16 +81,16 @@ $currentyear = date('Y');
                <?php
 
           if($title=='Profile'){
-                echo ' <div class="row">';
+                
 
                 require_once $content;
-                echo ' </div><br/>';
+                
      
               }else{
 ?>
 
 
-            <div class="row">
+            
               <div class="col-lg-8">
                 <div class="panel panel-default">
                   <div class="panel-heading" style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F">
@@ -276,31 +106,35 @@ $currentyear = date('Y');
 
               </div>
           </div> 
+          
            <div class="col-lg-4">
           
                   <?php 
                   require_once "sidebar.php";
+                  
                 
                     ?>
              </div>
         </div>
+        
         <?php }
 
 ?>
        </div>
-            <footer class="panel-footer" style="background-color:#242424; color:#f5f5f5; border: 1px solid #53118F">
-              <p align="left" >&copy; University of Caloocan City | North</p>
-           </footer>
       </div>
-
   </div>  
+  
 
  <div class="modal fade" id="myOrdered">
  </div>
-
-  <script src="<?php echo web_root; ?>jquery/jquery.min.js"></script>
-
-
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="<?php echo web_root; ?>jquery/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo web_root; ?>js/scripts.js"></script>
   <script src="<?php echo web_root; ?>js/bootstrap.min.js"></script>
   <script type="text/javascript" language="javascript" src="<?php echo web_root; ?>input-mask/jquery.inputmask.js"></script> 
   <script type="text/javascript" language="javascript" src="<?php echo web_root; ?>input-mask/jquery.inputmask.date.extensions.js"></script> 
@@ -520,5 +354,6 @@ Session.get("PartialPayment");
    
 }); 
 </script>
-</body>
+
+    </body>
 </html>

@@ -1262,6 +1262,7 @@ pre code {
   }
   .col-lg-4 {
     width: 33.33333333333333%;
+    margin: auto;
   }
   .col-lg-5 {
     width: 41.66666666666667%;
@@ -1274,6 +1275,7 @@ pre code {
   }
   .col-lg-8 {
     width: 66.66666666666666%;
+    margin:auto;
   }
   .col-lg-9 {
     width: 75%;
@@ -4316,7 +4318,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (min-width: 768px) {
   .navbar-nav {
-    float: left;
+    float: right;
     margin: 0;
   }
   .navbar-nav > li {
@@ -5447,6 +5449,7 @@ a.list-group-item:focus {
 }
 
 .panel-footer {
+  margin: 0;
   padding: 10px 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #dddddd;
