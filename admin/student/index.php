@@ -11,24 +11,18 @@ switch ($view) {
 	case 'list' :
 		$content    = 'list.php';		
 		break;
-
 	case 'add' :
 		$content    = 'add.php';		
-		break;
-	case 'grades' :
-		$content    = 'viewgrade.php';		
 		break;
 	case 'addgrade' :
 		$content    = 'addgrade.php';		
 		break;
-
 	case 'edit' :
 		$content    = 'edit.php';		
 		break;
     case 'view' :
 		$content    = 'view.php';		
 		break;
-
 	default :
 		$content    = 'list.php';		
 }
