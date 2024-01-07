@@ -27,7 +27,7 @@
           <div class="panel">            
             <div id="img_profile" class="panel-body">
             <a href="" data-target="#myModal" data-toggle="modal" >
-            <img title="profile image" class="img-hover"   src="<?php echo web_root. 'student/'.  $res->STUDPHOTO; ?>">
+            <img title="profile image" class="img-hover"   src="<?php echo web_root. 'student\student_image\ava.jpg'.  $res->STUDPHOTO; ?>">
             </a>
              </div>
           <ul class="list-group">

@@ -60,7 +60,8 @@
 
 				  		 
 				  		echo '<td align="center" > <a title="View Information" href="index.php?view=view&id='.$result->IDNO.'"  class="btn btn-info btn-xs  ">View <span class="fa fa-info-circle fw-fa"></span></a>
-				  					 </td>';
+				  					 
+						</td>';
 
 				  		echo '</tr>';
 				  	} 

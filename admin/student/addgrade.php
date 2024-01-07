@@ -27,10 +27,15 @@ if($_GET['gid']==''){
          <div class="col-lg-12">
             <h1 class="page-header">Add Grade</h1>
           </div>
-
+          <!-- /.col-lg-12 `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_REQUISITE`, `COURSE_ID`, `AY`, `SEMESTER`-->
        </div> 
                    
+                    <!-- <div class="form-group">
+                    <div class="col-md-8">
+                      <label class="col-md-4 control-label" for=
+                      "user_id">User Id:</label> -->
 
+                      <!-- <div class="col-md-8"> -->
                        <input class="form-control input-sm" id="IDNO" name="IDNO" placeholder=
                             "Account Id" type="Hidden" value="<?php echo $_GET['IDNO']; ?>">
                         
@@ -39,7 +44,9 @@ if($_GET['gid']==''){
 
                             <input class="form-control input-sm" id="GRADEID" name="GRADEID" placeholder=
                             "Account Id" type="Hidden" value="<?php echo $_GET['gid']; ?>">
- 
+                   <!--    </div>
+                    </div>
+                  </div>      -->      
                    <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
@@ -126,7 +133,7 @@ if($_GET['gid']==''){
 
                       <div class="col-md-8">
                        <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                          
+                          <a href="index.php?view=grades&id=<?php echo $_GET['IDNO']; ?>" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>Back</strong></a>
                        </div>
                     </div>
                   </div>
@@ -135,4 +142,4 @@ if($_GET['gid']==''){
         </form>
       
 
-        </div>
+        </div><!--End of container-->

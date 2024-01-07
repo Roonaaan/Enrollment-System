@@ -14,6 +14,9 @@ switch ($view) {
 	case 'add' :
 		$content    = 'add.php';		
 		break;
+		case 'grades' :
+		$content    = 'viewgrade.php';		
+		break;
 	case 'addgrade' :
 		$content    = 'addgrade.php';		
 		break;

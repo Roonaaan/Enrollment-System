@@ -43,6 +43,7 @@ switch ($action) {
 			redirect('index.php?view=add');
 		}else{	
 			$subj = New Subject();
+			// $subj->USERID 		= $_POST['user_id'];
 			$subj->SUBJ_CODE 		= $_POST['SUBJ_CODE'];
 			$subj->SUBJ_DESCRIPTION	= $_POST['SUBJ_DESCRIPTION']; 
 			$subj->UNIT				= $_POST['UNIT'];
@@ -51,6 +52,9 @@ switch ($action) {
 			$subj->AY				= $_POST['AY']; 
 			$subj->SEMESTER			= $_POST['SEMESTER'];
 			$subj->create();
+
+						// $autonum = New Autonumber();  `SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_REQUISITE`, `COURSE_ID`, `AY`, `SEMESTER`
+						// $autonum->auto_update(2);
 
 			message("New [". $_POST['SUBJ_CODE'] ."] created successfully!", "success");
 			redirect("index.php");
@@ -65,6 +69,14 @@ switch ($action) {
 
 	if(isset($_POST['save'])){
 
+// $sql="SELECT * FROM tblstudent WHERE ACC_USERNAME='" . $_POST['USER_NAME'] . "'";
+// $userresult = mysqli_query($mydb->conn,$sql) or die(mysqli_error($mydb->conn));
+// $userStud  = mysqli_fetch_assoc($userresult);
+
+// if($userStud){
+// 	message("Username is already in used.", "error");
+//     redirect(web_root."admin/student/index.php?view=view&id=".$_POST['IDNO']);
+// }else{
 	$age = date_diff(date_create($_POST['BIRTHDATE']),date_create('today'))->y;
  if ($age < 15){
        message("Invalid age. 15 years old and above is allowed.", "error");
@@ -83,7 +95,7 @@ switch ($action) {
 		$stud->RELIGION 			= $_POST['RELIGION'];
 		$stud->CONTACT_NO 			= $_POST['CONTACT'];
 		$stud->HOME_ADD 			= $_POST['PADDRESS'];
-
+		// $stud->ACC_USERNAME 		= $_POST['USER_NAME']; 
 		$stud->update($_POST['IDNO']);
 
 
@@ -106,6 +118,18 @@ switch ($action) {
 	function doDelete(){
 		global $mydb;
 		
+		// if (isset($_POST['selector'])==''){
+		// message("Select the records first before you delete!","info");
+		// redirect('index.php');
+		// }else{
+
+		// $id = $_POST['selector'];
+		// $key = count($id);
+
+		// for($i=0;$i<$key;$i++){
+
+		// 	$subj = New User();
+		// 	$subj->delete($id[$i]);
 
 		
 				$id = 	$_GET['id'];
@@ -115,6 +139,8 @@ switch ($action) {
 			 
 			message("User already Deleted!","info");
 			redirect('index.php');
+		// }
+		// }
 
 		
 	}
@@ -145,6 +171,7 @@ switch ($action) {
 			$studentsubject->OUTCOME 	=  $remark; 
 			$studentsubject->updateSubject($_POST['SUBJ_ID'],$_POST['IDNO']);
 
+// for checking the status
 
 			$subject = New Subject();
   			$res = $subject->single_subject($_POST['SUBJ_ID']);
@@ -158,20 +185,23 @@ switch ($action) {
 			WHERE st.`SUBJ_ID`=s.`SUBJ_ID` AND COURSE_ID=".$res->COURSE_ID." AND s.SEMESTER='".$res->SEMESTER."' AND AVERAGE > 74 AND IDNO=".$_POST['IDNO'];
 			$cur = mysqli_query($mydb->conn,$sql);
 			$stufunitresult = mysqli_fetch_assoc($cur);
-
+// echo $unitresult['Unit1'];
+// echo $stufunitresult['Unit'];
 
 				if ($unitresult['Unit']<>$stufunitresult['Unit']) {
 					$student = New Student(); 
 					$student->student_status ='Irregular'; 
 					$student->update($_POST['IDNO']);
 				}else{
+						# code...
 					$student = New Student(); 
 					$student->student_status ='Regular'; 
 					$student->update($_POST['IDNO']);
 				}
 
 
-
+// end
+// for validating year level
 
 			if ($res->SEMESTER<>'First') {
 				# code...
@@ -190,12 +220,12 @@ switch ($action) {
 
 
 				if ($unitresult['Unit'] < $stufunitresult['Unit']) {
-
+					# code...
 					$course = New Course();
 					$courseresult = $course->single_course($res->COURSE_ID);
 					switch ($courseresult->COURSE_LEVEL) {
 						case 1:
-
+							# code...
 						$sql = "SELECT * FROM `course`  WHERE COURSE_NAME='".$courseresult->COURSE_NAME."' AND COURSE_LEVEL=2"; 
 						$cur = mysqli_query($mydb->conn,$sql);
 						$studcourse = mysqli_fetch_assoc($cur);
@@ -207,6 +237,7 @@ switch ($action) {
 
 							break;
 						case 2:
+							# code...
 
 						$sql = "SELECT * FROM `course`  WHERE COURSE_NAME='".$courseresult->COURSE_NAME."' AND COURSE_LEVEL=3"; 
 						$cur = mysqli_query($mydb->conn,$sql);
@@ -219,7 +250,7 @@ switch ($action) {
 
 							break;
 						case 3:
-
+							# code...
 
 						$sql = "SELECT * FROM `course`  WHERE COURSE_NAME='".$courseresult->COURSE_NAME."' AND COURSE_LEVEL=4"; 
 						$cur = mysqli_query($mydb->conn,$sql);
@@ -233,7 +264,7 @@ switch ($action) {
 							break;
 						
 						default:
-
+							# code...
 							break;
 							$sql = "SELECT * FROM `course`  WHERE COURSE_NAME='".$courseresult->COURSE_NAME."' AND COURSE_LEVEL=1"; 
 							$cur = mysqli_query($mydb->conn,$sql);
@@ -253,6 +284,19 @@ switch ($action) {
 
 
 			}
+
+
+// end
+
+
+
+
+
+
+
+
+
+
 
 			message("[". $_POST['SUBJ_CODE'] ."] has been updated!", "success");
 			 redirect("index.php?view=grades&id=".$_POST['IDNO']);

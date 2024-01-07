@@ -12,7 +12,26 @@
         <link href="<?php echo web_root; ?>css/styles.css" rel="stylesheet" />
         <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo web_root; ?>font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      
 
+        <?php 
+$sem = new Semester();
+$resSem = $sem->single_semester();
+$_SESSION['SEMESTER'] = $resSem->SEMESTER; 
+?>
+ <?php
+if (isset($_SESSION['gvCart'])){
+  if (count($_SESSION['gvCart'])>0) {
+    $cart = '<span class="carttxtactive">('.count($_SESSION['gvCart']) .')</span>';
+  } 
+ 
+} 
+$currentyear = date('Y');
+  $nextyear =  date('Y') + 1;
+  $sy = $currentyear .'-'.$nextyear;
+  $_SESSION['SY'] = $sy;
+ ?>
+ 
     </head>
     <body>
         <!-- Responsive navbar-->
