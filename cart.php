@@ -32,7 +32,7 @@
                       AND  SEMESTER ='".$_SESSION['SEMESTER']."' AND
                       NOT FIND_IN_SET(  `PRE_REQUISITE` , ( 
                       SELECT GROUP_CONCAT(SUBJ_CODE SEPARATOR ',') FROM tblstudent s,grades g,subject sub
-                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID AND AVE <=74.5 
+                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID 
                       AND  s.IDNO =" .$_SESSION['IDNO'].")
                       )";
 
