@@ -7,7 +7,7 @@ require_once("../../include/initialize.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Green Valley Foundation College INC.  </title>
+  <title>University of Caloocan - North</title>
   
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link href="<?php echo web_root; ?>admin/css/bootstrap.min.css" rel="stylesheet">

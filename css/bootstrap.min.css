@@ -1823,7 +1823,6 @@ fieldset[disabled] .checkbox-inline {
 
 select.input-sm {
   height: 30px;
-  line-height: 30px;
 }
 
 textarea.input-sm {
@@ -4250,7 +4249,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
-    margin-left: -15px;
+    margin-left: -40vh;
   }
 }
 
