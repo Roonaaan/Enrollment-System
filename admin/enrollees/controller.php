@@ -53,16 +53,6 @@ $_SESSION['SY'] = $sy;
  			while ($row = mysqli_fetch_array($resSubject)) {
 
  					# code...
- 					$studentsubject = New StudentSubjects();
-					$studentsubject->IDNO 		= $_GET['IDNO'];
-					$studentsubject->SUBJ_ID	= $row['SUBJ_ID'];
-					$studentsubject->LEVEL 		= 1;
-					$studentsubject->SEMESTER 	= $_SESSION['SEMESTER'];
-					$studentsubject->SY 		= $_SESSION['SY'];
-					$studentsubject->ATTEMP 	= 1; 
-					$studentsubject->create();
-
-
 					$grade = New Grade();
 					$grade->IDNO = $_GET['IDNO'];
 					$grade->SUBJ_ID	 = $row['SUBJ_ID'];

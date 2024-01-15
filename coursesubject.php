@@ -24,7 +24,7 @@ $totunit =0;
                       AND  SEMESTER ='".$_SESSION['SEMESTER']."' AND
                       NOT FIND_IN_SET(  `PRE_REQUISITE` , ( 
                       SELECT GROUP_CONCAT(SUBJ_CODE SEPARATOR ',') FROM tblstudent s,grades g,subject sub
-                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID AND AVE <=74.5 
+                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID 
                       AND  s.IDNO =" .$_SESSION['IDNO'].")
                       )";
 
@@ -105,7 +105,7 @@ $totunit =0;
 
            
 
-            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME.'-'.$_SESSION['COURSELEVEL'];
+            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME;
            
             ?></b><br>
           <b>Semester : <?php echo $_SESSION['SEMESTER']; ?></b> <br/>
@@ -152,7 +152,7 @@ $totunit =0;
                       AND  SEMESTER ='".$_SESSION['SEMESTER']."' AND
                       NOT FIND_IN_SET(  `PRE_REQUISITE` , ( 
                       SELECT GROUP_CONCAT(SUBJ_CODE SEPARATOR ',') FROM tblstudent s,grades g,subject sub
-                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID AND AVE <=74.5 
+                      WHERE s.IDNO=g.IDNO AND g.SUBJ_ID=sub.SUBJ_ID
                       AND  s.IDNO =" .$_SESSION['IDNO'].")
                       )";
 
