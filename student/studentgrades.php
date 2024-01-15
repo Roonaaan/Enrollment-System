@@ -35,8 +35,8 @@
 				  	// `GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`,
 				  	//  `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`
 
-						$sql = "SELECT * FROM `tblstudent` st, `grades` g,`subject` s ,studentsubjects ss
-						WHERE st.`IDNO`=g.`IDNO` and g.`SUBJ_ID`=s.`SUBJ_ID`  and s.`SUBJ_ID`=ss.`SUBJ_ID` AND g.`IDNO`=ss.`IDNO`  AND g.`REMARKS` NOT IN ('Drop') and st.`IDNO`=".$_SESSION['IDNO'];
+						$sql = "SELECT DISTINCT * FROM `tblstudent` st,`subject` s ,studentsubjects ss
+						WHERE st.`IDNO`=ss.`IDNO` and ss.`SUBJ_ID`=s.`SUBJ_ID` and st.`IDNO`=".$_SESSION['IDNO'];
 				  		$mydb->setQuery($sql);
 
 				  		$cur = $mydb->loadResultList();

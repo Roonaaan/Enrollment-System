@@ -238,7 +238,7 @@ $totunit =0;
 
            $subtot = '';
            $perunit = 0;
-           $entrancefee = 0;
+           $entrancefee = 320;
            $totsem = 0;
 
            $subtot = $totunit * $perunit;
@@ -285,7 +285,7 @@ $totunit =0;
               $student = New Student();
               $result = $student->single_student($_SESSION['IDNO']);
 
-              if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
+              if ($result->student_status=='New' || $result->student_status=='Irregular' || $result->student_status=='Regular') { 
               ?>
               <tr>
                 <th>Partial Payment:</th>
@@ -318,14 +318,14 @@ $totunit =0;
       <div class="col-xs-3">
          </form>
          <?php
-          if ($result->student_status=='New') { 
+          if ($result->student_status=='New' || $result->student_status=='Irregular' || $result->student_status=='Regular') { 
          ?>
           <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
            <input type="hidden" value="sb-01j8u28917912@business.example.com" name="business">
           <!-- Specify a Buy Now button. -->
           <input type="hidden" value="_xclick" name="cmd">
           <input type="hidden" value="Partial Payments" name="item_name">
-          <input type="hidden" id="partial" value="200" name="amount">
+          <input type="hidden" id="partial" value="320" name="amount">
           <input type="hidden" name="currency_code" value="PHP">
           <input type="hidden" name="return" value="http://localhost<?php echo web_root ?>index.php?q=payment">
           <input type="hidden" name="cancel_return" value="http://localhost<?php echo web_root ?>index.php">

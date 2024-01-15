@@ -359,12 +359,12 @@ Session.set("PartialPayment", partial);
 Session.get("PartialPayment");
 
 
- if (partial >= 1600) {
+ if (partial >= 320) {
   return true;
  }else{
 
 
-  alert("invalid payment. Minimum of 1600 pesos in-order to enroll.");
+  alert("invalid payment. Minimum of 320 pesos in-order to enroll.");
   return false;
  };
 
