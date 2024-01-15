@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2023 at 02:19 PM
+-- Generation Time: Jan 15, 2024 at 02:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -86,22 +86,6 @@ CREATE TABLE `grades` (
   `SEMS` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `grades`
---
-
-INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `REMARKS`, `COMMENT`, `SEMS`) VALUES
-(6, 1000000210, 1, 0, 0, 0, 0, 0, '', '', ''),
-(7, 1000000210, 2, 0, 0, 0, 0, 0, '', '', ''),
-(8, 1000000210, 3, 0, 0, 0, 0, 0, '', '', ''),
-(9, 1000000210, 4, 0, 0, 0, 0, 0, '', '', ''),
-(10, 1000000210, 5, 0, 0, 0, 0, 0, '', '', ''),
-(11, 1000000210, 1, 0, 0, 0, 0, 0, '', '', 'First'),
-(12, 1000000210, 2, 0, 0, 0, 0, 0, '', '', 'First'),
-(13, 1000000210, 3, 0, 0, 0, 0, 0, '', '', 'First'),
-(14, 1000000210, 4, 0, 0, 0, 0, 0, '', '', 'First'),
-(15, 1000000210, 5, 0, 0, 0, 0, 0, '', '', 'First');
-
 -- --------------------------------------------------------
 
 --
@@ -125,10 +109,38 @@ CREATE TABLE `schoolyr` (
 --
 
 INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY`, `DATE_RESERVED`, `DATE_ENROLLED`, `STATUS`) VALUES
-(1, '2023-2024', 'First', 21, 1000000208, 'ENROLLED', '2023-12-10 00:00:00', '2023-12-10 00:00:00', 'New'),
-(2, '2023-2024', 'First', 21, 1000000209, 'ENROLLED', '2023-12-15 00:00:00', '2023-12-15 00:00:00', 'New'),
-(4, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-25 00:00:00', '2023-12-25 00:00:00', 'New'),
-(5, '2023-2024', 'First', 21, 1000000210, 'ENROLLED', '2023-12-26 00:00:00', '2023-12-26 00:00:00', 'Old');
+(6, '2024-2025', 'Second', 21, 1000000211, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'New'),
+(7, '2024-2025', 'First', 21, 1000000212, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'New'),
+(8, '2024-2025', 'First', 21, 1000000212, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'Old'),
+(9, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'New'),
+(10, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'Old'),
+(11, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-12 00:00:00', '2024-01-12 00:00:00', 'Old'),
+(12, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(13, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(14, '2024-2025', 'First', 21, 1000000214, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(15, '2024-2025', 'First', 21, 1000000220, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'New'),
+(16, '2024-2025', 'First', 21, 1000000220, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(17, '2024-2025', 'First', 21, 1000000220, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(18, '2024-2025', 'First', 21, 1000000223, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'New'),
+(19, '2024-2025', 'First', 21, 1000000223, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(20, '2024-2025', 'First', 21, 1000000225, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'New'),
+(21, '2024-2025', 'First', 21, 1000000226, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'New'),
+(22, '2024-2025', 'First', 21, 1000000226, 'ENROLLED', '2024-01-14 00:00:00', '2024-01-14 00:00:00', 'Old'),
+(23, '2024-2025', 'First', 21, 1000000228, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'New'),
+(24, '2024-2025', 'First', 21, 1000000228, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(25, '2024-2025', 'First', 21, 1000000228, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(26, '2024-2025', 'First', 21, 1000000228, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(27, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'New'),
+(28, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(29, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(30, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(31, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(32, '2024-2025', 'First', 21, 1000000232, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(33, '2024-2025', 'First', 21, 1000000238, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'New'),
+(34, '2024-2025', 'First', 21, 1000000238, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(35, '2024-2025', 'First', 21, 1000000238, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old'),
+(36, '2024-2025', 'First', 21, 1000000241, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'New'),
+(37, '2024-2025', 'First', 21, 1000000241, 'ENROLLED', '2024-01-15 00:00:00', '2024-01-15 00:00:00', 'Old');
 
 -- --------------------------------------------------------
 
@@ -147,22 +159,6 @@ CREATE TABLE `studentsubjects` (
   `AVERAGE` double NOT NULL,
   `OUTCOME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `studentsubjects`
---
-
-INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMESTER`, `SY`, `ATTEMP`, `AVERAGE`, `OUTCOME`) VALUES
-(1546, 1000000210, 1, 1, 'First', '2023-2024', 1, 0, ''),
-(1547, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
-(1548, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
-(1549, 1000000210, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1550, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, ''),
-(1551, 1000000210, 1, 1, 'First', '2023-2024', 1, 0, ''),
-(1552, 1000000210, 2, 1, 'First', '2023-2024', 1, 0, ''),
-(1553, 1000000210, 3, 1, 'First', '2023-2024', 1, 0, ''),
-(1554, 1000000210, 4, 1, 'First', '2023-2024', 1, 0, ''),
-(1555, 1000000210, 5, 1, 'First', '2023-2024', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -191,8 +187,7 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (2, 'CS 116', 'Algorithm and Complexity', 3, 'None', 21, '', 'First', 0),
 (3, 'CS 118', 'CS Thesis Writing 1', 5, 'None', 21, '', 'First', 0),
 (4, 'CSE 103', 'Computational Science', 3, 'None', 21, '', 'First', 0),
-(5, 'CSE 104', 'Intelligent Systems', 3, 'None', 21, '', 'First', 0),
-(347, 'CCS 119', 'Capstone Project and Research 1', 5, 'None', 22, '', 'First', 0);
+(5, 'CSE 104', 'Intelligent Systems', 3, 'None', 21, '', 'First', 0);
 
 -- --------------------------------------------------------
 
@@ -217,7 +212,7 @@ CREATE TABLE `tblauto` (
 INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
 (1, 'Asset', 'Asset', 'ASitem', 0, 3, 1),
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 1000000, 211, 1),
+(3, 'SIDNO', 'IDNO', '2015', 1000000, 243, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
 
 -- --------------------------------------------------------
@@ -239,167 +234,60 @@ CREATE TABLE `tbllogs` (
 --
 
 INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) VALUES
-(339, 1, '2023-11-30 05:19:36', 'Administrator', 'Logged out'),
-(340, 1, '2023-11-30 05:19:38', 'Administrator', 'Logged in'),
-(341, 1, '2023-11-30 05:22:56', 'Administrator', 'Logged out'),
-(342, 1, '2023-11-30 05:22:59', 'Administrator', 'Logged in'),
-(343, 1, '2023-11-30 05:24:06', 'Administrator', 'Logged out'),
-(344, 1, '2023-11-30 05:24:08', 'Administrator', 'Logged in'),
-(345, 1, '2023-11-30 05:24:17', 'Administrator', 'Logged out'),
-(346, 1, '2023-11-30 05:24:19', 'Administrator', 'Logged in'),
-(347, 1, '2023-11-30 05:36:22', 'Administrator', 'Logged out'),
-(348, 1, '2023-11-30 05:37:18', 'Administrator', 'Logged in'),
-(349, 1, '2023-11-30 05:37:43', 'Administrator', 'Logged out'),
-(350, 2, '2023-11-30 05:37:47', 'Administrator', 'Logged in'),
-(351, 2, '2023-11-30 05:37:49', 'Administrator', 'Logged out'),
-(352, 2, '2023-11-30 05:38:14', 'Administrator', 'Logged in'),
-(353, 2, '2023-11-30 05:43:18', 'Administrator', 'Logged out'),
-(354, 1, '2023-11-30 05:43:20', 'Administrator', 'Logged in'),
-(355, 1, '2023-11-30 05:45:32', 'Administrator', 'Logged out'),
-(356, 1, '2023-11-30 05:46:18', 'Administrator', 'Logged in'),
-(357, 1, '2023-11-30 05:56:55', 'Administrator', 'Logged out'),
-(358, 1, '2023-11-30 05:56:59', 'Administrator', 'Logged in'),
-(359, 1, '2023-11-30 05:58:07', 'Administrator', 'Logged out'),
-(360, 1, '2023-11-30 06:04:37', 'Administrator', 'Logged in'),
-(361, 1, '2023-11-30 06:04:42', 'Administrator', 'Logged out'),
-(362, 1, '2023-11-30 06:25:17', 'Administrator', 'Logged in'),
-(363, 1, '2023-11-30 06:30:17', 'Administrator', 'Logged in'),
-(364, 1, '2023-11-30 06:30:20', 'Administrator', 'Logged out'),
-(365, 2, '2023-11-30 06:30:24', 'Administrator', 'Logged in'),
-(366, 2, '2023-11-30 06:30:30', 'Administrator', 'Logged out'),
-(367, 1, '2023-11-30 06:30:35', 'Administrator', 'Logged in'),
-(368, 1, '2023-11-30 06:42:48', 'Administrator', 'Logged out'),
-(369, 1, '2023-11-30 06:42:50', 'Administrator', 'Logged in'),
-(370, 1, '2023-11-30 06:43:53', 'Administrator', 'Logged out'),
-(371, 1, '2023-11-30 06:43:55', 'Administrator', 'Logged in'),
-(372, 1, '2023-11-30 06:45:08', 'Administrator', 'Logged out'),
-(373, 1, '2023-11-30 06:45:10', 'Administrator', 'Logged in'),
-(374, 1, '2023-11-30 11:28:37', 'Administrator', 'Logged in'),
-(375, 1, '2023-11-30 11:28:40', 'Administrator', 'Logged out'),
-(376, 1, '2023-11-30 11:28:48', 'Administrator', 'Logged in'),
-(377, 1, '2023-11-30 11:29:02', 'Administrator', 'Logged out'),
-(378, 1, '2023-11-30 11:29:04', 'Administrator', 'Logged in'),
-(379, 1, '2023-11-30 11:50:16', 'Administrator', 'Logged out'),
-(380, 1, '2023-11-30 11:50:19', 'Administrator', 'Logged in'),
-(381, 1, '2023-11-30 11:52:56', 'Administrator', 'Logged out'),
-(382, 1, '2023-11-30 11:55:33', 'Administrator', 'Logged in'),
-(383, 1000000202, '2023-11-30 11:59:31', 'Student', 'Logged out'),
-(384, 1000000202, '2023-11-30 12:00:49', 'Student', 'Logged in'),
-(385, 1000000202, '2023-11-30 12:11:29', 'Student', 'Logged out'),
-(386, 1000000202, '2023-11-30 12:20:25', 'Student', 'Logged in'),
-(387, 1000000202, '2023-11-30 12:21:36', 'Student', 'Logged out'),
-(388, 1000000202, '2023-11-30 12:25:17', 'Student', 'Logged in'),
-(389, 1000000202, '2023-11-30 12:26:52', 'Student', 'Logged out'),
-(390, 1, '2023-11-30 12:28:42', 'Administrator', 'Logged out'),
-(391, 1, '2023-11-30 12:28:45', 'Registrar', 'Logged in'),
-(392, 1000000202, '2023-11-30 15:12:28', 'Student', 'Logged in'),
-(393, 1, '2023-11-30 15:15:13', 'Registrar', 'Logged in'),
-(394, 1, '2023-11-30 15:15:33', 'Registrar', 'Logged out'),
-(395, 1, '2023-11-30 15:15:36', 'Administrator', 'Logged in'),
-(396, 1, '2023-11-30 15:16:14', 'Administrator', 'Logged out'),
-(397, 1, '2023-11-30 15:24:51', 'Administrator', 'Logged in'),
-(398, 1, '2023-11-30 15:55:49', 'Administrator', 'Logged out'),
-(399, 1, '2023-11-30 16:02:56', 'Administrator', 'Logged in'),
-(400, 1000000202, '2023-11-30 16:03:05', 'Student', 'Logged out'),
-(401, 1000000203, '2023-12-01 05:35:39', 'Student', 'Logged in'),
-(402, 1, '2023-12-01 05:36:50', 'Administrator', 'Logged in'),
-(403, 1000000203, '2023-12-01 05:57:23', 'Student', 'Logged out'),
-(404, 1, '2023-12-01 17:14:39', 'Administrator', 'Logged in'),
-(405, 1, '2023-12-02 15:01:13', 'Administrator', 'Logged in'),
-(406, 1, '2023-12-02 15:03:14', 'Administrator', 'Logged out'),
-(407, 1, '2023-12-02 15:03:16', 'Administrator', 'Logged in'),
-(408, 1, '2023-12-02 15:11:24', 'Administrator', 'Logged out'),
-(409, 1, '2023-12-02 15:11:26', 'Administrator', 'Logged in'),
-(410, 1, '2023-12-02 15:11:46', 'Administrator', 'Logged out'),
-(411, 1, '2023-12-02 15:11:48', 'Administrator', 'Logged in'),
-(412, 1, '2023-12-02 15:12:09', 'Administrator', 'Logged out'),
-(413, 1, '2023-12-02 15:12:11', 'Administrator', 'Logged in'),
-(414, 1, '2023-12-02 15:25:25', 'Administrator', 'Logged out'),
-(415, 1, '2023-12-02 15:25:27', 'Administrator', 'Logged in'),
-(416, 1, '2023-12-02 15:31:21', 'Administrator', 'Logged out'),
-(417, 1000000204, '2023-12-02 15:31:31', 'Student', 'Logged in'),
-(418, 1000000204, '2023-12-02 15:31:54', 'Student', 'Logged out'),
-(419, 1000000204, '2023-12-02 15:33:27', 'Student', 'Logged in'),
-(420, 1000000204, '2023-12-02 15:33:58', 'Student', 'Logged out'),
-(421, 1, '2023-12-02 15:37:21', 'Administrator', 'Logged in'),
-(422, 1000000205, '2023-12-02 15:49:02', 'Student', 'Logged out'),
-(423, 1000000205, '2023-12-02 15:49:04', 'Student', 'Logged in'),
-(424, 1000000205, '2023-12-02 15:49:44', 'Student', 'Logged out'),
-(425, 1000000205, '2023-12-02 15:49:47', 'Student', 'Logged in'),
-(426, 1, '2023-12-03 04:31:28', 'Administrator', 'Logged in'),
-(427, 1000000205, '2023-12-03 04:37:48', 'Student', 'Logged in'),
-(428, 1000000205, '2023-12-03 04:37:56', 'Student', 'Logged out'),
-(429, 1000000205, '2023-12-03 04:37:59', 'Student', 'Logged in'),
-(430, 1000000205, '2023-12-03 04:38:10', 'Student', 'Logged out'),
-(431, 1000000205, '2023-12-03 04:38:12', 'Student', 'Logged in'),
-(432, 1000000205, '2023-12-03 04:38:51', 'Student', 'Logged out'),
-(433, 1000000206, '2023-12-03 04:45:18', 'Student', 'Logged in'),
-(434, 1000000206, '2023-12-03 14:17:28', 'Student', 'Logged in'),
-(435, 1, '2023-12-03 15:12:12', 'Administrator', 'Logged in'),
-(436, 1, '2023-12-04 04:27:13', 'Administrator', 'Logged in'),
-(437, 1, '2023-12-04 04:38:01', 'Administrator', 'Logged in'),
-(438, 1000000205, '2023-12-04 04:44:31', 'Student', 'Logged in'),
-(439, 1000000205, '2023-12-04 04:46:10', 'Student', 'Logged out'),
-(440, 1, '2023-12-04 06:57:29', 'Administrator', 'Logged in'),
-(441, 1, '2023-12-04 06:59:01', 'Administrator', 'Logged out'),
-(442, 1, '2023-12-04 07:06:09', 'Administrator', 'Logged in'),
-(443, 1, '2023-12-04 11:57:09', 'Administrator', 'Logged in'),
-(444, 1000000205, '2023-12-04 12:24:46', 'Student', 'Logged in'),
-(445, 1000000205, '2023-12-04 12:27:33', 'Student', 'Logged out'),
-(446, 1000000205, '2023-12-04 13:09:23', 'Student', 'Logged in'),
-(447, 1000000205, '2023-12-04 13:19:29', 'Student', 'Logged out'),
-(448, 1, '2023-12-10 01:39:09', 'Administrator', 'Logged in'),
-(449, 1, '2023-12-10 01:39:51', 'Administrator', 'Logged out'),
-(450, 1, '2023-12-10 01:40:58', 'Administrator', 'Logged in'),
-(451, 1, '2023-12-10 01:41:00', 'Administrator', 'Logged out'),
-(452, 1, '2023-12-10 01:45:26', 'Administrator', 'Logged in'),
-(453, 1, '2023-12-10 03:31:27', 'Administrator', 'Logged in'),
-(454, 1000000206, '2023-12-10 05:12:13', 'Student', 'Logged in'),
-(455, 1, '2023-12-10 05:12:24', 'Administrator', 'Logged in'),
-(456, 1000000206, '2023-12-10 05:12:33', 'Student', 'Logged out'),
-(457, 1, '2023-12-10 05:19:25', 'Administrator', 'Logged in'),
-(458, 1000000208, '2023-12-15 09:32:15', 'Student', 'Logged in'),
-(459, 1000000208, '2023-12-15 12:19:00', 'Student', 'Logged in'),
-(460, 1, '2023-12-15 15:26:29', 'Administrator', 'Logged in'),
-(461, 1000000208, '2023-12-15 16:38:12', 'Student', 'Logged in'),
-(462, 1000000208, '2023-12-15 16:49:01', 'Student', 'Logged out'),
-(463, 1000000208, '2023-12-15 16:49:11', 'Student', 'Logged in'),
-(464, 1000000208, '2023-12-15 16:50:40', 'Student', 'Logged out'),
-(465, 1000000209, '2023-12-16 13:25:54', 'Student', 'Logged in'),
-(466, 1000000202, '2023-12-16 13:32:06', 'Student', 'Logged out'),
-(467, 1000000209, '2023-12-16 13:32:07', 'Student', 'Logged in'),
-(468, 1000000209, '2023-12-23 11:22:26', 'Student', 'Logged in'),
-(469, 1, '2023-12-25 14:38:07', 'Administrator', 'Logged in'),
-(470, 1, '2023-12-25 14:38:42', 'Administrator', 'Logged out'),
-(471, 1, '2023-12-25 14:40:43', 'Administrator', 'Logged in'),
-(472, 1000000209, '2023-12-25 15:04:27', 'Student', 'Logged in'),
-(473, 1000000209, '2023-12-25 15:43:00', 'Student', 'Logged out'),
-(474, 1000000210, '2023-12-25 15:50:22', 'Student', 'Logged in'),
-(475, 1000000210, '2023-12-26 08:33:38', 'Student', 'Logged in'),
-(476, 1000000210, '2023-12-26 08:42:17', 'Student', 'Logged in'),
-(477, 1000000210, '2023-12-26 09:22:41', 'Student', 'Logged in'),
-(478, 1000000210, '2023-12-26 09:24:50', 'Student', 'Logged in'),
-(479, 1000000210, '2023-12-26 12:35:02', 'Student', 'Logged in'),
-(480, 1, '2023-12-26 13:15:20', 'Administrator', 'Logged in'),
-(481, 1000000210, '2023-12-26 13:18:33', 'Student', 'Logged out'),
-(482, 1000000210, '2023-12-26 14:16:44', 'Student', 'Logged in'),
-(483, 1000000210, '2023-12-26 14:16:49', 'Student', 'Logged out'),
-(484, 1, '2023-12-26 14:25:44', 'Administrator', 'Logged in'),
-(485, 1000000210, '2023-12-27 08:50:02', 'Student', 'Logged in'),
-(486, 1000000210, '2023-12-27 08:52:43', 'Student', 'Logged out'),
-(487, 1000000210, '2023-12-27 08:52:48', 'Student', 'Logged in'),
-(488, 1000000210, '2023-12-27 09:09:33', 'Student', 'Logged out'),
-(489, 1000000210, '2023-12-27 09:09:36', 'Student', 'Logged in'),
-(490, 1000000210, '2023-12-27 13:36:55', 'Student', 'Logged in'),
-(491, 1000000210, '2023-12-27 13:39:53', 'Student', 'Logged out'),
-(492, 1, '2023-12-27 13:41:18', 'Administrator', 'Logged in'),
-(493, 1000000210, '2023-12-27 13:43:41', 'Student', 'Logged out'),
-(494, 1, '2023-12-28 12:35:13', 'Administrator', 'Logged in'),
-(495, 1, '2023-12-28 12:53:13', 'Administrator', 'Logged in'),
-(496, 1, '2023-12-28 16:43:36', 'Administrator', 'Logged in'),
-(497, 1000000210, '2023-12-28 17:01:36', 'Student', 'Logged in'),
-(498, 1000000210, '2023-12-28 17:20:46', 'Student', 'Logged out'),
-(499, 1, '2023-12-29 13:33:59', 'Administrator', 'Logged in');
+(500, 1, '2024-01-12 12:49:49', 'Administrator', 'Logged in'),
+(501, 1000000211, '2024-01-12 13:03:17', 'Student', 'Logged out'),
+(502, 1, '2024-01-12 17:17:09', 'Administrator', 'Logged in'),
+(503, 1000000202, '2024-01-12 17:37:40', 'Student', 'Logged out'),
+(504, 1000000214, '2024-01-12 17:37:42', 'Student', 'Logged in'),
+(505, 1000000202, '2024-01-12 17:55:02', 'Student', 'Logged out'),
+(506, 1000000214, '2024-01-12 17:55:04', 'Student', 'Logged in'),
+(507, 1000000214, '2024-01-12 17:55:14', 'Student', 'Logged out'),
+(508, 1000000214, '2024-01-12 17:55:17', 'Student', 'Logged in'),
+(509, 1000000214, '2024-01-12 17:59:55', 'Student', 'Logged out'),
+(510, 1000000214, '2024-01-12 17:59:57', 'Student', 'Logged in'),
+(511, 1000000214, '2024-01-14 12:15:35', 'Student', 'Logged in'),
+(512, 1000000202, '2024-01-14 12:58:50', 'Student', 'Logged out'),
+(513, 1000000214, '2024-01-14 12:58:52', 'Student', 'Logged in'),
+(514, 1000000214, '2024-01-14 15:18:45', 'Student', 'Logged in'),
+(515, 1000000202, '2024-01-14 15:24:56', 'Student', 'Logged out'),
+(516, 1000000214, '2024-01-14 15:24:59', 'Student', 'Logged in'),
+(517, 1000000214, '2024-01-14 15:41:33', 'Student', 'Logged out'),
+(518, 1, '2024-01-14 15:42:58', 'Administrator', 'Logged in'),
+(519, 1000000202, '2024-01-14 15:48:38', 'Student', 'Logged out'),
+(520, 1000000220, '2024-01-14 15:48:41', 'Student', 'Logged in'),
+(521, 1000000202, '2024-01-14 15:54:28', 'Student', 'Logged out'),
+(522, 1000000220, '2024-01-14 15:54:31', 'Student', 'Logged in'),
+(523, 1000000220, '2024-01-14 15:57:25', 'Student', 'Logged out'),
+(524, 1000000220, '2024-01-14 15:58:19', 'Student', 'Logged in'),
+(525, 1000000220, '2024-01-14 15:58:49', 'Student', 'Logged out'),
+(526, 1000000223, '2024-01-14 16:08:48', 'Student', 'Logged out'),
+(527, 1000000225, '2024-01-14 16:13:09', 'Student', 'Logged out'),
+(528, 1000000225, '2024-01-14 16:13:11', 'Student', 'Logged in'),
+(529, 1000000225, '2024-01-14 16:15:11', 'Student', 'Logged out'),
+(530, 1000000225, '2024-01-14 16:15:13', 'Student', 'Logged in'),
+(531, 1000000225, '2024-01-14 16:15:47', 'Student', 'Logged out'),
+(532, 1000000225, '2024-01-14 16:17:08', 'Student', 'Logged in'),
+(533, 1000000225, '2024-01-14 16:18:03', 'Student', 'Logged out'),
+(534, 1000000226, '2024-01-14 16:27:45', 'Student', 'Logged out'),
+(535, 1000000228, '2024-01-14 19:29:53', 'Student', 'Logged in'),
+(536, 1000000228, '2024-01-14 19:30:27', 'Student', 'Logged out'),
+(537, 1, '2024-01-14 19:30:40', 'Administrator', 'Logged in'),
+(538, 1000000228, '2024-01-15 12:41:28', 'Student', 'Logged in'),
+(539, 1, '2024-01-15 12:47:54', 'Administrator', 'Logged in'),
+(540, 1000000202, '2024-01-15 13:00:46', 'Student', 'Logged out'),
+(541, 1000000228, '2024-01-15 13:00:49', 'Student', 'Logged in'),
+(542, 1000000228, '2024-01-15 13:15:54', 'Student', 'Logged out'),
+(543, 1000000232, '2024-01-15 13:53:04', 'Student', 'Logged out'),
+(544, 1000000232, '2024-01-15 13:53:07', 'Student', 'Logged in'),
+(545, 1000000232, '2024-01-15 13:54:17', 'Student', 'Logged out'),
+(546, 1000000232, '2024-01-15 13:54:23', 'Student', 'Logged in'),
+(547, 1000000232, '2024-01-15 13:54:51', 'Student', 'Logged out'),
+(548, 1000000232, '2024-01-15 13:54:53', 'Student', 'Logged in'),
+(549, 1000000232, '2024-01-15 13:55:35', 'Student', 'Logged out'),
+(550, 1000000238, '2024-01-15 13:58:03', 'Student', 'Logged out'),
+(551, 1000000238, '2024-01-15 13:58:05', 'Student', 'Logged in'),
+(552, 1000000238, '2024-01-15 14:15:43', 'Student', 'Logged out'),
+(553, 1000000241, '2024-01-15 14:26:59', 'Student', 'Logged out');
 
 -- --------------------------------------------------------
 
@@ -425,7 +313,21 @@ CREATE TABLE `tblpayment` (
 --
 
 INSERT INTO `tblpayment` (`PAYMENTID`, `IDNO`, `COURSE_ID`, `COURSE_LEVEL`, `SEMESTER`, `ENTRANCEFEE`, `TOTALUNITS`, `TOTALSEMESTER`, `PARTIALPAYMENT`, `BALANCE`) VALUES
-(45, 1000000210, 21, 1, 'First', 0, 0, 0, 0, 0);
+(52, 1000000220, 21, 1, 'First', 0, 0, 0, 0, 0),
+(53, 1000000220, 21, 1, 'First', 0, 0, 0, 0, 0),
+(54, 1000000223, 21, 1, 'First', 0, 0, 0, 0, 0),
+(55, 1000000226, 21, 1, 'First', 0, 0, 0, 0, 0),
+(56, 1000000228, 21, 1, 'First', 320, 0, 320, 0, 0),
+(57, 1000000228, 21, 1, 'First', 320, 0, 320, 0, 0),
+(58, 1000000228, 21, 1, 'First', 320, 0, 320, 0, 0),
+(59, 1000000232, 21, 1, 'First', 320, 0, 320, 0, 0),
+(60, 1000000232, 21, 1, 'First', 320, 0, 320, 0, 0),
+(61, 1000000232, 21, 1, 'First', 320, 0, 320, 0, 0),
+(62, 1000000232, 21, 1, 'First', 320, 0, 320, 0, 0),
+(63, 1000000232, 21, 1, 'First', 320, 0, 320, 0, 0),
+(64, 1000000238, 21, 1, 'First', 320, 0, 320, 0, 0),
+(65, 1000000238, 21, 1, 'First', 320, 0, 320, 0, 0),
+(66, 1000000241, 21, 1, 'First', 320, 0, 320, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -444,8 +346,8 @@ CREATE TABLE `tblsemester` (
 --
 
 INSERT INTO `tblsemester` (`SEMID`, `SEMESTER`, `SETSEM`) VALUES
-(1, 'First', 0),
-(2, 'Second', 1);
+(1, 'First', 1),
+(2, 'Second', 0);
 
 -- --------------------------------------------------------
 
@@ -460,13 +362,6 @@ CREATE TABLE `tblstuddetails` (
   `GCONTACT` varchar(40) NOT NULL,
   `IDNO` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tblstuddetails`
---
-
-INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
-(1, 'Lucky Dancel', '', '123', 1000000210);
 
 -- --------------------------------------------------------
 
@@ -500,13 +395,6 @@ CREATE TABLE `tblstudent` (
   `SYEAR` varchar(30) NOT NULL,
   `NewEnrollees` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tblstudent`
---
-
-INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
-(1, 1000000210, 'John Ronan', 'Ramos', 'C', 'Male', '2001-11-08', 'Camarin Caloocan City', 'Single', 0, 'Filipino', 'Catholic', '09091697716', '#65 Block 30 Lot 149 Mangga St. Camarin Caloocan City', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'New', 1, 1, 21, '', 'First', '', 0);
 
 -- --------------------------------------------------------
 
@@ -624,19 +512,19 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `schoolyr`
 --
 ALTER TABLE `schoolyr`
-  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1556;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1706;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -648,13 +536,13 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=554;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
 --
 ALTER TABLE `tblpayment`
-  MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `tblsemester`
@@ -666,13 +554,13 @@ ALTER TABLE `tblsemester`
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `useraccounts`
