@@ -289,7 +289,7 @@ $totunit =0;
               ?>
               <tr>
                 <th>Partial Payment:</th>
-                <td><input type="text" id="PartialPayment" autocompete="false" name="PartialPayment" required="true"></td>
+                <td> &#8369 <input type="text" id="PartialPayment" autocompete="false" name="PartialPayment" required="true"></td>
               </tr>
               <tr>
                 <th>Balance:</th>
