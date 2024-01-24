@@ -38,20 +38,6 @@
                     </div>
                   </div>
 
-
-                  <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "COURSE_MAJOR">Major:</label>
-
-                      <div class="col-md-8">
-                        
-                         <input class="form-control input-sm" id="COURSE_MAJOR" name="COURSE_MAJOR" placeholder=
-                            "Major" type="text" value="<?php echo $singlecourse->COURSE_MAJOR; ?>" required>
-                      </div>
-                    </div>
-                  </div>
-
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=

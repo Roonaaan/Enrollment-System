@@ -23,8 +23,8 @@
 				  	<tr>
 				  		<th>Course Id</th>
 				  		<th>Course</th>
+							<th>Level</th>
 				  		<th>Description</th>
-				  		<th>Department</th>
 				  		<th width="10%" >Action</th>
 				 
 				  	</tr>	
@@ -33,22 +33,44 @@
 				  <tbody>
 				  	<?php 
 
-				  		
+				  		// $mydb->setQuery("SELECT * 
+								// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
 				  		$mydb->setQuery("SELECT * 
 											FROM  `course` c, `department` d WHERE c.DEPT_ID=d.DEPT_ID");
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {
 
-							
+							switch ($result->COURSE_LEVEL) {
+								case 1:
+									# code...
+								$Level ='First Year';
+									break;
+								case 2:
+									# code...
+								$Level ='Second Year';
+									break;
+								case 3:
+									# code...
+								$Level ='Third Year';
+									break;
+								case 4:
+									# code...
+								$Level ='Fourth Year';
+									break;
+
+								default:
+									# code...
+								$Level ='First Year';
+									break;
+							}
 
 
 				  		echo '<tr>';
 				  		echo '<td >' . $result->COURSE_ID.'</td>';
 				  		echo '<td>' . $result->COURSE_NAME.'</a></td>';
+				  		echo '<td>'. $Level.'</td>';
 				  		echo '<td>'. $result->COURSE_DESC.'</td>'; 
-				  		echo '<td>'. $result->DEPARTMENT_NAME.'</td>';
-
 				  		echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->COURSE_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
 				  					 <a title="Delete" href="controller.php?action=delete&id='.$result->COURSE_ID.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> </a>
 				  					 </td>';

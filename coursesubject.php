@@ -94,6 +94,7 @@ $totunit =0;
             $_SESSION['Course_name'] = $singlecourse->COURSE_NAME;
 
           if (isset($_SESSION['STUDID'])) {
+            # code...
             
                $_SESSION['COURSELEVEL'] = $singlecourse->COURSE_LEVEL ;
           }elseif(isset($_SESSION['IDNO'])){
@@ -105,7 +106,7 @@ $totunit =0;
 
            
 
-            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME;
+            echo $_SESSION['COURSE_YEAR'] = $singlecourse->COURSE_NAME.'-'.$_SESSION['COURSELEVEL'];
            
             ?></b><br>
           <b>Semester : <?php echo $_SESSION['SEMESTER']; ?></b> <br/>

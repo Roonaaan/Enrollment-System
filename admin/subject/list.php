@@ -52,7 +52,7 @@
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
 				  		echo '<td>' . $result->UNIT.'</a></td>';
 				  		echo '<td>'. $result->PRE_REQUISITE.'</td>';
-				  		echo '<td>'. $result->COURSE_NAME.'</td>';
+				  		echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'</td>';
 				  		// echo '<td>' . $result->AY.'</a></td>';
 				  		echo '<td>'. $result->SEMESTER.'</td>'; 
 				  		 

@@ -29,7 +29,7 @@ switch ($action) {
 	function doInsert(){
 		if(isset($_POST['save'])){
 			
-  		if ($_POST['COURSE_NAME'] == "" OR $_POST['COURSE_MAJOR'] == "" OR $_POST['COURSE_DESC'] == "" OR $_POST['DEPT_ID'] == "none") {
+  		if ($_POST['COURSE_NAME'] == "" OR $_POST['COURSE_DESC'] == "" OR $_POST['DEPT_ID'] == "none") {
 			$messageStats = false;
 			message("All field is required!","error");
 			redirect('index.php?view=add');
@@ -37,6 +37,7 @@ switch ($action) {
 			$course = New Course();
 			
 			$course->COURSE_NAME 		= $_POST['COURSE_NAME'];
+			$course->COURSE_LEVEL		= $_POST['COURSE_LEVEL'];
 			$course->COURSE_MAJOR		= $_POST['COURSE_MAJOR'];
 			$course->COURSE_DESC		= $_POST['COURSE_DESC']; 
 			$course->DEPT_ID			= $_POST['DEPT_ID'];

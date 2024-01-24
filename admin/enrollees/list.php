@@ -61,7 +61,7 @@
 				  		echo '<td>'. $result->CONTACT_NO.'</td>';
 				  	
 				  		echo '<td>'. $result->student_status.'</td>'; 
-				  		echo '<td>'. $result->COURSE_NAME.'</td>';
+				  		echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.' </td>';
 				  		 if($result->student_status=='New'){
 				  		 	echo '<td align="center" > 
 				  		             <a title="Confirm" href="controller.php?action=confirm&IDNO='.$result->IDNO.'"  class="btn btn-info btn-xs  ">Confirm <span class="fa fa-info-circle fw-fa"></span></a>

@@ -71,7 +71,7 @@
 						$student->COURSE_ID   	= $_SESSION['COURSEID'];
 						$student->SEMESTER   	= $_SESSION['SEMESTER'];
 						$student->student_status = 'Transferee';
-						// $student->YEARLEVEL   	= $_SESSION['COURSELEVEL']; 
+						$student->YEARLEVEL   	= $_SESSION['COURSELEVEL']; 
 						$student->NewEnrollees  = 1;
 						$student->create();
 
@@ -201,33 +201,35 @@
 
  			</tr>
  			<tr>
- 				<td><label>Course</label></td>
- 				<td colspan="2">
+			 <td><label>Course/Year</label></td>
+				<td colspan="2">
+					
+					<select class="form-control input-sm" name="COURSE">
+								<?php
+								if(isset($_SESSION['COURSEID'])){
+									$course = New Course();
+  								    $singlecourse = $course->single_course($_SESSION['COURSEID']);
+  								    echo '<option value='.$singlecourse->COURSE_ID.' >'.$singlecourse->COURSE_NAME.'-'.$singlecourse->COURSE_LEVEL.' </option>';
 
- 					<select class="form-control input-sm" name="COURSE">
- 						<?php
-							if (isset($_SESSION['COURSEID'])) {
-								$course = new Course();
-								$singlecourse = $course->single_course($_SESSION['COURSEID']);
-								echo '<option value=' . $singlecourse->COURSE_ID . ' >' . $singlecourse->COURSE_NAME . ' </option>';
-							} else {
-								echo '<option value="Select">Select</option>';
-							}
+								}else{
+									echo '<option value="Select">Select</option>';
+								}
+								
+								?>
+								<?php 
 
-							?>
- 						<?php
+								$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_ID");
+								$cur = $mydb->loadResultList();
 
-							$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_ID");
-							$cur = $mydb->loadResultList();
+								foreach ($cur as $result) {
+								  echo '<option value='.$result->COURSE_ID.' >'.$result->COURSE_NAME.'-'.$result->COURSE_LEVEL.' </option>';
 
-							foreach ($cur as $result) {
-								echo '<option value=' . $result->COURSE_ID . ' >' . $result->COURSE_NAME . ' </option>';
-							}
-							?>
- 					</select>
+								}
+								?>
+								</select> 
 
 
- 				</td>
+				</td>
  				<td><label>Civil Status</label></td>
  				<td colspan="2">
  					<select class="form-control input-sm" name="CIVILSTATUS">
