@@ -29,7 +29,7 @@ $_SESSION['PASS']    	  =  $_POST['PASS'];
 if ($res) {
 	# code...
 	message("Student already exist.", "error");
-    redirect(web_root."index.php?q=enroll");
+    redirect(web_root."index.php?q=enrol");
 
  }else{
 
@@ -53,7 +53,7 @@ if($userStud){
        message("Cannot Proceed. Must be 15 years old and above to enroll.", "error");
        redirect("index.php?q=enrol");
 
-    } else {
+    }else{
 		$student = New Student();
 		$student->IDNO 			= $_SESSION['STUDID'];
 		$student->FNAME 		= $_SESSION['FNAME'];
@@ -219,7 +219,7 @@ if($userStud){
 			<td><label>Course/Year</label></td>
 				<td colspan="2">
 					
-					<select class="form-control input-sm" name="COURSE">
+				<select class="form-control input-sm" name="COURSE">
 								<?php
 								if(isset($_SESSION['COURSEID'])){
 									$course = New Course();
@@ -233,7 +233,7 @@ if($userStud){
 								?>
 								<?php 
 
-								$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_LEVEL=1");
+								$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_ID");
 								$cur = $mydb->loadResultList();
 
 								foreach ($cur as $result) {
@@ -241,7 +241,7 @@ if($userStud){
 
 								}
 								?>
-				    </select> 
+								</select> 
 
 
 				</td>
@@ -268,7 +268,7 @@ if($userStud){
 				</td>
 			</tr>
 			<tr>
-				<td><label>Guardian</label></td>
+				<td><label>Gaurdian</label></td>
 				<td colspan="2">
 					<input required="true"  class="form-control input-md" id="GUARDIAN" name="GUARDIAN" placeholder="Parents/Guardian Name" type="text"value="<?php echo isset($_SESSION['GUARDIAN']) ? $_SESSION['GUARDIAN'] : ''; ?>">
 				</td>

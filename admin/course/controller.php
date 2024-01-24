@@ -29,13 +29,13 @@ switch ($action) {
 	function doInsert(){
 		if(isset($_POST['save'])){
 			
-  		if ($_POST['COURSE_NAME'] == "" OR $_POST['COURSE_DESC'] == "" OR $_POST['DEPT_ID'] == "none") {
+  		if ($_POST['COURSE_NAME'] == "" OR $_POST['COURSE_LEVEL'] == "" OR $_POST['COURSE_MAJOR'] == "" OR $_POST['COURSE_DESC'] == "" OR $_POST['DEPT_ID'] == "none") {
 			$messageStats = false;
 			message("All field is required!","error");
 			redirect('index.php?view=add');
 		}else{	
 			$course = New Course();
-			
+			// $course->USERID 		= $_POST['user_id'];
 			$course->COURSE_NAME 		= $_POST['COURSE_NAME'];
 			$course->COURSE_LEVEL		= $_POST['COURSE_LEVEL'];
 			$course->COURSE_MAJOR		= $_POST['COURSE_MAJOR'];
@@ -43,7 +43,8 @@ switch ($action) {
 			$course->DEPT_ID			= $_POST['DEPT_ID'];
 			$course->create();
 
-						
+						// $autonum = New Autonumber(); 
+						// $autonum->auto_update(2);
 
 			message("New [". $_POST['COURSE_NAME'] ."] created successfully!", "success");
 			redirect("index.php");
@@ -58,6 +59,7 @@ switch ($action) {
 
 			$course = New Course(); 
 			$course->COURSE_NAME 		= $_POST['COURSE_NAME'];
+			$course->COURSE_LEVEL		= $_POST['COURSE_LEVEL'];
 			$course->COURSE_MAJOR		= $_POST['COURSE_MAJOR'];
 			$course->COURSE_DESC		= $_POST['COURSE_DESC'];
 			$course->DEPT_ID			= $_POST['DEPT_ID'];
@@ -71,7 +73,18 @@ switch ($action) {
 
 	function doDelete(){
 		
-		
+		// if (isset($_POST['selector'])==''){
+		// message("Select the records first before you delete!","info");
+		// redirect('index.php');
+		// }else{
+
+		// $id = $_POST['selector'];
+		// $key = count($id);
+
+		// for($i=0;$i<$key;$i++){
+
+		// 	$course = New User();
+		// 	$course->delete($id[$i]);
 
 		
 				$id = 	$_GET['id'];
@@ -81,7 +94,9 @@ switch ($action) {
 			 
 			message("Course already Deleted!","info");
 			redirect('index.php');
-	
+		// }
+		// }
+
 		
 	}
 

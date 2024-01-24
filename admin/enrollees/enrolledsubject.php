@@ -1,4 +1,4 @@
- <?php 
+<?php 
  check_message(); 
 
   $student = New Student();
@@ -21,13 +21,13 @@
               <tr  bgcolor="#098744" style="color:#fff">
              <th>ID</th>
               <th>
-              
+               <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
                Subject</th>
               <th>Description</th> 
               <th>Unit</th>
               <th>Pre-Requisite</th>
               <th>Course/Year</th>
-              
+              <!-- <th>Academic Year</th> -->
               <th>Semester</th>
               <th width="10%" >Action</th>
             </tr> 
@@ -50,14 +50,14 @@
                       foreach ($cur as $result) { 
 
                          echo '<tr>';
-                          
+                          // echo '<td width="5%" align="center"></td>';
                           echo '<td>' . $result->SUBJ_ID.'</a></td>';
                           echo '<td>'. $result->SUBJ_CODE.'</td>';
                           echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
                           echo '<td>' . $result->UNIT.'</a></td>';
                           echo '<td>'. $result->PRE_REQUISITE.'</td>';
                           echo '<td>'. $result->COURSE_NAME.'-'.$result->COURSE_LEVEL.'</td>';
-                          
+                          // echo '<td>' . $result->AY.'</a></td>';
                           echo '<td>'. $result->SEMESTER.'</td>'; 
                           echo '<td align="center" > <a title="Remove" href="controller.php?action=removed&id='.$result->SUBJ_ID.'&IDNO='.$_GET['IDNO'].'"  class="btn btn-danger btn-xs  ">  Remove <span class="fa fa-trash fw-fa"></span></a>
                       </td>';

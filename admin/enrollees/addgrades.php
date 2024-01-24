@@ -22,7 +22,7 @@ if(isset($_GET['gid'])){
   $res = $subject->single_subject($SUBJ_ID);
 
  if (!isset($_GET['SEMESTER'])) {
- 
+   # code...
      redirect("index.php");
  }
 
@@ -100,7 +100,7 @@ $subj = $subject->single_subject($_GET['id']);
 
           <div class="col-md-6">
             <textarea  class="form-control input-sm" id="SUBJ_CODE" name="SUBJ_CODE" readonly="true" rows="4" cols="32"><?php echo $res->SUBJ_CODE .'['. $res->SUBJ_DESCRIPTION.']';?></textarea>
-             <?php echo $res->SUBJ_CODE .'['. $res->SUBJ_DESCRIPTION.']';?>"> -->
+             <!-- <input class="form-control input-sm" id="SUBJ_CODE" name="SUBJ_CODE" readonly="true" type="text" value="<?php echo $res->SUBJ_CODE .'['. $res->SUBJ_DESCRIPTION.']';?>"> -->
           </div>
         </div>
       </div>
@@ -179,7 +179,7 @@ $subj = $subject->single_subject($_GET['id']);
 
           <div class="col-md-6">
            <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-             <?php echo $_GET['IDNO']; ?>" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>Back</strong></a> -->
+              <!-- <a href="index.php?view=grades&id=<?php echo $_GET['IDNO']; ?>" class="btn btn-info"><span class="fa fa-arrow-circle-left fw-fa"></span></span>&nbsp;<strong>Back</strong></a> -->
            </div>
         </div>
       </div>
@@ -298,7 +298,7 @@ $subj = $subject->single_subject($_GET['id']);
 
     tot = parseFloat(first) +  parseFloat(second)  +  parseFloat(third)  +  parseFloat(fourth) ;
 
-    
+    // tot = tot /  4;
 
    document.getElementById('AVERAGE').value = tot.toFixed(2);
 

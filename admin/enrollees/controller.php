@@ -43,7 +43,9 @@ $_SESSION['SY'] = $sy;
 		 $resQuery = mysqli_query($mydb->conn,$sql) or die(mysqli_error($mydb->conn));
 		 $studcourse = mysqli_fetch_assoc($resQuery);
 
+		// $student = New Student(); 
 		
+		// $studcourse = $student->single_student($_GET['IDNO']);
  
 
 		 $sql = "SELECT * FROM `subject` s, `course` c 
@@ -53,6 +55,16 @@ $_SESSION['SY'] = $sy;
  			while ($row = mysqli_fetch_array($resSubject)) {
 
  					# code...
+ 					$studentsubject = New StudentSubjects();
+					$studentsubject->IDNO 		= $_GET['IDNO'];
+					$studentsubject->SUBJ_ID	= $row['SUBJ_ID'];
+					$studentsubject->LEVEL 		= 1;
+					$studentsubject->SEMESTER 	= $_SESSION['SEMESTER'];
+					$studentsubject->SY 		= $_SESSION['SY'];
+					$studentsubject->ATTEMP 	= 1; 
+					$studentsubject->create();
+
+
 					$grade = New Grade();
 					$grade->IDNO = $_GET['IDNO'];
 					$grade->SUBJ_ID	 = $row['SUBJ_ID'];
@@ -70,7 +82,8 @@ $_SESSION['SY'] = $sy;
 			$query = "SELECT * FROM `tblstudent` WHERE `COURSE_ID`=".$studcourse['COURSE_ID'];
 			$result = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
 			$numrow = mysqli_num_rows($result);
-			
+			// $maxrows = count($numrow);
+
 
 			if ($numrow > 40) {
 				# code...
@@ -116,13 +129,13 @@ global $mydb;
 	 		$maxrows = mysqli_num_rows($result);
 
 	 		if ($maxrows > 0) {
-	 			
+	 			# code...
 	 			message("Subject has already credited.", "error");
 				redirect("index.php?view=addCredit&IDNO=".$idno);
 	 		}else{
 
 	 			if ($ave > 74.4) {
-	 			
+	 			# code...
 		 
 
 				$currentyear = date('Y');
@@ -226,9 +239,9 @@ $subj = $subject->single_subject($_GET['id']);
 
 
  		if (isset($row['SUBJ_ID'])) {
-			
+			# code...
 		if ($row['AVE'] > 0 && $row['AVE'] < 75 ) {
-			
+			# code...
 			?>
 			<script type="text/javascript">
 				alert('This subject is under taken.')
@@ -236,7 +249,7 @@ $subj = $subject->single_subject($_GET['id']);
 			</script>
 	 	<?php
 		}elseif ($row['AVE']==0) {
-			
+			# code...
 			?>
 			<script type="text/javascript">
 				alert('This subject is under taken.')
@@ -244,7 +257,7 @@ $subj = $subject->single_subject($_GET['id']);
 			</script>
 	 	<?php
 		}elseif ($row['AVE'] > 74) {
-			
+			# code...
 		
 		?>
 			<script type="text/javascript">
@@ -270,7 +283,19 @@ $subj = $subject->single_subject($_GET['id']);
 	function doDelete(){
 global $mydb;
 		
-		
+		// if (isset($_POST['selector'])==''){
+		// message("Select the records first before you delete!","info");
+		// redirect('index.php');
+		// }else{
+
+		// $id = $_POST['selector'];
+		// $key = count($id);
+
+		// for($i=0;$i<$key;$i++){
+
+		// 	$course = New User();
+		// 	$course->delete($id[$i]);
+
 		
 			$id = 	$_GET['id'];
 
@@ -279,7 +304,8 @@ global $mydb;
 			 
 			message("Course already Deleted!","info");
 			redirect('index.php');
-		
+		// }
+		// }
 
 		
 	}
@@ -327,13 +353,18 @@ global $mydb;
 			                   		# code...
 			                   
 
-			                    
+			                     // $mydb->setQuery($query);
+			                     // $cur = $mydb->loadResultList(); 
+			                     //  foreach ($cur as $result) { 
+
 			                      	$sql = "SELECT * FROM `studentsubjects` WHERE  `IDNO`=". $_POST['IDNO']." AND `SUBJ_ID`=".$row['SUBJ_ID'];
 			                     	$resQuery = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
 
 			                   	while ($rows = mysqli_fetch_array($resQuery)) {
 
-			                     
+			                      // 	 $mydb->setQuery($query);
+				                     // $cur = $mydb->loadResultList(); 
+				                     //  foreach ($cur as $result) { 
 				                      	
 				                      	if (file_exists($rows['SUBJ_ID'])) {
 				                      		# code...
@@ -375,7 +406,7 @@ global $mydb;
 							$query = "SELECT * FROM `tblstudent` WHERE `COURSE_ID`=". $cid['COURSE_ID'];
 							$result = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
 							$numrow = mysqli_num_rows($result);
-							
+							// $maxrows = count($numrow);
 
 			                if ($numrow > 40) {
 								# code...
@@ -392,7 +423,10 @@ global $mydb;
 								$student->update($_POST['IDNO']);
 							}
 
-				  	
+				  	// 		$student = New Student();  
+							// $student->NewEnrollees =0;  
+							// $student->YEARLEVEL = $courseLevel['COURSE_LEVEL'];
+							// $student->update($_POST['IDNO']);
 			              
 
 			              

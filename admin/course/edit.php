@@ -16,9 +16,9 @@
 
            <div class="row">
          <div class="col-lg-12">
-            <h1 class="page-header">Update Course</h1>
+            <h1 class="page-header">Update Course/Year</h1>
           </div>
-          
+          <!-- /.col-lg-12 -->
        </div> 
       
                         
@@ -34,6 +34,32 @@
                         
                          <input class="form-control input-sm" id="COURSE_NAME" name="COURSE_NAME" placeholder=
                             "Course" type="text" value="<?php echo $singlecourse->COURSE_NAME; ?>">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-8">
+                      <label class="col-md-4 control-label" for=
+                      "COURSE_LEVEL">Year Level:</label>
+
+                      <div class="col-md-8">
+                        
+                         <input class="form-control input-sm" id="COURSE_LEVEL" name="COURSE_LEVEL" placeholder=
+                            "Course Level" type="text" value="<?php echo $singlecourse->COURSE_LEVEL; ?>">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-8">
+                      <label class="col-md-4 control-label" for=
+                      "COURSE_MAJOR">Major:</label>
+
+                      <div class="col-md-8">
+                        
+                         <input class="form-control input-sm" id="COURSE_MAJOR" name="COURSE_MAJOR" placeholder=
+                            "Major" type="text" value="<?php echo $singlecourse->COURSE_MAJOR; ?>" required>
                       </div>
                     </div>
                   </div>
@@ -119,4 +145,4 @@
         </form>
       
 
-        </div>
+        </div><!--End of container-->

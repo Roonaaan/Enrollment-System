@@ -7,7 +7,7 @@
  <div class="row">
       <div class="col-lg-12">
        	 <div class="col-lg-6">
-            <h1 class="page-header">List of Courses  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
+            <h1 class="page-header">List of Courses/Year  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
        		</div>
        		<div class="col-lg-6" >
        			<img style="float:right;" src="<?php echo web_root; ?>img/ucc.png" >
@@ -23,12 +23,14 @@
 				  	<tr>
 				  		<th>Course Id</th>
 				  		<th>Course</th>
-							<th>Level</th>
+				  		<th>Level</th>
+
 				  		<th>Description</th>
+				  		<th>Department</th>
 				  		<th width="10%" >Action</th>
 				 
 				  	</tr>	
-				  </thead>     
+				  </thead>     <!-- `COURSE_NAME`, `COURSE_LEVEL`, ``, `COURSE_DESC`, `DEPT_ID` -->
               
 				  <tbody>
 				  	<?php 
@@ -71,6 +73,8 @@
 				  		echo '<td>' . $result->COURSE_NAME.'</a></td>';
 				  		echo '<td>'. $Level.'</td>';
 				  		echo '<td>'. $result->COURSE_DESC.'</td>'; 
+				  		echo '<td>'. $result->DEPARTMENT_NAME.'</td>';
+
 				  		echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->COURSE_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
 				  					 <a title="Delete" href="controller.php?action=delete&id='.$result->COURSE_ID.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> </a>
 				  					 </td>';
@@ -81,9 +85,13 @@
 					
 				</table>
  
-				
+				<!-- <div class="btn-group">
+				  <a href="index.php?view=add" class="btn btn-default">New</a>
+				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+				</div>
+ -->
 			</div>
 				</form>
 	
 
-</div> 
+</div> <!---End of container-->

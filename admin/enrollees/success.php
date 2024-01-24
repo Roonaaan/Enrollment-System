@@ -61,14 +61,14 @@ $_SESSION['SY'] = $sy;
         <div class="col-xs-12">
           <h3 class="page-header">
             <i class="fa fa-book"></i> List of Subjects
-    
+            <!-- <small class="pull-right">Date: 2/10/2014</small> -->
           </h3>
         </div>
         <!-- /.col -->
       </div>
 
 <?php 
-
+// if (isset($_POST['btnCartSubmit'])) {
   
           if (isset($_SESSION['admingvCart'])){
   # code...
@@ -174,8 +174,8 @@ $_SESSION['SY'] = $sy;
           <?php
 
            $subtot = '';
-           $perunit = 0;
-           $entrancefee = 320;
+           $perunit = 10;
+           $entrancefee = 200;
            $totsem = 0;
 
            $subtot = $totunit * $perunit;
@@ -211,7 +211,10 @@ $_SESSION['SY'] = $sy;
                 <th>Miscellaneous Fee</th>
                 <td> &#8369 <?php echo  $entrancefee  ; ?></td>
               </tr>
-           
+              <!-- <tr>
+                <th>Shipping:</th>
+                <td>$5.80</td>
+              </tr> -->
               <tr>
                 <th>Total Semester:</th>
                 <td> &#8369 <?php echo  $totsem; ?>
@@ -240,11 +243,16 @@ $_SESSION['SY'] = $sy;
             </table>
           </div>
         </div>
-       
+        <!-- /.col -->
       </div>
-     
-     
-      
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-9">
+          <a href="statementaccnt.php?IDNO=<?php echo $_GET['IDNO']; ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Print</a>
+          
+      </div>
       
       </div>
     </section> 
@@ -254,5 +262,5 @@ $_SESSION['SY'] = $sy;
  <?php
   unset($_SESSION['SEMESTER']);
   unset($_SESSION['SY']);
-
+  // unset($_SESSION['admingvCart']);
  ?>

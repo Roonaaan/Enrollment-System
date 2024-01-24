@@ -7,8 +7,8 @@ require_once("../../include/initialize.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>University of Caloocan - North</title>
-  
+  <title>University of Caloocan City  </title>
+  <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link href="<?php echo web_root; ?>admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -96,7 +96,7 @@ require_once("../../include/initialize.php");
       </table>
          
 <?php 
-
+// if (isset($_POST['btnCartSubmit'])) {
   
   if (isset($_SESSION['admingvCart'])){
   # code...
@@ -128,7 +128,7 @@ require_once("../../include/initialize.php");
                       foreach ($cur as $result) { 
 
                          echo '<tr>';
-                         
+                          // echo '<td width="5%" align="center"></td>';
                           echo '<td>' . $result->SUBJ_ID.'</a></td>';
                           echo '<td>'. $result->SUBJ_CODE.'</td>';
                           echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
@@ -191,8 +191,8 @@ require_once("../../include/initialize.php");
           <?php
 
            $subtot = '';
-           $perunit = 0;
-           $entrancefee = 320;
+           $perunit = 209;
+           $entrancefee = 5693;
            $totsem = 0;
 
            $subtot = $totunit * $perunit;

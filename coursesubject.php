@@ -238,8 +238,8 @@ $totunit =0;
           <?php
 
            $subtot = '';
-           $perunit = 0;
-           $entrancefee = 320;
+           $perunit = 10;
+           $entrancefee = 200;
            $totsem = 0;
 
            $subtot = $totunit * $perunit;

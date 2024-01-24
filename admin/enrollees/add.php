@@ -4,7 +4,9 @@
                           redirect(web_root."admin/index.php");
                          }
 
-
+                      // $autonum = New Autonumber();
+                      // $res = $autonum->single_autonumber(2);
+ 
                    ?>
       
        <div class="table-responsive" style="margin-top:5%;"> 
@@ -30,7 +32,8 @@
 
             foreach ($cur as $result) {
               echo '<tr>';
-              
+              // echo '<td width="5%" align="center"></td>';
+              // echo '<td>' . $result->SUBJ_ID.'</a></td>';
               echo '<td>'. $result->SUBJ_CODE.' ['. $result->SUBJ_DESCRIPTION.']</td>'; 
               echo '<td>' . $result->UNIT.'</a></td>';
               echo '<td>'. $result->PRE_REQUISITE.'</td>';
@@ -53,5 +56,5 @@
                  </form>
                          
          
-              </div>
+              </div><!--/table-resp--> 
  
