@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2024 at 10:59 AM
+-- Generation Time: Jan 24, 2024 at 11:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,6 +37,16 @@ CREATE TABLE `course` (
   `SETSEMESTER` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_LEVEL`, `COURSE_MAJOR`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
+(60, 'BS Computer Science', '1', 'Computer Science', 'Bachelor of Science in Computer Science', 37, ''),
+(61, 'BS Information Technology', '1', 'Information Technology', 'Bachelor of Science in Information Technology', 37, ''),
+(62, 'BS Information System', '1', 'Information System', 'Bachelor of Science in Information System', 37, ''),
+(63, 'BS Entertainment and Multimedi', '1', 'Entertainment and Multimedia C', 'Bachelor of Science in Entertainment and Multimedia Computing', 37, '');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +58,14 @@ CREATE TABLE `department` (
   `DEPARTMENT_NAME` varchar(30) NOT NULL,
   `DEPARTMENT_DESC` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`DEPT_ID`, `DEPARTMENT_NAME`, `DEPARTMENT_DESC`) VALUES
+(37, 'CLAS', 'College of Liberal Arts                \r\n         '),
+(38, 'CRIM', 'College of Criminology                    \r\n      ');
 
 -- --------------------------------------------------------
 
@@ -517,7 +535,16 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`,
 (1503, 1000000156, 83, 0, 0, 0, 0, 0, '', '', ''),
 (1504, 1000000156, 84, 0, 0, 0, 0, 0, '', '', ''),
 (1505, 1000000156, 85, 0, 0, 0, 0, 0, '', '', ''),
-(1506, 1000000156, 86, 0, 0, 0, 0, 0, '', '', '');
+(1506, 1000000156, 86, 0, 0, 0, 0, 0, '', '', ''),
+(1507, 1000000203, 346, 0, 0, 0, 0, 0, '', '', ''),
+(1508, 1000000203, 347, 0, 0, 0, 0, 0, '', '', ''),
+(1509, 1000000203, 348, 0, 0, 0, 0, 0, '', '', ''),
+(1510, 1000000203, 349, 0, 0, 0, 0, 0, '', '', ''),
+(1511, 1000000203, 350, 0, 0, 0, 0, 0, '', '', ''),
+(1512, 1000000203, 351, 0, 0, 0, 0, 0, '', '', ''),
+(1513, 1000000203, 352, 0, 0, 0, 0, 0, '', '', ''),
+(1514, 1000000203, 353, 0, 0, 0, 0, 0, '', '', ''),
+(1515, 1000000203, 354, 0, 0, 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -590,7 +617,9 @@ INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY
 (195, '2016-2017', 'First', 42, 1000000163, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
 (196, '2016-2017', 'First', 21, 1000000162, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
 (197, '2016-2017', 'First', 42, 100000098, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(198, '2016-2017', 'First', 42, 1000000156, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New');
+(198, '2016-2017', 'First', 42, 1000000156, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
+(199, '2024-2025', 'Second', 60, 1000000202, 'ENROLLED', '2024-01-24 00:00:00', '2024-01-24 00:00:00', 'New'),
+(200, '2024-2025', 'First', 60, 1000000203, 'ENROLLED', '2024-01-24 00:00:00', '2024-01-24 00:00:00', 'New');
 
 -- --------------------------------------------------------
 
@@ -630,6 +659,21 @@ CREATE TABLE `studentsubjects` (
   `OUTCOME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `studentsubjects`
+--
+
+INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMESTER`, `SY`, `ATTEMP`, `AVERAGE`, `OUTCOME`) VALUES
+(1501, 1000000203, 346, 1, 'First', '2024-2025', 1, 0, ''),
+(1502, 1000000203, 347, 1, 'First', '2024-2025', 1, 0, ''),
+(1503, 1000000203, 348, 1, 'First', '2024-2025', 1, 0, ''),
+(1504, 1000000203, 349, 1, 'First', '2024-2025', 1, 0, ''),
+(1505, 1000000203, 350, 1, 'First', '2024-2025', 1, 0, ''),
+(1506, 1000000203, 351, 1, 'First', '2024-2025', 1, 0, ''),
+(1507, 1000000203, 352, 1, 'First', '2024-2025', 1, 0, ''),
+(1508, 1000000203, 353, 1, 'First', '2024-2025', 1, 0, ''),
+(1509, 1000000203, 354, 1, 'First', '2024-2025', 1, 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -647,6 +691,24 @@ CREATE TABLE `subject` (
   `SEMESTER` varchar(20) NOT NULL,
   `PreTaken` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_REQUISITE`, `COURSE_ID`, `AY`, `SEMESTER`, `PreTaken`) VALUES
+(346, 'CCS 101', 'Introduction to Computing', 3, 'none', 60, '', 'First', 0),
+(347, 'CCS 102', 'Fundamentals of Programming', 5, 'none', 60, '', 'First', 0),
+(348, 'CCS 109', 'Business Application Software', 3, 'none', 60, '', 'First', 0),
+(349, 'GEC 001', 'Understanding the Self', 3, 'none', 60, '', 'First', 0),
+(350, 'GEC 005', 'Purposive Communication', 3, 'none', 60, '', 'First', 0),
+(351, 'GEC 004 ', 'Mathematics in Modern World', 3, 'none', 60, '', 'First', 0),
+(352, 'NSTP 101', 'NSTP CWTS 1', 3, 'none', 60, '', 'First', 0),
+(353, 'PE 001', 'Physical Fitness and Wellness', 2, 'none', 60, '', 'First', 0),
+(354, 'GEC 002', 'Readings in the Philippines History', 3, 'none', 60, '', 'First', 0),
+(355, 'PE 001', 'Physical Education', 2, 'none', 61, '', 'First', 0),
+(356, 'PE 001', 'Physical Education', 2, 'none', 62, '', 'First', 0),
+(357, 'PE 001', 'Physical Education', 2, 'none', 63, '', 'First', 0);
 
 -- --------------------------------------------------------
 
@@ -671,7 +733,7 @@ CREATE TABLE `tblauto` (
 INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
 (1, 'Asset', 'Asset', 'ASitem', 0, 3, 1),
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 1000000, 202, 1),
+(3, 'SIDNO', 'IDNO', '2015', 1000000, 204, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
 
 -- --------------------------------------------------------
@@ -1049,7 +1111,12 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (338, 100000098, '2016-10-07 19:07:23', 'Student', 'Logged in'),
 (339, 1000000217, '2024-01-24 10:49:24', 'Student', 'Logged out'),
 (340, 2, '2024-01-24 10:50:40', 'Administrator', 'Logged out'),
-(341, 1, '2024-01-24 10:50:45', 'Administrator', 'Logged in');
+(341, 1, '2024-01-24 10:50:45', 'Administrator', 'Logged in'),
+(342, 2, '2024-01-24 11:31:17', 'Administrator', 'Logged out'),
+(343, 2, '2024-01-24 11:31:36', 'Administrator', 'Logged in'),
+(344, 1000000202, '2024-01-24 11:41:54', 'Student', 'Logged out'),
+(345, 1000000203, '2024-01-24 11:45:47', 'Student', 'Logged out'),
+(346, 1000000203, '2024-01-24 11:45:56', 'Student', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -1260,8 +1327,8 @@ CREATE TABLE `tblsemester` (
 --
 
 INSERT INTO `tblsemester` (`SEMID`, `SEMESTER`, `SETSEM`) VALUES
-(1, 'First', 0),
-(2, 'Second', 1);
+(1, 'First', 1),
+(2, 'Second', 0);
 
 -- --------------------------------------------------------
 
@@ -1276,6 +1343,14 @@ CREATE TABLE `tblstuddetails` (
   `GCONTACT` varchar(40) NOT NULL,
   `IDNO` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblstuddetails`
+--
+
+INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
+(132, 'Jezrel Paraiso', '', '09568278446', 1000000202),
+(133, 'Jezrel Paraiso', '', '09568278446', 1000000203);
 
 -- --------------------------------------------------------
 
@@ -1310,6 +1385,14 @@ CREATE TABLE `tblstudent` (
   `NewEnrollees` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `tblstudent`
+--
+
+INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
+(131, 1000000202, 'Lucky', 'Dancel', 'P', 'Male', '2002-01-16', 'Caloocan', 'Single', 0, 'Filipino', 'Catholic', '09568278446', 'blk 4 lot 1 Princess Homes Executive Village, Bagumbong 171', '1111', '011c945f30ce2cbafc452f39840f025693339c42', 'New', 1, 1, 60, '', 'Second', '', 0),
+(132, 1000000203, 'Ian', 'Dancel', 'P', 'Male', '2002-01-16', 'Caloocan', 'Single', 0, 'Filipino', 'Catholic', '09568278446', 'blk 4 lot 1 Princess Homes Executive Village, Bagumbong 171', '2222', 'fea7f657f56a2a448da7d4b535ee5e279caf3d9a', 'New', 1, 1, 60, '', 'First', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1332,7 +1415,7 @@ CREATE TABLE `useraccounts` (
 
 INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `ACCOUNT_PASSWORD`, `ACCOUNT_TYPE`, `EMPID`, `USERIMAGE`) VALUES
 (1, 'John Ronan Ramos', 'Ronan', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 1234, 'photos/LoginRed.jpg'),
-(2, 'Lucky Dancel', 'Lucky', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 0, '');
+(2, 'Lucky Dancel', 'Lucky', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 0, 'photos/MARIO.png');
 
 --
 -- Indexes for dumped tables
@@ -1457,25 +1540,25 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1507;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1516;
 
 --
 -- AUTO_INCREMENT for table `schoolyr`
 --
 ALTER TABLE `schoolyr`
-  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
 -- AUTO_INCREMENT for table `studentschedule`
@@ -1487,13 +1570,13 @@ ALTER TABLE `studentschedule`
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1501;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1510;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
+  MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
 
 --
 -- AUTO_INCREMENT for table `tblauto`
@@ -1511,7 +1594,7 @@ ALTER TABLE `tblinstructor`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
 
 --
 -- AUTO_INCREMENT for table `tblpayment`
@@ -1535,13 +1618,13 @@ ALTER TABLE `tblsemester`
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `useraccounts`
