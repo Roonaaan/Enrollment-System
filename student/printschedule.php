@@ -91,66 +91,29 @@ require_once ("../include/initialize.php");
 				  		  Subject</th>
 				  		<th>Description</th> 
 				  		<th>Unit</th> 
-				  		<th>Year Level</th>
-				  		<th>Semester</th> 
-				 
+				  		<th>Year Level</th>		 
 				  	</tr>	
 				  </thead> 
 				  <tbody>
-				  	<?php  
-				  	// `GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`,
-				  	//  `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`
+				  <?php
+                    $sql ="SELECT * 
+                    FROM  tblstudent st, studentsubjects ss, `subject` sub
+                    WHERE  st.IDNO=ss.IDNO AND ss.`SUBJ_ID` = sub.`SUBJ_ID`
+                    AND st.STUDSECTION=ss.LEVEL  
+                    AND ss.`IDNO`=" .$_SESSION['IDNO']." AND LEVEL='".$res->STUDSECTION."'
+                    AND sub.SEMESTER = '".$_SESSION['SEMESTER']."' AND LEVEL='".$resCourse->COURSE_LEVEL."'";
 
-						$sql = "SELECT * FROM `tblstudent` st, `grades` g,`subject` s ,studentsubjects ss
-						WHERE st.`IDNO`=g.`IDNO` and g.`SUBJ_ID`=s.`SUBJ_ID`  and s.`SUBJ_ID`=ss.`SUBJ_ID` AND g.`IDNO`=ss.`IDNO`  AND g.`REMARKS` NOT IN ('Drop') and st.`IDNO`=".$_SESSION['IDNO'];
-				  		$mydb->setQuery($sql);
+                      $mydb->setQuery($sql);
+                      $cur = $mydb->loadResultList();
 
-				  		$cur = $mydb->loadResultList();
-
-						foreach ($cur as $result) {
-							switch ($result->LEVEL) {
-								case 1:
-									# code...
-								$Level ='First Year';
-									break;
-								case 2:
-									# code...
-								$Level ='Second Year';
-									break;
-								case 3:
-									# code...
-								$Level ='Third Year';
-									break;
-								case 4:
-									# code...
-								$Level ='Fourth Year';
-									break;
-
-								default:
-									# code...
-								$Level ='First Year';
-									break;
-							}
-
-
-
-
-				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
-				  		echo '<td></td>';
+                      foreach ($cur as $result) {
+                        echo '<tr>';
 				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
+              echo '<td>' . $result->UNIT.'</a></td>'; ; 
 				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
-				  		echo '<td>' . $result->UNIT.'</a></td>'; 
-				  		echo '<td>'. $Level.'</td>'; 
-				  		echo '<td>'. $result->SEMESTER.'</td>';
-				  	
-				  		 
-				  		// echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->SUBJ_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
-				  		// 			 <a title="Delete" href="controller.php?action=delete&id='.$result->SUBJ_ID.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> </a>
-				  		// 			 </td>';
-				  		echo '</tr>';
-				  	} 
-				  	?>
+              echo '</tr>';
+                      }
+                    ?> 
 				  </tbody>
 					
 				</table>

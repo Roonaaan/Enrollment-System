@@ -57,7 +57,8 @@
        check_message();   
        ?>
   <ul class="nav nav-tabs" id="myTab">
-    <li><a href="#grades" data-toggle="tab">Registration Form</a></li>
+  <li class="active"><a href="#home" data-toggle="tab">Registration Form</a></li> 
+    <li><a href="#grades" data-toggle="tab">Enrolled Subjects</a></li>
     <?php 
     if ($res->student_status=='Irregular' || $res->student_status=='Transferee' && $res->NewEnrollees==0) {
 
@@ -72,39 +73,74 @@
     <div class="tab-pane active" id="home">
     <br/>
     <div class="col-md-12">
+    <h3>Registration Form</h3> 
     </div>
       <div class="table-responsive" style="margin-top:5%;"> 
-             <form action="customer/controller.php?action=delete" Method="POST">  					
-            				
+      <form action="customer/controller.php?action=delete" Method="POST">  					
+            				<table  class="table table-striped table-bordered table-hover "  style="font-size:12px" cellspacing="0"  > 
+            				  <thead>
+            				  	<tr> 
+                          <th>Subject</th>
+                          <th>Unit</th>
+                          <th>Description</th>  
+            				  </thead> 	 
             			  <tbody>
+                    <?php
+                    $sql ="SELECT * 
+                    FROM  tblstudent st, studentsubjects ss, `subject` sub
+                    WHERE  st.IDNO=ss.IDNO AND ss.`SUBJ_ID` = sub.`SUBJ_ID`
+                    AND st.STUDSECTION=ss.LEVEL  
+                    AND ss.`IDNO`=" .$_SESSION['IDNO']." AND LEVEL='".$res->STUDSECTION."'
+                    AND sub.SEMESTER = '".$_SESSION['SEMESTER']."' AND LEVEL='".$resCourse->COURSE_LEVEL."'";
 
+                      $mydb->setQuery($sql);
+                      $cur = $mydb->loadResultList();
+
+                      foreach ($cur as $result) {
+                        echo '<tr>';
+				  		echo '<td>'. $result->SUBJ_CODE.'</td>';
+              echo '<td>' . $result->UNIT.'</a></td>'; ; 
+				  		echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
+              echo '</tr>';
+                      }
+                    ?> 
             				</tbody>
-
+            					<!-- <footer>
+                        <tr>
+                          <td colspan="7"><a class="btn btn-primary btn-sm" href="">Print</a></td>
+                        </tr>     
+                      </footer> -->
+            				 	
             				</table>
                      
-            	
+            		 </form>
+                  <form action="student/printschedule.php" method="POST" target="_blank">
+                <input type="hidden" name="Course" value="<?php echo $resCourse->COURSE_LEVEL; ?>">
+                <!-- this row will not appear when printing -->
+                    <div class="row no-print">
+                      <div class="col-xs-12">
+                       <span class="pull-right"> <button type="submit" name="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
+                    </div>
+                    </div> 
+                  </form>       
          
-              </div>
+              </div><!--/table-resp-->
                
-             </div>
+             </div><!--/tab-pane-->
             <div class="tab-pane" id="grades">
          
               <?php require_once  ("studentgrades.php"); ?>
-          
-       
-            </div>
-             <div class="tab-pane" id="adddrop">
-                               
+
             </div>
              <div class="tab-pane" id="settings">
     		 
               <?php require_once  ("updateyearlevel.php"); ?>
           
        
-            </div>
-  </div>
+            </div><!--/tab-pane-->
+  </div><!--/tab-content-->
  </div>
-</div>
+</div><!--/col-9--> 
 </div>
 
 

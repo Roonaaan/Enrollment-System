@@ -166,10 +166,10 @@ $totunit =0;
                   echo '<td>' . $result->SUBJ_ID.'</a></td>';
                   echo '<td>'. $result->SUBJ_CODE.'</td>';
                   echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
-                  echo '<td>' . $result->UNIT.'</a></td>';
+
                    
                   echo '</tr>';
-                   $totunit +=  $result->UNIT ;
+
                 }
 
 
@@ -191,12 +191,12 @@ $totunit =0;
                           echo '<td>' . $result->SUBJ_ID.'</a></td>';
                           echo '<td>'. $result->SUBJ_CODE.'</td>';
                           echo '<td>'. $result->SUBJ_DESCRIPTION.'</td>';
-                          echo '<td>' . $result->UNIT.'</a></td>';
+
                           echo '</tr>';
 
                         
                         
-                          $totunit +=  $result->UNIT; 
+
                       }  
                         
                 }  
@@ -217,22 +217,18 @@ $totunit =0;
           echo '<td>'.$result->UNIT.'</td>';
           echo '</tr>';
 
-          $totunit =  $result->UNIT;
+          $totunit = intval($result->UNIT);
           }
       }
       
           ?>
-           <tr>
-            <td colspan="3" align="right" >Total Units</td>
-            <td><?php echo $totunit;?></td>
-            </tr> 
+
       </tbody>
      </table>  
  
    <div class="row">
         <!-- accepted payments column -->
         <div class="col-xs-6">
-          <p class="lead">Tuition:</p>
         <p class="lead">
 
           <?php
@@ -242,10 +238,9 @@ $totunit =0;
            $entrancefee = 320;
            $totsem = 0;
            
-           $totunit =  intval($totunit);
+           
            $subtot = $totunit * $perunit;
            $totsem = $entrancefee + $subtot;
-           echo$totunit .' x ' . ' &#8369 ' . $perunit . ' =  &#8369 ' . $subtot ; 
 
 
            $_SESSION['SUBTOT'] = $subtot;
@@ -256,9 +251,6 @@ $totunit =0;
           </p>
           
 
-          <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-           Description : This is the formula of amount per unit and its total.
-          </p>
         </div>
 
         <div class="col-xs-6">
@@ -287,7 +279,7 @@ $totunit =0;
               $student = New Student();
               $result = $student->single_student($_SESSION['IDNO']);
 
-              if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
+              if ($result->student_status=='New' || $result->student_status=='Regular' || $result->student_status=='Irregular') { 
               ?>
               <tr>
                 <th>Partial Payment:</th>
@@ -320,7 +312,7 @@ $totunit =0;
       <div class="col-xs-3">
          </form>
          <?php
-          if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
+          if ($result->student_status=='New' || $result->student_status=='Regular' || $result->student_status=='Irregular') { 
          ?>
           <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
            <input type="hidden" value="sb-01j8u28917912@business.example.com" name="business">

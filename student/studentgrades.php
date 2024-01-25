@@ -10,7 +10,7 @@
  
 <div class="row">
       <div class="col-lg-12"> 
-            <h3 class="page-header">Registration Form </h3>
+            <h3 class="page-header">Enrolled Subjects</h3>
        	 
        		</div>
         	<!-- /.col-lg-12 -->
@@ -27,6 +27,7 @@
 				  		<th>Unit</th> 
 				  		<th>Year Level</th>
 				  		<th>Semester</th> 
+						<th>Remarks</th>
 				 
 				  	</tr>	
 				  </thead> 
@@ -35,8 +36,8 @@
 				  	// `GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`,
 				  	//  `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`
 
-						$sql = "SELECT DISTINCT * FROM `tblstudent` st,`subject` s ,studentsubjects ss
-						WHERE st.`IDNO`=ss.`IDNO` and ss.`SUBJ_ID`=s.`SUBJ_ID` and st.`IDNO`=".$_SESSION['IDNO'];
+					  $sql = "SELECT * FROM `tblstudent` st, `grades` g,`subject` s ,studentsubjects ss
+					  WHERE st.`IDNO`=g.`IDNO` and g.`SUBJ_ID`=s.`SUBJ_ID`  and s.`SUBJ_ID`=ss.`SUBJ_ID` AND g.`IDNO`=ss.`IDNO`  AND g.`REMARKS` NOT IN ('Drop') and st.`IDNO`=".$_SESSION['IDNO'];
 				  		$mydb->setQuery($sql);
 
 				  		$cur = $mydb->loadResultList();
@@ -77,6 +78,7 @@
 				  		echo '<td>' . $result->UNIT.'</a></td>'; 
 				  		echo '<td>'. $Level.'</td>'; 
 				  		echo '<td>'. $result->SEMESTER.'</td>';
+						  echo '<td>'. $result->REMARKS.'</td>'; 
 				  	
 				  		 
 				  		// echo '<td align="center" > <a title="Edit" href="index.php?view=edit&id='.$result->SUBJ_ID.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span></a>
@@ -96,15 +98,7 @@
  -->
 			</div>
 				</form>
-				<form action="student/printschedule.php" method="POST" target="_blank">
-                <input type="hidden" name="Course" value="<?php echo $resCourse->COURSE_LEVEL; ?>">
-                <!-- this row will not appear when printing -->
-                    <div class="row no-print">
-                      <div class="col-xs-12">
-                       <span class="pull-right"> <button type="submit" name="submit" class="btn btn-primary"  ><i class="fa fa-print"></i> Print</button></span>  
-                    </div>
-                    </div> 
-                  </form> 
+
 	
 
 </div> <!---End of container-->

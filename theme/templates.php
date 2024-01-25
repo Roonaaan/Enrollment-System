@@ -55,7 +55,7 @@ $currentyear = date('Y');
 $student = New Student();
 $singlestudent = $student->single_student($_SESSION['IDNO']);
 
-if ($singlestudent->student_status=='New') {
+if ($singlestudent->student_status=='New' || $singlestudent->student_status=='Regular' || $singlestudent->student_status=='Regular') {
   # code...
 
 ?> 
