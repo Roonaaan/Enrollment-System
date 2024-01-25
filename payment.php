@@ -39,11 +39,6 @@ if ($row['student_status'] == 'New') {
 		$studentsubject->ATTEMP 	= 1;
 		$studentsubject->create();
 
-		$grade = new Grade();
-		$grade->IDNO = $_SESSION['IDNO'];
-		$grade->SUBJ_ID	 = $result->SUBJ_ID;
-		$grade->SEMS     = $_SESSION['SEMESTER'];
-		$grade->create();
 	}
 
 	if (isset($_SESSION['gvCart'])) {
@@ -66,11 +61,6 @@ if ($row['student_status'] == 'New') {
 				$studentsubject->ATTEMP 	= 1;
 				$studentsubject->create();
 
-				$grade = new Grade();
-				$grade->IDNO = $_SESSION['IDNO'];
-				$grade->SUBJ_ID	 = $result->SUBJ_ID;
-				$grade->SEMS     = $_SESSION['SEMESTER'];
-				$grade->create();
 			}
 		}
 	}

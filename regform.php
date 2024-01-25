@@ -233,7 +233,7 @@ if($userStud){
 								?>
 								<?php 
 
-								$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_ID");
+								$mydb->setQuery("SELECT * FROM `course` WHERE COURSE_LEVEL=1");
 								$cur = $mydb->loadResultList();
 
 								foreach ($cur as $result) {

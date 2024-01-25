@@ -174,8 +174,8 @@ $_SESSION['SY'] = $sy;
           <?php
 
            $subtot = '';
-           $perunit = 10;
-           $entrancefee = 200;
+           $perunit = 0;
+           $entrancefee = 320;
            $totsem = 0;
 
            $subtot = $totunit * $perunit;

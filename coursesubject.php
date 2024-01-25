@@ -143,7 +143,7 @@ $totunit =0;
       $result = mysqli_query($mydb->conn,$query) or die(mysqli_error($mydb->conn));
       $row = mysqli_fetch_assoc($result);
 
-      if ($row['student_status']=='New') {
+      if ($row['student_status']=='Irregular') {
         # code...
             $totunit = 0;
 
@@ -217,7 +217,7 @@ $totunit =0;
           echo '<td>'.$result->UNIT.'</td>';
           echo '</tr>';
 
-          $totunit +=  $result->UNIT;
+          $totunit =  $result->UNIT;
           }
       }
       
@@ -238,10 +238,11 @@ $totunit =0;
           <?php
 
            $subtot = '';
-           $perunit = 10;
-           $entrancefee = 200;
+           $perunit = 0;
+           $entrancefee = 320;
            $totsem = 0;
-
+           
+           $totunit =  intval($totunit);
            $subtot = $totunit * $perunit;
            $totsem = $entrancefee + $subtot;
            echo$totunit .' x ' . ' &#8369 ' . $perunit . ' =  &#8369 ' . $subtot ; 
@@ -286,7 +287,7 @@ $totunit =0;
               $student = New Student();
               $result = $student->single_student($_SESSION['IDNO']);
 
-              if ($result->student_status=='New' || $result->student_status=='Irregular' || $result->student_status=='Regular') { 
+              if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
               ?>
               <tr>
                 <th>Partial Payment:</th>
@@ -319,7 +320,7 @@ $totunit =0;
       <div class="col-xs-3">
          </form>
          <?php
-          if ($result->student_status=='New' || $result->student_status=='Irregular' || $result->student_status=='Regular') { 
+          if ($result->student_status=='Regular' || $result->student_status=='Irregular') { 
          ?>
           <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
            <input type="hidden" value="sb-01j8u28917912@business.example.com" name="business">
